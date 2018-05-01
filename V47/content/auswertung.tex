@@ -9,9 +9,9 @@ und die Grafiken wurden mittels matplotlib \cite{matplotlib} erstellt.
 Die aufgenommenen Messwerte sind in Tabelle \ref{tab:messwerte}
 dargestellt. Es wurde die Heizzeit $\text{d}t$, Heizstrom $I$ und -spannung $U$ der Probe und
 die Widerstände der Pt-100 Elemente von Probe und Zylinder notiert. Als Messunsicherheit
-wurde für $\text{d}t$ \SIrange{2}{4}{\second},
-für $I$ \SI{0.3}{\milli\ampere},
-für $U$ \SI{0.01}{\volt} und
+wurde für die Heizzeit \SIrange{2}{4}{\second},
+für den Heizstrom \SI{0.3}{\milli\ampere},
+für die Heizspannung \SI{0.01}{\volt} und
 für die Widerstände \SI{0.1}{\ohm} verwendet.
 
 % TODO
@@ -40,16 +40,27 @@ $\kappa = \SI{139e9}{\newton\per\meter\squared}$ \cite{demtroeder} das Kompressi
 und $V_0 = \SI{7.11e-6}{\meter\raiseto{3}\per\mole}$ \cite{webelements} das Molvolumen
 von Kupfer ist. Als Temperatur wurde dabei der Mittelwert zwischen der Probentemperatur
 zu Beginn und zum Ende der jeweiligen Heizzeit $T_\text{mittel}$ verwendet.
-Die sich ergebenden Werte von $C_\text{V}$ und $T_\text{mittel}$ sind in Tabelle
-\ref{tab:cv} angegeben.
+Die sich ergebenden Werte von $T_\text{mittel}$ und $C_\text{V}$ sind in Tabelle
+\ref{tab:cv} angegeben und der Verlauf von $C_\text{V}$ ist in Abbildung
+\ref{fig:cv} dargestellt.
 
-Für den linearen Ausdehnungskoeffizienten $\alpha$ sind in der Versuchsanleitung \cite{anleitung}
+\begin{figure}
+  \centering
+  \includegraphics[height=8cm]{build/cv.pdf}      % width=\textwidth
+    \caption{Die experimentell ermittelten Werte von $C_\text{V}$ in Abhängigkeit
+             von der Temperatur.}
+  \label{fig:cv}
+\end{figure}
+\FloatBarrier
+
+Für den linearen Ausdehnungskoeffizienten $\alpha$ sind in der Versuchsanleitung
+\cite[p.~5]{anleitung}
 Werte für Kupfer in \SI{10}{\degree}-Schritten angegeben. Diese wurden mittels eines Polynoms
 4. Grades der Form
 \begin{equation}
     \alpha(T) = a + b\;T + c\;T^2 + d\;T^3 + e\;T^4
 \end{equation}
-von scipy.curve_fit gefittet. Dabei ergab sich für die Parameter
+von scipy.curve\_fit gefittet. Dabei ergab sich für die Parameter
 \begin{align}
     % TODO
     .
@@ -58,15 +69,20 @@ Der Verlauf von $\alpha$ ist in Abbildung \ref{fig:alpha} dargestellt.
 Die für die Berechnung von $C_\text{V}$ verwendeten Werte von $\alpha$ sind ebenfalls
 in Tabelle \ref{tab:cv} aufgeführt.
 
-% TODO
-% Einfügen Plot von alpha
-% fig:alpha
+\begin{figure}
+  \centering
+  \includegraphics[height=8cm]{build/alpha.pdf}      % width=\textwidth
+    \caption{Messwerte und Regression des linearen Ausdehnungskoeffizienten.}
+  \label{fig:alpha}
+\end{figure}
 
+\FloatBarrier
 Aus den gemessenen $(C_\text{V}, T)$-Wertepaaren wurde bis zu einer Temperatur von
 \SI{170}{\kelvin} mittels einer Tabelle in der
 Versuchsanleitung ein Wert für $\sfrac{\theta_\text{D}}{T}$ ermittelt. Diese wurden
 mit der mittleren Temperatur $T_\text{mittel}$ multipliziert und sind ebenfalls
-in Tabelle \ref{tab:cv} aufgeführt.
+in Tabelle \ref{tab:cv} aufgeführt. Der Mittelwert von $\theta_\text{D}$ ergab sich
+zu % TODO.
 
 
 % TODO
@@ -74,9 +90,3 @@ in Tabelle \ref{tab:cv} aufgeführt.
 % tab:cv
 
 
-% \begin{figure}
-%   \centering
-%   \includegraphics[width=\textwidth]{Plot.pdf}
-%   \caption{Bildunterschrift}
-%   \label{fig:Plot1}
-% \end{figure}
