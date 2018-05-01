@@ -1,9 +1,78 @@
 \newpage
 \section{Auswertung}
-
 \label{sec:Auswertung}
-% \subsection{Unterkapiel}
-% \label{sec:Unterkapitel}
+
+Die Auswertung erfolgte mit Hilfe von scipy \cite{scipy},
+die Fehlerrechnung wurde mit Hilfe von uncertainties \cite{uncertainties}
+und die Grafiken wurden mittels matplotlib \cite{matplotlib} erstellt.
+
+Die aufgenommenen Messwerte sind in Tabelle \ref{tab:messwerte}
+dargestellt. Es wurde die Heizzeit $\text{d}t$, Heizstrom $I$ und -spannung $U$ der Probe und
+die Widerstände der Pt-100 Elemente von Probe und Zylinder notiert. Als Messunsicherheit
+wurde für $\text{d}t$ \SIrange{2}{4}{\second},
+für $I$ \SI{0.3}{\milli\ampere},
+für $U$ \SI{0.01}{\volt} und
+für die Widerstände \SI{0.1}{\ohm} verwendet.
+
+% TODO
+% Tabelle mit allen Messwerten
+% tab:messwerte
+
+Aus diesen Messwerten wurde $C_\text{p}$ bestimmt nach
+\begin{equation}
+    C_\text{p} = \frac{U\;\cdot\;I\;\cdot\;\text{d}t}{|T_\text{Probe,f}-T_\text{Probe,i}|\;\cdot\;n}
+    \text{,}
+\end{equation}
+wobei $T_\text{Probe,i}$ die Temperatur der Probe vor dem Heizintervall, $T_\text{Probe,f}$
+die Temperatur der Probe nach dem Heizintervall und $n$ die Stoffmenge der Probe beschreibt.
+Die Stoffmenge berechnet sich dabei aus dem Quotienten der Masse der Probe
+$m_\text{Probe} = \SI{324}{\gram}$ \cite{anleitung} und der Molaren Masse der Probe
+$M_\text{Kupfer} = \SI{63.55}{\kilo\gram\per\mole}$ \cite{lenntech} zu
+$n \approx \SI{5.4}{\mole}$. Die berechneten $C_\text{p}$-Werte sind in Tabelle
+\ref{tab:rechnungen} dargestellt.
+
+Die Umrechnung von $C_\text{p}$ nach $C_\text{V}$ erfolgte mittels der Korrekturformel
+\begin{equation}
+    C_\text{V} - C_\text{p} = 9\;\alpha^2\;\kappa\;V_0\;T\text{,}
+\end{equation}
+wobei $\alpha$ der lineare Ausdehnungskoeffizient,
+$\kappa = \SI{139e9}{\newton\per\meter\squared}$ \cite{demtroeder} das Kompressionsmodul
+und $V_0 = \SI{7.11e-6}{\meter\raiseto{3}\per\mole}$ \cite{webelements} das Molvolumen
+von Kupfer ist. Als Temperatur wurde dabei der Mittelwert zwischen der Probentemperatur
+zu Beginn und zum Ende der jeweiligen Heizzeit $T_\text{mittel}$ verwendet.
+Die sich ergebenden Werte von $C_\text{V}$ und $T_\text{mittel}$ sind in Tabelle
+\ref{tab:cv} angegeben.
+
+Für den linearen Ausdehnungskoeffizienten $\alpha$ sind in der Versuchsanleitung \cite{anleitung}
+Werte für Kupfer in \SI{10}{\degree}-Schritten angegeben. Diese wurden mittels eines Polynoms
+4. Grades der Form
+\begin{equation}
+    \alpha(T) = a + b\;T + c\;T^2 + d\;T^3 + e\;T^4
+\end{equation}
+von scipy.curve_fit gefittet. Dabei ergab sich für die Parameter
+\begin{align}
+    % TODO
+    .
+\end{align}
+Der Verlauf von $\alpha$ ist in Abbildung \ref{fig:alpha} dargestellt.
+Die für die Berechnung von $C_\text{V}$ verwendeten Werte von $\alpha$ sind ebenfalls
+in Tabelle \ref{tab:cv} aufgeführt.
+
+% TODO
+% Einfügen Plot von alpha
+% fig:alpha
+
+Aus den gemessenen $(C_\text{V}, T)$-Wertepaaren wurde bis zu einer Temperatur von
+\SI{170}{\kelvin} mittels einer Tabelle in der
+Versuchsanleitung ein Wert für $\sfrac{\theta_\text{D}}{T}$ ermittelt. Diese wurden
+mit der mittleren Temperatur $T_\text{mittel}$ multipliziert und sind ebenfalls
+in Tabelle \ref{tab:cv} aufgeführt.
+
+
+% TODO
+% Tabelle mit Cp-Werten, Tmittel-Werten, alpha-Werten, Cv-Werten, thetaD/T, thetaD
+% tab:cv
+
 
 % \begin{figure}
 %   \centering
