@@ -121,7 +121,7 @@ plt.figure()
 plt.errorbar(x=noms(Tmittel), xerr=stds(Tmittel), y=noms(Cv), yerr=stds(Cv), color='b', fmt='x', label='Stützstellen')
 # Tmax = 170 - 273.15                 # in grd
 # plt.axvline(x=Tmax, color='k')
-plt.xlabel(r'$T\;\mathrm{in}\;\mathrm{K}$')
+plt.xlabel(r'$T\;\mathrm{in}\;\mathrm{grd}$')
 plt.ylabel(r'$C_{\mathrm{V}}\;\mathrm{in}\;\mathrm{J/(mol\;grd)}$')
 # plt.xlim(60, 310)
 # plt.ylim(6.70, 16.95)
@@ -156,12 +156,50 @@ print('Theoretische Berechnung')
 
 omega_theo = 18*(np.pi**2)*Nl / (Vp * (1/(vlong**3) + 2/(vtrans**3)))
 omega_theo = omega_theo**(1/3)
-print('    Omega-Debye  ', omega_theo)
+print('    Omega-Debye  ', omega_theo, ' 1/s')
 theta_theo = omega_theo * codata.value('Planck constant over 2 pi') / codata.value('Boltzmann constant') # in K
-theta_theo -= 273.15        # in grd
-print('    Theta-Debye  ', theta_theo)
+# theta_theo -= 273.15        # in grd
+print('    Theta-Debye  ', theta_theo, ' K')
 
 
-# ascii.write(
-#             [T_zylinder1, noms(T_z1), stds(T_z1), T_zylinder2, noms(T_z2), stds(T_z2)],
-#             'build/table_zylinder.tex', format='latex')
+# Erstelle Tabellen
+ascii.write(
+            [np.round(noms(dt), 0),
+             noms(U),
+             np.round(noms(I)*1e3, 1), # in mA
+             noms(iRp),
+             noms(fRp),
+             np.round(noms(iTp), 1),
+             np.round(stds(iTp), 1),
+             np.round(noms(fTp), 1),
+             np.round(stds(fTp), 1)],
+            'build/table_messwerte.tex',
+            format='latex',
+            overwrite=True)
+
+ascii.write([
+                np.round(noms(Cp), 2),
+                np.round(stds(Cp), 2),
+                np.round(noms(Tmittel), 1),
+                np.round(stds(Tmittel), 1),
+                np.round(noms(func_alpha(Tmittel, a, b, c, d, e)*1e6), 2),
+                np.round(stds(func_alpha(Tmittel, a, b, c, d, e)*1e6), 2),
+                np.round(noms(Cv), 2),
+                np.round(stds(Cv), 2),
+            ],
+            'build/table_cv.tex',
+            format='latex',
+            overwrite=True)
+
+ascii.write([
+                np.round(noms(Tmittel[0:len(abgelesen)]), 1),
+                np.round(stds(Tmittel[0:len(abgelesen)]), 1),
+                np.round(noms(Cv[0:len(abgelesen)]), 2),
+                np.round(stds(Cv[0:len(abgelesen)]), 2),
+                abgelesen,
+                np.round(noms(theta_exp), 1),
+                np.round(stds(theta_exp), 1)
+            ],
+            'build/table_theta.tex',
+            format='latex',
+            overwrite=True)

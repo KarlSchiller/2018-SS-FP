@@ -13,10 +13,15 @@ wurde für die Heizzeit \SIrange{2}{4}{\second},
 für den Heizstrom \SI{0.3}{\milli\ampere},
 für die Heizspannung \SI{0.01}{\volt} und
 für die Widerstände \SI{0.1}{\ohm} verwendet.
+Die Widerstände der Pt-100 Elemente wurden mittels der Relation
+\begin{equation}
+    T(R) = \num{0.00134}\;R^2 + \num{2.296}\;R - \num{243.02}
+\end{equation}
+in Temperaturen von Probe und Zylinder umgerechnet.
 
-% TODO
 % Tabelle mit allen Messwerten
 % tab:messwerte
+\input{tab/table_messwerte.tex}
 
 Aus diesen Messwerten wurde $C_\text{p}$ bestimmt nach
 \begin{equation}
@@ -26,10 +31,10 @@ Aus diesen Messwerten wurde $C_\text{p}$ bestimmt nach
 wobei $T_\text{Probe,i}$ die Temperatur der Probe vor dem Heizintervall, $T_\text{Probe,f}$
 die Temperatur der Probe nach dem Heizintervall und $n$ die Stoffmenge der Probe beschreibt.
 Die Stoffmenge berechnet sich dabei aus dem Quotienten der Masse der Probe
-$m_\text{Probe} = \SI{324}{\gram}$ \cite{anleitung} und der Molaren Masse der Probe
+$m_\text{Probe} = \SI{324}{\gram}$ \cite{anleitung} und der molaren Masse der Probe
 $M_\text{Kupfer} = \SI{63.55}{\gram\per\mole}$ \cite{lenntech} zu
 $n \approx \SI{5.4}{\mole}$. Die berechneten $C_\text{p}$-Werte sind in Tabelle
-\ref{tab:rechnungen} dargestellt.
+\ref{tab:cv} dargestellt.
 
 Die Umrechnung von $C_\text{p}$ nach $C_\text{V}$ erfolgte mittels der Korrekturformel
 \begin{equation}
@@ -53,6 +58,11 @@ Die sich ergebenden Werte von $T_\text{mittel}$ und $C_\text{V}$ sind in Tabelle
 \end{figure}
 \FloatBarrier
 
+% Tabelle mit Cp-Werten, Tmittel-Werten, alpha-Werten, Cv-Werten
+% tab:cv
+\input{tab/table_cv.tex}
+\FloatBarrier
+
 Für den linearen Ausdehnungskoeffizienten $\alpha$ sind in der Versuchsanleitung
 \cite[p.~5]{anleitung}
 Werte für Kupfer in \SI{10}{\degree}-Schritten angegeben. Diese wurden mittels eines Polynoms
@@ -67,7 +77,6 @@ von scipy.curve\_fit gefittet. Dabei ergab sich für die Parameter
     c &= \SI{-1.3(3)e-10}{1\per\raiseto{3}\grd} \\
     d &= \SI{-1.5(3)e-12}{1\per\raiseto{4}\grd} \\
     e &= \SI{-8.2(7)e-15}{1\per\raiseto{5}\grd}
-    .
 \end{align}
 Der Verlauf von $\alpha$ ist in Abbildung \ref{fig:alpha} dargestellt.
 Die für die Berechnung von $C_\text{V}$ verwendeten Werte von $\alpha$ sind ebenfalls
@@ -79,18 +88,16 @@ in Tabelle \ref{tab:cv} aufgeführt.
     \caption{Messwerte und Regression des linearen Ausdehnungskoeffizienten.}
   \label{fig:alpha}
 \end{figure}
+\FloatBarrier
 
 \FloatBarrier
 Aus den gemessenen $(C_\text{V}, T)$-Wertepaaren wurde bis zu einer Temperatur von
 \SI{170}{\kelvin} mittels einer Tabelle in der
-Versuchsanleitung ein Wert für $\sfrac{\theta_\text{D}}{T}$ ermittelt. Diese wurden
-mit der mittleren Temperatur $T_\text{mittel}$ multipliziert und sind ebenfalls
-in Tabelle \ref{tab:cv} aufgeführt. Der Mittelwert von $\theta_\text{D}$ ergab sich
-zu % TODO.
+Versuchsanleitung \cite[p.~5]{anleitung} ein Wert für $\sfrac{\theta_\text{D}}{T}$ ermittelt. Diese wurden
+mit der mittleren Temperatur $T_\text{mittel}$ multipliziert und sind
+in Tabelle \ref{tab:theta} aufgeführt. Der Mittelwert von $\theta_\text{D}$ ergab sich
+zu \SI{915.9(4)}{\kelvin}.
 
-
-% TODO
-% Tabelle mit Cp-Werten, Tmittel-Werten, alpha-Werten, Cv-Werten, thetaD/T, thetaD
-% tab:cv
-
-
+% Tabelle mit ThetaD/T, thetaD
+% tab:theta
+\input{tab/table_theta.tex}
