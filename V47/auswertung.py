@@ -29,14 +29,16 @@ V0 = 7.11e-6                    # in m^3/mol
 M = 63.55*1e-3                 # in kg/mol
 # Stoffmenge der Probe
 n = m / M                    # in mol
-print('Stoffmenge Probe     ', n)
+print('Stoffmenge Probe     ', n, ' mol')
 # Loschmidtsche Zahl von CODATA
 Nl = ufloat(2.6516467, 0.0000015)*1e25  # in 1/m^3
 # longitudinale Phasengeschwindigkeit in Kupfer
 vlong = 4.7*1e3                 # in m/s
 # transversale Phasengeschwindigkeit in Kupfer
 vtrans = 2.26*1e3               # in m/s
-
+# Volumen der Probe
+Vp = V0 * n               # in m^3
+print('Volumen Probe        ', Vp, 'm^3')
 
 # Einlesen der gemessenen Werte
 # Notation: r steht für read, also eingelesen
@@ -84,8 +86,6 @@ print('Regression für alpha')
 params, covariance = curve_fit(func_alpha, Talpha, alpha)
 # covariance is the covaniance matrix
 errors = np.sqrt(np.diag(covariance))
-# print('a = ', params[0], ' +/- ', errors[0], ' 1/grd')
-# print('b = ', params[1], ' +/- ', errors[1])
 print('a = ', params[0], ' +/- ', errors[0], ' 1/grd')
 print('b = ', params[1], ' +/- ', errors[1], ' 1/grd^2')
 print('c = ', params[2], ' +/- ', errors[2], ' 1/grd^3')
@@ -115,14 +115,11 @@ plt.clf()
 # Berechne Cv mittels Korrekturformel
 Tmittel = (iTp + fTp)/2             # in grd
 Cv = Cp - 9 * func_alpha(Tmittel, a, b, c, d, e)**2 * kappa * V0 * Tmittel
-# print(a + b*Tmittel + c*Tmittel**2 + d*Tmittel**3 + e*Tmittel*4)
-# print(func_alpha(Tmittel, *params))
-# print(func_alpha(Tmittel, a, b, c, d, e))
 
 # Plotten von Cv
-Tmax = 170 - 273.15                 # in grd
 plt.figure()
 plt.errorbar(x=noms(Tmittel), xerr=stds(Tmittel), y=noms(Cv), yerr=stds(Cv), color='b', fmt='x', label='Stützstellen')
+# Tmax = 170 - 273.15                 # in grd
 # plt.axvline(x=Tmax, color='k')
 plt.xlabel(r'$T\;\mathrm{in}\;\mathrm{K}$')
 plt.ylabel(r'$C_{\mathrm{V}}\;\mathrm{in}\;\mathrm{J/(mol\;grd)}$')
@@ -157,15 +154,12 @@ print('    Theta-Debye  ', np.mean(theta_exp))
 ###
 print('Theoretische Berechnung')
 
-# Volumen der Probe
-Vp = V0 * n               # in m^3
-
 omega_theo = 18*(np.pi**2)*Nl / (Vp * (1/(vlong**3) + 2/(vtrans**3)))
 omega_theo = omega_theo**(1/3)
 print('    Omega-Debye  ', omega_theo)
-theta_theo = omega_theo * codata.value('Planck constant over 2 pi') / codata.value('Boltzmann constant')
+theta_theo = omega_theo * codata.value('Planck constant over 2 pi') / codata.value('Boltzmann constant') # in K
+theta_theo -= 273.15        # in grd
 print('    Theta-Debye  ', theta_theo)
-
 
 
 # ascii.write(

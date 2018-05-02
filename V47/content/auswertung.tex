@@ -27,7 +27,7 @@ wobei $T_\text{Probe,i}$ die Temperatur der Probe vor dem Heizintervall, $T_\tex
 die Temperatur der Probe nach dem Heizintervall und $n$ die Stoffmenge der Probe beschreibt.
 Die Stoffmenge berechnet sich dabei aus dem Quotienten der Masse der Probe
 $m_\text{Probe} = \SI{324}{\gram}$ \cite{anleitung} und der Molaren Masse der Probe
-$M_\text{Kupfer} = \SI{63.55}{\kilo\gram\per\mole}$ \cite{lenntech} zu
+$M_\text{Kupfer} = \SI{63.55}{\gram\per\mole}$ \cite{lenntech} zu
 $n \approx \SI{5.4}{\mole}$. Die berechneten $C_\text{p}$-Werte sind in Tabelle
 \ref{tab:rechnungen} dargestellt.
 
@@ -37,7 +37,7 @@ Die Umrechnung von $C_\text{p}$ nach $C_\text{V}$ erfolgte mittels der Korrektur
 \end{equation}
 wobei $\alpha$ der lineare Ausdehnungskoeffizient,
 $\kappa = \SI{139e9}{\newton\per\meter\squared}$ \cite{demtroeder} das Kompressionsmodul
-und $V_0 = \SI{7.11e-6}{\meter\raiseto{3}\per\mole}$ \cite{webelements} das Molvolumen
+und $V_0 = \SI{7.11e-6}{\raiseto{3}\meter\per\mole}$ \cite{webelements} das Molvolumen
 von Kupfer ist. Als Temperatur wurde dabei der Mittelwert zwischen der Probentemperatur
 zu Beginn und zum Ende der jeweiligen Heizzeit $T_\text{mittel}$ verwendet.
 Die sich ergebenden Werte von $T_\text{mittel}$ und $C_\text{V}$ sind in Tabelle
@@ -62,7 +62,11 @@ Werte für Kupfer in \SI{10}{\degree}-Schritten angegeben. Diese wurden mittels 
 \end{equation}
 von scipy.curve\_fit gefittet. Dabei ergab sich für die Parameter
 \begin{align}
-    % TODO
+    a &= \SI{1.632(2)e-05}{1\per\grd} \\
+    b &= \SI{1.45(9)e-08}{1\per\raiseto{2}\grd} \\
+    c &= \SI{-1.3(3)e-10}{1\per\raiseto{3}\grd} \\
+    d &= \SI{-1.5(3)e-12}{1\per\raiseto{4}\grd} \\
+    e &= \SI{-8.2(7)e-15}{1\per\raiseto{5}\grd}
     .
 \end{align}
 Der Verlauf von $\alpha$ ist in Abbildung \ref{fig:alpha} dargestellt.

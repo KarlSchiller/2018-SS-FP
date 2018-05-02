@@ -1,6 +1,6 @@
 # Aus Versuchsanleitung V47
 # Tabelle 2: Linearer Ausdehnungskoeffizient von Kupfer
-# T/K alpha/10^-6 grd^-1
+# T/K alpha/10^-6grd^-1
 070 07.00
 080 08.50
 090 09.75
