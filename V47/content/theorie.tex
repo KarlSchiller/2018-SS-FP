@@ -1,6 +1,6 @@
 \section{Zielsetzung}
 \label{sec:Zielsetzung}
-In diesem Versuch soll die Molare Wärme von kristallinem Kupfer bestimmt werden.
+In diesem Versuch soll die molare Wärme von kristallinem Kupfer bestimmt werden.
 Dazu wird die Debye-Temperatur $\theta_\text{D}$ experimentell bestimmt und mit einem theoretischen
 Wert verglichen.
 
@@ -19,7 +19,7 @@ Für ein Mol beträgt der Wert also
 \begin{equation}
   \text{U} = 3\, k\, \text{N}_\text{L}\, T = 3\,\text{R}\,T,
 \end{equation}
-wobei $N_\text{L} = \SI{2,6868e25}{\metre^{-3}}$ die Loschmidtsche Zahl und $\text{R} = \SI{8,3144598}{\mole^{-1}\kelvin^{-1}}$ die allgemeine Gaskonstante ist.
+wobei $N_\text{L}$ die Loschmidtsche Zahl und $\text{R}$ die allgemeine Gaskonstante ist.
 Bei einem konstanten Volumen führt dies zu einer spezifischen Molwärme von
 \begin{equation}
   C_\text{V} = 3\,\text{R}.
@@ -34,14 +34,13 @@ können Energien von n$\hbar\omega$ (n $\in \mathds{N}$) aufgenommen und abgegeb
 Die mittlere Energie lässt sich nun durch eine relativen Wahrscheinlichkeit W(n)
 ausdrücken, die der Boltzmann-Verteilung folgt:
 \begin{equation}
-  W(n) = \exp{\left(-\frac{\text{n}\hbar\omega}{kT}\right)}
+  \text{W}(\text{n}) = \exp{\left(-\frac{\text{n}\hbar\omega}{kT}\right)}
 \end{equation}
-Die mittlere Energie nach Einstein erhält man, wenn man die Energien (n$\hbar\omega$)
-mit W(n) für alle n multipliziert und normiert. Daraus ergibt sich:
+Die mittlere Energie nach Einstein ergibt sich durch Abzählen und Normieren aller möglichen Energien. Daraus ergibt sich:
 \begin{equation}
   \langle \text{u} \rangle_\text{Einstein} = \frac{\hbar\omega}{\exp{\left(\frac{\hbar\omega}{\text{k}T}\right)}-1}
 \end{equation}
-Der Ausdruck, welcher für die molare Wärme entsteht, wird als Einstein-Funktion bezeichnet
+Der Ausdruckfür die molare Wärme wird als Einstein-Funktion bezeichnet
 und liefert für hohe Temperaturen wieder ein asymptotisches Verhalten gegen 3R:
 \begin{equation}
   \text{C}_\text{V} = 3\,\text{R}\,\frac{\hbar^2\omega^2}{\text{k}^2T^2}\frac{\exp{\left(\frac{\hbar\omega}{\text{k}T}\right)}}{(\exp{\left(\frac{\hbar\omega}{\text{k}T}\right)}-1)^2}
@@ -49,30 +48,30 @@ und liefert für hohe Temperaturen wieder ein asymptotisches Verhalten gegen 3R:
 
 \subsection{Debye-Modell}
 \label{sec:Debye-Modell}
-Im Debye-Modell wird die Einstein-Frequenz durch eine spektrale Verteilung Z(\omega)
-ersetzt. Diese Verteilung beinhaltet alle auftretenden Eigenchwingungen der Atome
-und kann bei Festkörpern mit anisotropen oder stark dispertiven elastischen Verhalten
-beliebig kompliziert werden. Als Annahme wird dabei getroffen, das die Phasengeschwindigkeit
-weder von der Frequenz, noch von der Ausbreitungsrichtung abhängt. Somit kann in
+Im Debye-Modell wird die Einstein-Frequenz durch eine spektrale Verteilung Z($\omega$)
+ersetzt. Diese Verteilung beinhaltet alle auftretenden Eigenschwingungen der Atome
+und kann bei Festkörpern
+beliebig kompliziert werden. Als Annahme wird getroffen, das die Phasengeschwindigkeit
+weder von der Frequenz, noch von der Ausbreitungsrichtung abhängt. Somit können in
 einem Festkörper mit Seitenlänge L in einem Intervall von $\omega$ bis $\omega + \text{d}\omega$
 die Eigenschwingungen abgezählt werden. Daraus ergibt sich:
 \begin{equation}
-  \text{Z}(\omega) \text{d}\omega = \frac{3\,L^3}{2\,\pi^2\text{v}^3}\,\omega^2 \text{d}\omega = \frac{L^3}{2\,\pi^2}\omega^2\left(\frac{1}{\text{v}_l^3}+\frac{2}{\text{v}_\text{tr}^3}\right)\text{d}\omega
+  \text{Z}(\omega) \text{d}\omega = \frac{L^3}{2\,\pi^2}\omega^2\left(\frac{1}{\text{v}_l^3}+\frac{2}{\text{v}_\text{tr}^3}\right)\text{d}\omega
 \end{equation}
 Dabei ist $v_l$ für Longitudinalwellen und $v_\text{tr}$ für Transversalwellen. Ein endlicher Kristall besitzt aber nur $3\,\text{N}_\text{L}$ Eigenschwingungen ($\text{N}_\text{L}$
-ist die Anzahl der Atome im Festkörper). Die maximale Frequenz wird dabei als Debye-Frequenz bezeichnet.Aus
+ist die Anzahl der Atome im Festkörper), sodass eine maximale Frequenz existiert, welche als Debye-Frequenz bezeichnet wird. Aus
 \begin{equation}
   \int_0^{\omega_\text{D}} \text{Z} \text{d}\omega = 3\,\text{N}_\text{L}
 \end{equation}
 folgt
 \begin{equation}
-  \text{Z}(\omega) = \frac{9\,\text{N}_\text{L}}{\omega_\text{D}^3}\omega^2 \text{d}\omega
+  \text{Z}(\omega) = \frac{9\,\text{N}_\text{L}}{\omega_\text{D}^3}\omega^2 \text{d}\omega.
 \end{equation}
-berechnet man nun die Molwärme, so bietet sich die Definition der Debye-Temperatur ($\theta_\text{D}$)
+Wird nun die Molwärme berechnet, so definiert sich die Debye-Temperatur ($\theta_\text{D}$) durch
 \begin{equation}
-  \frac{\theta_\text{D}}{T} = \frac{\hbar\omega_\text{D}}{\text{k}T}
+  \frac{\theta_\text{D}}{T} = \frac{\hbar\omega_\text{D}}{\text{k}T}.
 \end{equation}
-damit und mit
+Damit und mit
 \begin{equation}
   x = \frac{\hbar\omega}{\text{k}T}
 \end{equation}
