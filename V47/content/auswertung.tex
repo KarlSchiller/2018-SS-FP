@@ -16,6 +16,7 @@ für die Widerstände \SI{0.1}{\ohm} verwendet.
 Die Widerstände der Pt-100 Elemente wurden mittels der Relation
 \begin{equation}
     T(R) = \num{0.00134}\;R^2 + \num{2.296}\;R - \num{243.02}
+    \label{eqn:TausR}
 \end{equation}
 in Temperaturen von Probe und Zylinder umgerechnet.
 
@@ -37,10 +38,9 @@ $n \approx \SI{5.4}{\mole}$. Die berechneten $C_\text{p}$-Werte sind in Tabelle
 \ref{tab:cv} dargestellt.
 
 Die Umrechnung von $C_\text{p}$ nach $C_\text{V}$ erfolgte mittels der Korrekturformel
-\begin{equation}
+\begin{equation*}
     C_\text{V} - C_\text{p} = 9\;\alpha^2\;\kappa\;V_0\;T\text{,}
-    \label{eqn:TausR}
-\end{equation}
+\end{equation*}
 wobei $\alpha$ der lineare Ausdehnungskoeffizient,
 $\kappa = \SI{139e9}{\newton\per\meter\squared}$ \cite{demtroeder} das Kompressionsmodul
 und $V_0 = \SI{7.11e-6}{\raiseto{3}\meter\per\mole}$ \cite{webelements} das Molvolumen
