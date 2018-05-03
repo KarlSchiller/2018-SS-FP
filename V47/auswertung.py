@@ -203,3 +203,28 @@ ascii.write([
             'build/table_theta.tex',
             format='latex',
             overwrite=True)
+
+# Nochmalige Berechnung von Theta-Debye durch Anpassung der C_V Werte.
+# Für die Diskussion
+shift = 16
+Cv_neu = Cv[2:8] + shift
+print('Wirds bei einem shift von Cv um ', shift, 'besser?')
+print(Cv_neu)
+abgelesen_neu = np.array([0.9, 2.4, 2.5, 2.5, 2.3, 1.9])
+# shift 13 abgelesen_neu = np.array([1.9, 3.1, 3.3, 3.2, 3.0, 3.6])
+theta_neu = abgelesen_neu * (Tmittel[2:8]+273.15)
+print(theta_neu)
+print('Es ergibt sich für Theta-Debye ', np.mean(theta_neu), ' Kelvin')
+
+ascii.write([
+                np.round(noms(Tmittel[2:8]), 1),
+                np.round(stds(Tmittel[2:8]), 1),
+                np.round(noms(Cv_neu), 2),
+                np.round(stds(Cv_neu), 2),
+                abgelesen_neu,
+                np.round(noms(theta_neu), 1),
+                np.round(stds(theta_neu), 1)
+            ],
+            'build/table_neu.tex',
+            format='latex',
+            overwrite=True)

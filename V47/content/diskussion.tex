@@ -2,8 +2,37 @@
 \label{sec:Diskussion}
 
 % Besprechung von Cv
+Leider spiegeln die experimentell ermittelten $C_\text{V}$-Werte den
+theoretisch vorhergesagten Zusammenhang nur sehr begrenzt wieder, siehe
+dazu Abbildung \ref{fig:cv}. Im Bereich bis ungefähr \SI{100}{\grd} sollte sich
+ein Verlauf ähnlich zu $C_\text{V} \sim T^3$ einstellen, bei höheren
+Temperaturen sollte die Wärmekapazität gegen einen konstanten Wert
+streben. Es zeigt sich, dass in beiden Bereichen die experimentell
+ermittelte Wärmekapazität zu gering ausfällt, was ein Indiz für einen
+systematischen Fehler sein könnte. Dabei ist anzumerken, dass aufgrund
+schwieriger Synchronisation der Erwärmungen von Probe und Zylinder
+der Zylinder immer wärmer war als die Probe. Es ist also zu einer
+Wärmestrahlung seitens des Zylinders an die Probe gekommen, welche die benötigte
+Heizleistung für eine Temperaturerhöhung erniedrigt und somit für kleinere
+experimentelle $C_\text{V}$-Werte verantwortlich ist.
+
+% Besprechung der Debye-Temperatur
+Bei den ersten zwei Messwerten trat eine Temperaturerhöhung auf, die
+größer als \SI{11}{\celsius} war, sodass hier die Pt-100 Elemente nicht
+genau dem angenommenen Zusammenhang \eqref{eqn:TausR} folgen. Bei den Messwerten
+\numrange{4}{6} war die Zylindertemperatur deutlich größer als die
+Temperatur der Probe, sodass hier die Wärmekapazitätswerte deutlich kleiner
+ausfallen. Da jedoch nur die ersten \num{8} Messwerte zur Berechnung der
+Debye-Temperatur verwendet wurden, lässt sich hier eine starke Abweichung
+zum Literaturwert festellen:
+\begin{align*}
+    \theta_\text{D,exp} &= \SI{915.9(4)}{\kelvin} \\
+    \theta_\text{D,lit} &= \SI{347}{\kelvin} \text{ \cite{door} bei }T = \SI{0}{\kelvin} \\
+    \theta_\text{D,lit} &= \SI{310}{\kelvin} \text{ \cite{door} bei }T = \SI{300}{\kelvin}
+\end{align*}
+
 % Berechnung der Debye-Temperatur
-Mittels der Formeln % TODO \eqref{} Formeln 7 und 10
+Mittels der Formeln \eqref{eqn:debye-temperatur} % TODO \eqref{} Formeln 7 und 10
 lassen sich die Debye-Frequenz und die Debye-Temperatur theoretisch
 berechnen. Unter Verwendung von
 $v_\text{trans}=\SI{2.26}{\kilo\meter\per\second}$,
@@ -11,13 +40,27 @@ $v_\text{long}=\SI{4.7}{\kilo\meter\per\second}$ \cite[p.~5]{anleitung}
 und $N_\text{L}=\SI{2.6516467(15)e25}{\raiseto{-3}\meter}$ \cite{Codata}
 ergibt sich
 \begin{align*}
-    % TODO
-    % Theoretische Werte für Debye Frequenz und Temperatur
+    \omega_\text{D,theo} &= \SI{8.7640029(17)e+13}{\raiseto{-1}\second} \\
+    \theta_\text{D,theo} &= \SI{669.41515(13)}{\kelvin}
 \end{align*}
+Hier weicht der Wert von dem experimentell Bestimmten um \SI{26.9}{\percent}
+nach oben ab, was sich jedoch mit den oben genannten Fehlern erklären lässt.
+Der theoretisch berechnete Wert ist etwa doppelt so groß wie der Literaturwert.
+Dies könnte daran liegen, dass die Probe als würfelförmig angenommen wurde und
+ihr tatsächliches Volumen etwas abweicht.
 
-% TODO
-% Vergleich mit Literaturwert Debye-Temperatur
+% Nochmalige Auswertung mit Anhebung der Cv-Werte
+Als Überprüfung, ob der oben genannte systematische Fehler tatsächlich für
+die Abweichung der Debyetemperatur verantwortlich sein kann, sind die
+Messwerte für $C_\text{V}$ in Tabelle \ref{tab:neu} bis \SI{170}{\kelvin}
+dargestellt. Dabei wurden sie jedoch um \SI{16}{\joule\per\mole\grd}
+angehoben und aus den oben genannten Gründen wurden die ersten zwei Messwerte
+weggelassen. Abermals wurden in einer Tabelle in der Versuchsanleitung
+\cite[p.~5]{anleitung} die zugehörigen Werte von $\sfrac{\theta_\text{D}}{T}$
+nachgeschlagen und mit $T_\text{mittel}$ multipliziert. Zusammen mit den
+sich ergebenden Debyetemperaturen sind sie ebenfalls in Tabelle \ref{tab:neu}
+aufgelistet. Bei diesen höheren $C_\text{V}$-Werten beträgt die
+Debye-Temperatur im Mittel \SI{316.45(15)}{\kelvin} und passt sehr gut zu
+dem Literaturwert.
 
-% Diskussion der Abweichungen:
-- Cv konstant zu klein, da Zylinder immer etwas wärmer und somit Wärmestrahlung
-- Konvektion und Wärmeleitung vllt. nicht vollständig verhindert
+\input{tab/table_neu.tex}

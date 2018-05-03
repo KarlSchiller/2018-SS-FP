@@ -24,10 +24,10 @@ in Temperaturen von Probe und Zylinder umgerechnet.
 \input{tab/table_messwerte.tex}
 
 Aus diesen Messwerten wurde $C_\text{p}$ bestimmt nach
-\begin{equation}
+\begin{equation*}
     C_\text{p} = \frac{U\;\cdot\;I\;\cdot\;\text{d}t}{|T_\text{Probe,f}-T_\text{Probe,i}|\;\cdot\;n}
     \text{,}
-\end{equation}
+\end{equation*}
 wobei $T_\text{Probe,i}$ die Temperatur der Probe vor dem Heizintervall, $T_\text{Probe,f}$
 die Temperatur der Probe nach dem Heizintervall und $n$ die Stoffmenge der Probe beschreibt.
 Die Stoffmenge berechnet sich dabei aus dem Quotienten der Masse der Probe
@@ -39,6 +39,7 @@ $n \approx \SI{5.4}{\mole}$. Die berechneten $C_\text{p}$-Werte sind in Tabelle
 Die Umrechnung von $C_\text{p}$ nach $C_\text{V}$ erfolgte mittels der Korrekturformel
 \begin{equation}
     C_\text{V} - C_\text{p} = 9\;\alpha^2\;\kappa\;V_0\;T\text{,}
+    \label{eqn:TausR}
 \end{equation}
 wobei $\alpha$ der lineare Ausdehnungskoeffizient,
 $\kappa = \SI{139e9}{\newton\per\meter\squared}$ \cite{demtroeder} das Kompressionsmodul
@@ -67,17 +68,17 @@ Für den linearen Ausdehnungskoeffizienten $\alpha$ sind in der Versuchsanleitun
 \cite[p.~5]{anleitung}
 Werte für Kupfer in \SI{10}{\degree}-Schritten angegeben. Diese wurden mittels eines Polynoms
 4. Grades der Form
-\begin{equation}
+\begin{equation*}
     \alpha(T) = a + b\;T + c\;T^2 + d\;T^3 + e\;T^4
-\end{equation}
+\end{equation*}
 von scipy.curve\_fit gefittet. Dabei ergab sich für die Parameter
-\begin{align}
+\begin{align*}
     a &= \SI{1.632(2)e-05}{1\per\grd} \\
     b &= \SI{1.45(9)e-08}{1\per\raiseto{2}\grd} \\
     c &= \SI{-1.3(3)e-10}{1\per\raiseto{3}\grd} \\
     d &= \SI{-1.5(3)e-12}{1\per\raiseto{4}\grd} \\
     e &= \SI{-8.2(7)e-15}{1\per\raiseto{5}\grd}
-\end{align}
+\end{align*}
 Der Verlauf von $\alpha$ ist in Abbildung \ref{fig:alpha} dargestellt.
 Die für die Berechnung von $C_\text{V}$ verwendeten Werte von $\alpha$ sind ebenfalls
 in Tabelle \ref{tab:cv} aufgeführt.
