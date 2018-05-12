@@ -3,8 +3,11 @@ all:  build/main.pdf
 build:
 	mkdir -p build
 
-build/main.pdf:
+build/main.pdf: build/alpha.pdf build/cv.pdf | build
 
+build/alpha.pdf build/cv.pdf: auswertung.py \
+rohdaten/alpha.txt rohdaten/messung.txt | build
+	python auswertung.py
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS="$(call translate,build:)" \

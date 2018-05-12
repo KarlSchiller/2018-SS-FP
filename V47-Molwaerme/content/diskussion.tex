@@ -26,35 +26,35 @@ ausfallen. Da jedoch nur die ersten \num{8} Messwerte zur Berechnung der
 Debye-Temperatur verwendet wurden, lässt sich hier eine starke Abweichung
 zum Literaturwert festellen:
 \begin{align*}
-  % Alles in Grad Celsius TODO
-    \theta_\text{D,exp} &= \SI{915.9(4)}{\kelvin} \\
-    \theta_\text{D,lit} &= \SI{347}{\kelvin} \text{ \cite{door} bei }T = \SI{0}{\kelvin} \\
-    \theta_\text{D,lit} &= \SI{310}{\kelvin} \text{ \cite{door} bei }T = \SI{300}{\kelvin}
+    \theta_\text{D,exp} &= \SI{642.8(4)}{\celsius} \\
+    \theta_\text{D,lit} &= \SI{74}{\celsius} \text{ \cite{door} bei }T = \SI{-273}{\celsius} \\
+    \theta_\text{D,lit} &= \SI{37}{\celsius} \text{ \cite{door} bei }T = \SI{27}{\celsius}
 \end{align*}
 
 % Berechnung der Debye-Temperatur
 Mittels der Formeln
 \eqref{eqn:debye-frequenz} und \eqref{eqn:debye-temperatur}
 lassen sich die Debye-Frequenz und die Debye-Temperatur theoretisch
-berechnen. Unter Verwendung von
+berechnen. Dabei wurde jedoch anstelle der Loschmidtschen Zahl die
+Avogadro-Konstante $N_\text{A}$ multipliziert mit der Stoffmenge eingesetzt.
+Unter Verwendung von
 $v_\text{trans}=\SI{2.26}{\kilo\meter\per\second}$,
 $v_\text{long}=\SI{4.7}{\kilo\meter\per\second}$ \cite[p.~5]{anleitung}
-und $N_\text{L}=\SI{2.6516467(15)e25}{\raiseto{-3}\meter}$ \cite{Codata}
+und $N_\text{A}=\SI{6.022140857e+23}{\raiseto{-1}\mole}$ \cite{scipy}
 ergibt sich
 \begin{align*}
-  % Neu berechnen TODO
-    \omega_\text{D,theo} &= \SI{8.7640029(17)e+13}{\raiseto{-1}\second} \\
-    \theta_\text{D,theo} &= \SI{669.41515(13)}{\kelvin}
+    \omega_\text{D,theo} &= \SI{43.49e13}{\raiseto{-1}\second} \\
+    \theta_\text{D,theo} &= \SI{59.06}{\celsius}
 \end{align*}
-Hier weicht der Wert von dem experimentell Bestimmten um \SI{26.9}{\percent}
-nach oben ab, was sich jedoch mit den oben genannten Fehlern erklären lässt.
+Hier weicht der Wert von dem experimentell Bestimmten um \SI{75.5}{\percent}
+nach oben ab (einsetzen der Temperaturen in \si{\kelvin}),
+was sich jedoch mit den oben genannten Fehlern erklären lässt.
 Der theoretisch berechnete Wert ist etwa doppelt so groß wie der Literaturwert.
-% Anpassen TODO
 
 % Nochmalige Auswertung mit Anhebung der Cv-Werte
 Als Überprüfung, ob der oben genannte systematische Fehler tatsächlich für
 die Abweichung der Debyetemperatur verantwortlich sein kann, sind die
-Messwerte für $C_\text{V}$ in Tabelle \ref{tab:neu} bis \SI{170}{\kelvin}
+Messwerte für $C_\text{V}$ in Tabelle \ref{tab:neu} bis \SI{-103}{\celsius}
 dargestellt. Dabei wurden sie jedoch um \SI{16}{\joule\per\mole\grd}
 angehoben und aus den oben genannten Gründen wurden die ersten zwei Messwerte
 weggelassen. Abermals wurden in einer Tabelle in der Versuchsanleitung
@@ -62,7 +62,7 @@ weggelassen. Abermals wurden in einer Tabelle in der Versuchsanleitung
 nachgeschlagen und mit $T_\text{mittel}$ multipliziert. Zusammen mit den
 sich ergebenden Debyetemperaturen sind sie ebenfalls in Tabelle \ref{tab:neu}
 aufgelistet. Bei diesen höheren $C_\text{V}$-Werten beträgt die
-Debye-Temperatur im Mittel \SI{316.45(15)}{\kelvin} und passt sehr gut zu
+Debye-Temperatur im Mittel \SI{43.30(15)}{\celsius} und passt sehr gut zu
 dem Literaturwert.
 
 \input{tab/table_neu.tex}

@@ -39,6 +39,9 @@ vtrans = 2.26*1e3               # in m/s
 # Volumen der Probe
 Vp = V0 * n               # in m^3
 print('Volumen Probe        ', Vp, 'm^3')
+# Avogadro-Konstante
+Na = codata.value('Avogadro constant')
+print('Avogadro-Konstante   ', Na, ' 1/mol')
 
 # Einlesen der gemessenen Werte
 # Notation: r steht für read, also eingelesen
@@ -144,9 +147,9 @@ print(table)
 
 # theta-debye/T für die Messwerte bis 170 K
 abgelesen = np.array([3.2, 0.8, 5.5, 8.3, 9.2, 8.8, 7.9, 6.8])
-theta_exp = abgelesen * (Tmittel[0:len(abgelesen)]+273.15)
+theta_exp = abgelesen * (Tmittel[0:len(abgelesen)]+273.15) - 273.15
 print('Experimentelle Bestimmung')
-print('    Theta-Debye  ', np.mean(theta_exp))
+print('    Theta-Debye  ', np.mean(theta_exp), '°C')
 
 
 ###
@@ -158,8 +161,16 @@ omega_theo = 18*(np.pi**2)*Nl / (Vp * (1/(vlong**3) + 2/(vtrans**3)))
 omega_theo = omega_theo**(1/3)
 print('    Omega-Debye  ', omega_theo, ' 1/s')
 theta_theo = omega_theo * codata.value('Planck constant over 2 pi') / codata.value('Boltzmann constant') # in K
-# theta_theo -= 273.15        # in grd
-print('    Theta-Debye  ', theta_theo, ' K')
+theta_theo -= 273.15        # in grd
+print('    Theta-Debye  ', theta_theo, ' °C')
+
+print('Verwende Na*n anstelle von Nl')
+omega_verzweiflung = 18*(np.pi**2)*Na*n / (Vp * (1/(vlong**3) + 2/(vtrans**3)))
+omega_verzweiflung = omega_verzweiflung**(1/3)
+theta_verzweiflung = omega_verzweiflung * codata.value('Planck constant over 2 pi') / codata.value('Boltzmann constant') # in K
+theta_verzweiflung -= 273.15    # in °C
+print('    Omega-Debye  ', omega_verzweiflung, ' 1/s')
+print('    Theta-Debye  ', theta_verzweiflung, ' °C')
 
 
 # Erstelle Tabellen
@@ -213,8 +224,9 @@ print(Cv_neu)
 abgelesen_neu = np.array([0.9, 2.4, 2.5, 2.5, 2.3, 1.9])
 # shift 13 abgelesen_neu = np.array([1.9, 3.1, 3.3, 3.2, 3.0, 3.6])
 theta_neu = abgelesen_neu * (Tmittel[2:8]+273.15)
+theta_neu -= 273.15 # Umrechnen kelin in °C
 print(theta_neu)
-print('Es ergibt sich für Theta-Debye ', np.mean(theta_neu), ' Kelvin')
+print('Es ergibt sich für Theta-Debye ', np.mean(theta_neu), ' °C')
 
 ascii.write([
                 np.round(noms(Tmittel[2:8]), 1),
