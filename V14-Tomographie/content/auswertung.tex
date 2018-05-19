@@ -2,12 +2,210 @@
 \section{Auswertung}
 
 \label{sec:Auswertung}
-% \subsection{Unterkapiel}
-% \label{sec:Unterkapitel}
+Als Fehler wird ein statistischer Poissonfehler verwendet, da es sich in diesem
+Experiment um ein Zählexperiment handelt. Dieser soll hier unter 3\% liegen,
+damit auf genauere Rechnungen verzichtet werden kann:
 
-% \begin{figure}
-%   \centering
-%   \includegraphics[width=\textwidth]{Plot.pdf}
-%   \caption{Bildunterschrift}
-%   \label{fig:Plot1}
-% \end{figure}
+\begin{equation*}
+  \frac{1}{\sqrt{N}} < 0.03
+\end{equation*}
+
+Damit dies gewährleistet ist, wird bei jeder Messung mindestens eine
+Zählrate von $\text{N}>1112$ aufgenommen.
+Zur Bestimmung der Spektren der Würfel wird zunächst eine Nullmessung (Messung
+ohne Würfel im Strahlengang) durchgeführt. Durch dies wird Abbildung \ref{fig:leer}
+erhalten. Somit ergibt sich eine Rate von
+\begin{equation*}
+    I_0 = 158.6 \,\frac{\text{Zählungen}}{\text{s}}
+\end{equation*}
+bei $9520$ Ereignissen über ein Zeitintervall von $\SI{60}{\second}$.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.8\textwidth]{build/Nullmessung1.pdf}
+  \caption{Messung der Energieverteilung bei einer Leermessung ohne Würfel. Die
+  Fehlerbalken repräsentieren die statistischen Poissonfehler.}
+  \label{fig:leer}
+\end{figure}
+
+Da die einzelnen Würfel ein Aluminiumgehäuse besitzen wird eine Mesung eines solchen
+Gehäuses durchgeführt um die zuätzliche Absorption zu ermitteln. Das gemessene Spektrum ist in
+Abbildung \ref{fig:alu} zu sehen.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.8\textwidth]{build/W1_pos1.pdf}
+  \caption{Messung der Energieverteilung eines Aluminiumgehäuses. Die Fehlerbalken
+  repräsentieren die statistischen Poissonfehler.}
+  \label{fig:alu}
+\end{figure}
+
+Da ein Würfel durch Drehen und Verschieben einen unterschiedlichen Wegunterschied
+besitzen kann, werden die in Abbildung \ref{fig:strahlengänge} zu erkennenden Projektionen
+------ betrachtet. Die Intensitätsvektoren $\vec{I}$ des Würfels ergeben sich aus
+den gemessenen Daten. Dabei ist zu sehen, das allerdings mehrere Projektionen die selben Weglängen
+besitzen, daraus ergibt sich der Vektor $\vec{\tilde{I}}$:
+
+\begin{equation*}
+  \vec{I}=\begin{pmatrix}
+        - \\
+        - \\
+        - \\
+        156.68  \\
+        157.28  \\
+        - \\
+        - \\
+        - \\
+        - \\
+        156.82 \\
+        156.53 \\
+        -
+  \end{pmatrix},\
+  \vec{\tilde{I}}=\begin{pmatrix}
+        156.68 \\
+        157.28 \\
+        156.68 \\
+        156.68 \\
+        157.28 \\
+        156.68 \\
+        156.82 \\
+        156.53 \\
+        156.82 \\
+        156.82 \\
+        156.53 \\
+        156.82
+  \end{pmatrix}
+\end{equation*}
+
+
+\subsection{Würfel aus einheitlichem Material}
+Die verwendeten Würfel 2 und 3 bestehen nach der Anleitung einheitlich aus Aluminum bzw.
+Blei und die Projektionen können gemittelt werden. Die Geometriematrix kann nun in einen
+Vektor mit aufsummierten Komponenten umgeschrieben werden. Dabei ergibt sich für beide
+Würfel der selbe Vektor, da beide Würfel gleich durchstahlt wurden:
+
+\begin{equation*}
+  A_2 = A_3 = \begin{pmatrix}
+          3 \\
+          3 \\
+          3\sqrt{2} \\
+          3\sqrt{2}
+        \end{pmatrix}
+\end{equation*}
+
+ Diese Vektoren beschreiben die Projektionen #####. Aus der Methode der kleinsten Quadrate
+ lassen sich die einzelnen Absorptionskoeffizienten der verschiedenen Materialien berechnen.
+ Die bestimmten Werte der Absoptionskoeffizienten sind in Tabelle \ref{tab:2,3} nachzulesen.
+
+ \begin{table}[htb]
+   \centering
+   \caption{Absorptionskoeffizienten der Würfel 2 und 3 bei verschiedenen Projektionen.}
+   \begin{tabular}{c
+                S[table-format=1.3(1)]
+                c}
+        \toprule
+        {Würfel} & {Absorptionkoeffizient $\mu$, $\si{\per\centi\meter}$} & {Sollmaterial}\\
+        \midrule
+        2 & 0.18(2) & Aluminium \\
+        3 & 0.91(6) & Blei \\
+   \end{tabular}
+   \label{tab:2,3}
+ \end{table}
+
+ \subsection{Würfel mit unbekanntem Inhalt}
+ Vor der Untersuchung des Würfel 4 wurde die Intensität ohne Würfel im Strahlengang noch
+ einmal gemessen. Dabei wurde, 6916 Ereignisse in 60$\,$s gezählt, also eine Rate von
+
+ \begin{equation*}
+   I_0 = 115.26 \,\frac{\text{Zählungen}}{\text{s}}.
+ \end{equation*}
+
+ Das Spektrum dieser Messung ist in Abb. \ref{fig:leer2} zu finden.
+
+ \begin{figure}[htb]
+   \centering
+   \includegraphics[width=0.8\textwidth]{build/Nullmessung2.pdf}
+   \caption{Messung des Energiespektrums ohne Würfel im Strahlengang vor der Vermessung
+   von Würfel 4.}
+   \label{fig:leer2}
+ \end{figure}
+
+ Der Würfel 4 wird untersucht, da sein Inhalt bestimmt werden soll. Dafür wird er durch 12
+ Projektionen vermessen. Da die Substruktur des Würfels unbekannt ist werden die neun einzelnen
+ Absorptionskoeffizienten durch die Geometriematrix $A$ bestimmt. $A$ hat die Form:
+
+ \begin{equation*}
+   A = \begin{pmatrix}
+              1 & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 \\
+              0 & 1 & 0 & 0 & 1 & 0 & 0 & 1 & 0 \\
+              0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 1 \\
+              1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+              0 & 0 & 0 & 1 & 1 & 1 & 0 & 0 & 0 \\
+              0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 \\
+              0 & \sqrt{2} & 0 & \sqrt{2} & 0 & 0 & 0 & 0 & 0 \\
+              0 & 0 & \sqrt{2} & 0 & \sqrt{2} & 0 & \sqrt{2} & 0 & 0 \\
+              0 & 0 & 0 & 0 & 0 & \sqrt{2} & 0 & \sqrt{2} & 0 \\
+              0 & 0 & 0 & \sqrt{2} & 0 & 0 & 0 & \sqrt{2} & 0 \\
+              \sqrt{2} & 0 & 0 & 0 & \sqrt{2} & 0 & 0 & 0 & \sqrt{2} \\
+              0 & \sqrt{2} & 0 & 0 & 0 & \sqrt{2} & 0 & 0 & 0
+      \end{pmatrix}
+ \end{equation*}
+
+Der dazugehörige Vektor der Ausgangsintensitäten $I_4$ und der Vektor mit den Intensitäten der
+Projektionen bestehen aus:
+
+\begin{equation*}
+  \vec{I_4} = \begin{pmatrix}
+      6.65 \pm 0.12 \\
+      4.83 \pm 0.10  \\
+      4.86 \pm 0.10  \\
+      8.81 \pm 0.14  \\
+      7.86 \pm 0.13  \\
+      9.52 \pm 0.14  \\
+      7.99 \pm 0.13  \\
+      3.21 \pm 0.08  \\
+      5.52 \pm 0.11  \\
+      13.22 \pm 0.17  \\
+      3.38 \pm 0.8 \\
+      5.36 \pm 0.11
+  \end{pmatrix},\
+   \vec{\tilde{I_4}} = \begin{pmatrix}
+   3.15 \pm 0.38 \\
+   3.48 \pm 0.46 \\
+   3.47 \pm 0.45 \\
+   2.88 \pm 0.33 \\
+   2.99 \pm 0.36 \\
+   2.80 \pm 0.32 \\
+   -1.60 \pm 1.06 \\
+   3.89 \pm 0.56 \\
+   -1.22 \pm 1.09 \\
+   -2.10 \pm 1.04 \\
+   3.84 \pm 0.54 \\
+   -1.1 \pm 1.10
+ \end{pmatrix}
+\end{equation*}
+
+Analog zu den Würfeln 2 und 3 wird auch hier die Methode der kleinsten Quadrate
+angewandt. Mit den Ergebnissen und dem normalisierten Logarithmus ergeben sich
+folgende Werte für die Absorptionskoeffizienten:
+
+\begin{table}
+  \centering
+  \caption{Bestimmte Absorptioinskoeffizienten aus den verschiedenen Projektionen für Würfel 4.}
+  \label{tab:5}
+  \begin{tabular}{c
+                  S[table-format=1.4(1)]}
+                  \toprule
+                  {Teilwürfel} & {Absorptionskoeffizient $mu$, $\si{\per\centi\meter}$}\\
+                  \midrule
+                  1 & 1.137(363) \\
+                  2 & 0.608(414) \\
+                  3 & 0.938(369) \\
+                  4 & 0.264(407) \\
+                  5 & 1.322(234) \\
+                  6 & 0.872(412) \\
+                  7 & 1.267(361) \\
+                  8 & 0.360(412) \\
+                  9 & 0.991(369) \\
+  \end{tabular}
+\end{table}

@@ -3,8 +3,9 @@ all:  build/main.pdf
 build:
 	mkdir -p build
 
-build/main.pdf:
-
+build/main.tex: build/Nullmessung1.pdf build/Nullmessung2.pdf build/W1_pos1.pdf | build \
+rohdaten/kein_wuerfel.txt rohdaten/W4_I0.txt rohdaten/W1_pos1.txt rohdaten/Würfel_1.txt rohdaten/Würfel_2.txt rohdaten/Würfel_3.txt rohdaten/Würfel_4.txt | build
+	python berechnungen.py
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS="$(call translate,build:)" \

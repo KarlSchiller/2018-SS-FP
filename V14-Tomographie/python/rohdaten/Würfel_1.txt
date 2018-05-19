@@ -1,0 +1,6 @@
+#Experimentelle Daten des ersten untersuchten Würfels. Dieser besteht aus der Aluminiumverkleidung
+#gemessene Zeitdauer t    gemessene Zählrate(Net Area)    fehler der Messrate
+60  9437  131
+60  9401  130
+60  9392  132
+60  9409  131

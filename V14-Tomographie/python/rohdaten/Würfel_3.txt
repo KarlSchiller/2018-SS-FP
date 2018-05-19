@@ -1,0 +1,6 @@
+#Experimentelle Daten des dritten untersuchten Würfels. Dieser besteht aus einem einzigen Material
+#gemessene Zeitdauer t    gemessene Zählrate(Net Area)    fehler der Messrate
+600 2685  82
+480 2569  80
+480 880 51
+480 3475  103

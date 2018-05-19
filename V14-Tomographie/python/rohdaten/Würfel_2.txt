@@ -1,0 +1,6 @@
+#Experimentelle Daten des zweiten untersuchten Würfels. Dieser besteht aus einem einzigen Material
+#gemessene Zeitdauer t    gemessene Zählrate(Net Area)    fehler der Messrate
+480 40005 277
+480 40283 276
+480 32938 256
+480 42817 291

@@ -1,0 +1,14 @@
+#Experimentelle Daten des vierten untersuchten Würfels. Dieser besteht aus den kleinen 1cmx1cm Kästchen aus unterschiedlichem Material
+#gemessene Zeitdauer t    gemessene Zählrate(Net Area)    fehler der Messrate
+480 3194  286
+480 2316  83
+480 2332  84
+480 4227  104
+480 3775  105
+480 4568  118
+480 3836  106
+480 1539 67
+480 2650  90
+480 6344 130
+480 1622  70
+480 2573  86
