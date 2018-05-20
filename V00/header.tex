@@ -108,6 +108,16 @@
 
 % Grafiken können eingebunden werden
 \usepackage{graphicx}
+% In folgenden Ordnern wird nach den Graphiken gesucht
+\graphicspath{
+  {images/}{../images/}
+  {pics/}{../pics}
+  {content/}{../content/}
+  {build/}{../build/}
+  {rohdaten/}{../rohdaten/}
+  {python/}{../python}
+}
+
 % größere Variation von Dateinamen möglich
 \usepackage{grffile}
 % verhindert das Bilder in anderen Sections auftrerten
