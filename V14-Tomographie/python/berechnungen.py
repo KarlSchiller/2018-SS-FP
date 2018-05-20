@@ -16,8 +16,8 @@ plt.rcParams['axes.spines.top'] = False
 plt.rcParams['axes.spines.right'] = False
 
 # make build directory if not existant
-if not os.path.isdir('../build'):
-    os.mkdir('../build')
+if not os.path.isdir('build'):
+    os.mkdir('build')
 
 #---------------------------
 I_0_1 = 9520
@@ -47,7 +47,7 @@ plt.bar(hist, I0, yerr=I0_error)
 plt.xlim(33, 250)
 plt.xlabel('Kanal')
 plt.ylabel('Ereignisse')
-plt.savefig('../build/Nullmessung1.pdf')
+plt.savefig('build/Nullmessung1.pdf')
 plt.clf()
 
 #--------- Plot zur Eingangsintensität
@@ -61,7 +61,7 @@ plt.bar(hist, I0, yerr=I0_error)
 plt.xlim(33, 250)
 plt.xlabel('Kanal')
 plt.ylabel('Ereignisse')
-plt.savefig('../build/Nullmessung2.pdf')
+plt.savefig('build/Nullmessung2.pdf')
 plt.clf()
 
 #--------- Plot zum ersten Würfel W1_pos1
@@ -74,7 +74,7 @@ plt.bar(hist, W1_pos1, yerr=W1_pos1_error)
 plt.xlim(33, 250)
 plt.xlabel('Kanal')
 plt.ylabel('Ereignisse')
-plt.savefig('../build/W1_pos1.pdf')
+plt.savefig('build/W1_pos1.pdf')
 plt.clf()
 
 ##--------- Plot zum zweiften Würfel W2_pos1
@@ -88,7 +88,7 @@ plt.clf()
 #plt.title('Messung des zweiten Würfels')
 #plt.xlabel('Kanal')
 #plt.ylabel('Ereignisse')
-#plt.savefig('../build/W2_pos1.pdf')
+#plt.savefig('build/W2_pos1.pdf')
 #plt.clf()
 #
 ##--------- Plot zum zweiften Würfel W3_pos1
@@ -102,7 +102,7 @@ plt.clf()
 #plt.title('Messung des dritten Würfels')
 #plt.xlabel('Kanal')
 #plt.ylabel('Ereignisse')
-#plt.savefig('../build/W3_pos1.pdf')
+#plt.savefig('build/W3_pos1.pdf')
 #plt.clf()
 
 
