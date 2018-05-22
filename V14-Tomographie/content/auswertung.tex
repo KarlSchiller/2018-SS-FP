@@ -4,8 +4,8 @@
 \label{sec:Auswertung}
 
 Als Fehler wird ein statistischer Poissonfehler verwendet, da es sich in diesem
-Experiment um ein Zählexperiment handelt. Dieser soll hier unter 3\% liegen,
-damit auf genauere Rechnungen verzichtet werden kann:
+Experiment um ein Zählexperiment handelt. Dieser soll hier unter \SI{3}{\percent} liegen,
+damit auf genauere Rechnungen verzichtet werden kann.
 
 \begin{equation*}
   \frac{1}{\sqrt{N}} < 0.03
@@ -14,8 +14,8 @@ damit auf genauere Rechnungen verzichtet werden kann:
 Damit dies gewährleistet ist, wird bei jeder Messung mindestens eine
 Zählrate von $\text{N}>1112$ aufgenommen.
 Zur Bestimmung der Spektren der Würfel wird zunächst eine Nullmessung (Messung
-ohne Würfel im Strahlengang) durchgeführt. Durch dies wird Abbildung \ref{fig:leer}
-erhalten. Somit ergibt sich eine Rate von
+ohne Würfel im Strahlengang) durchgeführt. Diese ist in Abbildung \ref{fig:leer}
+dargestellt. Gemessen wurde eine Rate von
 \begin{equation*}
     I_0 = 158.6 \,\frac{\text{Zählungen}}{\text{s}}
 \end{equation*}
@@ -29,8 +29,8 @@ bei $9520$ Ereignissen über ein Zeitintervall von $\SI{60}{\second}$.
   \label{fig:leer}
 \end{figure}
 
-Da die einzelnen Würfel ein Aluminiumgehäuse besitzen wird eine Mesung eines solchen
-Gehäuses durchgeführt um die zuätzliche Absorption zu ermitteln. Das gemessene Spektrum ist in
+Da die einzelnen Würfel ein Aluminiumgehäuse besitzen, wird eine Messung eines solchen
+Gehäuses durchgeführt, um die zuätzliche Absorption zu ermitteln. Das gemessene Spektrum ist in
 Abbildung \ref{fig:alu} zu sehen.
 
 \begin{figure}[htb]
@@ -44,7 +44,9 @@ Abbildung \ref{fig:alu} zu sehen.
 Da ein Würfel durch Drehen und Verschieben einen unterschiedlichen Wegunterschied
 besitzen kann, werden die in Abbildung \ref{fig:wuerfelpos} zu erkennenden Projektionen
 $I_1$, $I_2$, $I_11$ und $I_12$ betrachtet. Die Intensitätsvektoren $\vec{I}$ des Würfels ergeben sich aus
-den gemessenen Daten. $\vec{\tilde{I}}$ wird dabei durch \ref{eqn:} berechnet. Dabei ist zu sehen, das allerdings mehrere Projektionen die selben Weglängen
+den gemessenen Daten. $\vec{\tilde{I}}$ wird dabei durch Formel \eqref{eqn:matrixform} berechnet.
+Dabei ist zu sehen, das allerdings mehrere Projektionen die selben Weglängen
+>>>>>>> f8c4bde9e77f0a4719b7fca9e8a7723c6864d19e
 besitzen, daraus ergibt sich der Vektor $\vec{\tilde{I}}$:
 
 \begin{equation*}
@@ -81,7 +83,7 @@ besitzen, daraus ergibt sich der Vektor $\vec{\tilde{I}}$:
 
 \subsection{Würfel aus einheitlichem Material}
 Die verwendeten Würfel 2 und 3 bestehen nach der Anleitung einheitlich aus Aluminum bzw.
-Blei und die Projektionen können gemittelt werden. Die Geometriematrix kann nun in einen
+Blei. Die Geometriematrix kann nun in einen
 Vektor mit aufsummierten Komponenten umgeschrieben werden. Dabei ergibt sich für beide
 Würfel der selbe Vektor, da beide Würfel gleich durchstahlt wurden:
 
@@ -95,9 +97,10 @@ Würfel der selbe Vektor, da beide Würfel gleich durchstahlt wurden:
 \end{equation*}
 
 Diese Vektoren beschreiben die Projektionen % TODO #####.
-Aus der Methode der kleinsten Quadrate
+Aus der Methode der kleinsten Quadrate (Formeln \eqref{eqn:least-squares} und \eqref{eqn:least-squares-error})
 lassen sich die einzelnen Absorptionskoeffizienten der verschiedenen Materialien berechnen.
-Die bestimmten Werte der Absoptionskoeffizienten sind in Tabelle \ref{tab:2,3} nachzulesen.
+Die daraus bestimmten Werte sind in Tabelle \ref{tab:2,3} nachzulesen.
+
 
  \begin{table}[htb]
    \centering
@@ -116,10 +119,10 @@ Die bestimmten Werte der Absoptionskoeffizienten sind in Tabelle \ref{tab:2,3} n
 
  \subsection{Würfel mit unbekanntem Inhalt}
  Vor der Untersuchung des Würfel 4 wurde die Intensität ohne Würfel im Strahlengang noch
- einmal gemessen. Dabei wurde, 6916 Ereignisse in 60$\,$s gezählt, also eine Rate von
+ einmal gemessen. Dabei wurden 6916 Ereignisse in 60$\,$s gezählt, also eine Rate von
 
  \begin{equation*}
-   I_0 = 115.26 \,\frac{\text{Zählungen}}{\text{s}}.
+   I_0 = 115.26 \,\frac{\text{Zählungen}}{\si{s}}.
  \end{equation*}
 
  Das Spektrum dieser Messung ist in Abb. \ref{fig:leer2} zu finden.
@@ -132,9 +135,9 @@ Die bestimmten Werte der Absoptionskoeffizienten sind in Tabelle \ref{tab:2,3} n
    \label{fig:leer2}
  \end{figure}
 
- Der Würfel 4 wird untersucht, da sein Inhalt bestimmt werden soll. Dafür wird er durch 12
- Projektionen vermessen. Da die Substruktur des Würfels unbekannt ist werden die neun einzelnen
- Absorptionskoeffizienten durch die Geometriematrix $A$ bestimmt. $A$ hat die Form:
+ Der Würfel 4 wird untersucht, um seinen Inhalt zu bestimmen. Dafür wird er durch 12
+ Projektionen vermessen. Die neun einzelnen
+ Absorptionskoeffizienten werden durch die Geometriematrix $A$ bestimmt. $A$ hat die Form
 
  \begin{equation*}
    A = \begin{pmatrix}
@@ -150,10 +153,11 @@ Die bestimmten Werte der Absoptionskoeffizienten sind in Tabelle \ref{tab:2,3} n
               0 & 0 & 0 & \sqrt{2} & 0 & 0 & 0 & \sqrt{2} & 0 \\
               \sqrt{2} & 0 & 0 & 0 & \sqrt{2} & 0 & 0 & 0 & \sqrt{2} \\
               0 & \sqrt{2} & 0 & 0 & 0 & \sqrt{2} & 0 & 0 & 0
-      \end{pmatrix}
+      \end{pmatrix}.
  \end{equation*}
 
-Der dazugehörige Vektor der Ausgangsintensitäten $I_4$ und der Vektor mit den Intensitäten der
+Der dazugehörige Vektor der Ausgangszählraten $I_4$ und der Vektor der
+logarithmierten Intensitäten der
 Projektionen bestehen aus:
 
 \begin{equation*}

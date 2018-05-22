@@ -26,12 +26,17 @@ umstellen, dabei ist $N_\text{j}$ die Ausgangsintensität der j-ten Messung.
 Diese Umstellung lässt sich ebenfalls als Matrixgleichung der
 Form
 \begin{equation}
-  \mathbf{A} \cdot \vec{\mu} = \vec{I}
+  \begin{aligned}
+    \mathbf{A} \cdot \vec{\mu} &= \vec{I} \text{ mit} \\
+    \vec{\mu} &= (\mu_1,...,\mu_9)^\text{T} \text{ und} \\
+    \vec{I} &= \ln(\sfrac{I_0}{N_\text{j}})
+  \end{aligned}
+  \label{eqn:matrixform}
 \end{equation}
 realisieren.
-Der Vektor $\vec{\mu} = (\mu_1,...,\mu_9)^\text{T}$ beinhaltet die
+Der Vektor $\vec{\mu}$ beinhaltet die
 Absorptionskoeffizienten,
-der Vektor $\vec{I} = \ln(\sfrac{I_0}{N_\text{j}})$ stellt die rechte Seite
+der Vektor $\vec{I}$ stellt die rechte Seite
 der Gleichung dar und die Matrix $\mathbf{A}$ beschreibt die Würfelgeometrie.
 Werden mehr Schichten aufgenommen, als Würfel in der Probe sind, lassen sich
 die Absorptionskoeffizienten mittels
