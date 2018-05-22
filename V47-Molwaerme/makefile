@@ -14,7 +14,7 @@ build/main.pdf: FORCE | build
 	  BIBINPUTS=build: \
 	  max_print_line=1048576 \
 	latexmk \
-	  --lualatex \
+	  --lualatex -f \
 	  --output-directory=build \
 		--interaction=nonstopmode
 		--halt-on-error

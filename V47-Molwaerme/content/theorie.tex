@@ -30,11 +30,13 @@ Bei einem konstanten Volumen führt dies zu einer spezifischen Molwärme von
 \end{equation}
 Dies beschreibt bei hohen Temperaturen das Dulong-Petitsche Gesetz und ist weder
 Temperatur- noch Materialabhängig.
+Messungen bestätigen dies jedoch gerade bei tiefen Temperaturen nicht,
+sodass eine klassische Beschreibung nur für hohe Temperaturen sinnvoll ist.
 
 \subsection{Einstein-Modell}
 \label{sec:Einstein-Modell}
 Durch eine Quantelung der Schwingungsenergie mit konstanter Kreisfrequenz $\omega$
-können Energien von n$\hbar\omega$ (n $\in \mathds{N}$, $\hbar$ das reduzierte Plancksches Wirkungsquantum) aufgenommen und abgegeben werden.
+können Energien von n$\hbar\omega$ (n $\in \mathds{N}$, $\hbar$ das reduzierte Plancksche Wirkungsquantum) aufgenommen und abgegeben werden.
 Die mittlere Energie lässt sich nun durch eine relativen Wahrscheinlichkeit W(n)
 ausdrücken, die der Boltzmann-Verteilung folgt:
 \begin{equation}
@@ -44,7 +46,7 @@ Die mittlere Energie nach Einstein ergibt sich durch Abzählen und Normieren all
 \begin{equation}
   \langle \text{u} \rangle_\text{Einstein} = \frac{\hbar\omega}{\exp{\left(\frac{\hbar\omega}{\text{k}T}\right)}-1}.
 \end{equation}
-Der Ausdruckfür die molare Wärme wird als Einstein-Funktion bezeichnet
+Der Ausdruck für die molare Wärme wird als Einstein-Funktion bezeichnet
 und liefert für hohe Temperaturen wieder ein asymptotisches Verhalten gegen 3R:
 \begin{equation}
   \text{C}_\text{V} = 3\,\text{R}\,\frac{\hbar^2\omega^2}{\text{k}^2T^2}\frac{\exp{\left(\frac{\hbar\omega}{\text{k}T}\right)}}{(\exp{\left(\frac{\hbar\omega}{\text{k}T}\right)}-1)^2}.
@@ -61,7 +63,7 @@ weder von der Frequenz, noch von der Ausbreitungsrichtung abhängt. Somit könne
 einem würfelförmigen Festkörper mit Seitenlänge L in einem Intervall von $\omega$ bis $\omega + \text{d}\omega$
 die Eigenschwingungen abgezählt werden. Daraus ergibt sich:
 \begin{equation}
-  \text{Z}(\omega) \text{d}\omega = \frac{L^3}{2\,\pi^2}\omega^2\left(\frac{1}{\text{v}_l^3}+\frac{2}{\text{v}_\text{tr}^3}\right)\text{d}\omega
+  \text{Z}(\omega) \text{d}\omega = \frac{L^3}{2\,\pi^2}\omega^2\left(\frac{1}{\text{v}_l^3}+\frac{2}{\text{v}_\text{tr}^3}\right)\text{d}\omega.
 \end{equation}
 Dabei stehen $v_l$ für Longitudinalwellen und $v_\text{tr}$ für Transversalwellen. Ein endlicher Kristall besitzt aber nur $3\,\text{N}_\text{L}$ Eigenschwingungen ($\text{N}_\text{L}$
 ist die Anzahl der Atome im Festkörper), sodass eine maximale Frequenz existiert, welche als Debye-Frequenz bezeichnet wird. Aus
@@ -74,7 +76,7 @@ folgt
 \end{equation}
 mit Hilfe des Terms für die Debye Frequenz:
 \begin{equation}
-  \omega_\text{D}^3 = \frac{18\pi^2\text{N}_\text{L}}{\text{L}^3}\frac{1}{\left(\frac{1}{\text{v}_l^3}+\frac{2}{\text{v}_\text{tr}^3}\right)}
+  \omega_\text{D}^3 = \frac{18\pi^2\text{N}_\text{L}}{\text{L}^3}\frac{1}{\left(\frac{1}{\text{v}_l^3}+\frac{2}{\text{v}_\text{tr}^3}\right)}.
   \label{eqn:debye-frequenz}
 \end{equation}
 Wird nun die Molwärme berechnet, so definiert sich die Debye-Temperatur ($\theta_\text{D}$) durch
@@ -90,6 +92,8 @@ ergibt sich eine universelle Funktion, die nicht mehr vom untersuchten Festkörp
 \begin{equation}
   \text{C}_{\text{V}_\text{Debye}} = 9\,\text{R}\,\left(\frac{T}{\theta_\text{D}}\right)^3 \int_0^{\frac{\theta_\text{D}}{T}} \frac{x^4\text{e}^x}{\left(\text{e}^x - 1\right)^2}\text{d}x = f\left(\frac{\theta_\text{D}}{T}\right).
 \end{equation}
-Auch diese Funktion zeigt für hohe Temperaturen (T >> $\theta_\text{D}$) ein asymptotisches Verhalten gegen 3$R$. Bei tiefen Temperaturen hingegen (T << $\theta_\text{D}$) wird ein
+Auch diese Funktion zeigt für hohe Temperaturen (T >> $\theta_\text{D}$) ein asymptotisches Verhalten gegen 3$R$.
+Bei tiefen Temperaturen hingegen (T << $\theta_\text{D}$) wird ein
 $T^3$-Verlauf sichtbar, dies wird auch $T^3$-Gesetz genannt.
-Das Debye-Modell beschreibt die experimentellen Werte  als eine Näherung nicht perfekt, dies könnte erreicht werden, wenn die Diespersionsrelation der Longitudinal- und Transversalwellen mit berücksichtigt wird.
+Das Debye-Modell beschreibt die experimentellen Werte  als eine Näherung nicht perfekt, dies könnte erreicht werden,
+wenn die Dispersionsrelation der Longitudinal- und Transversalwellen mit berücksichtigt wird.
