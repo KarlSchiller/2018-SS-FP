@@ -30,14 +30,14 @@ t_I_2 = 60
 d = 0.01 #m
 
 # --------Daten der Würfel(gemessen)
-t_1, c_1, f_1 = np.genfromtxt('../rohdaten/Würfel_1.txt', unpack=True)
-t_2, c_2, f_2 = np.genfromtxt('../rohdaten/Würfel_2.txt', unpack=True)
-t_3, c_3, f_3 = np.genfromtxt('../rohdaten/Würfel_3.txt', unpack=True)
-t_4, c_4, f_4 = np.genfromtxt('../rohdaten/Würfel_4.txt', unpack=True)
+t_1, c_1, f_1 = np.genfromtxt('rohdaten/Würfel_1.txt', unpack=True)
+t_2, c_2, f_2 = np.genfromtxt('rohdaten/Würfel_2.txt', unpack=True)
+t_3, c_3, f_3 = np.genfromtxt('rohdaten/Würfel_3.txt', unpack=True)
+t_4, c_4, f_4 = np.genfromtxt('rohdaten/Würfel_4.txt', unpack=True)
 
 
 #--------- Plot zur Eingangsintensität
-I0 = np.genfromtxt('../rohdaten/kein_wuerfel.txt', unpack=True)
+I0 = np.genfromtxt('rohdaten/kein_wuerfel.txt', unpack=True)
 I0_error = np.sqrt(I0)
 
 hist = np.linspace(0, len(I0), 512)
@@ -51,7 +51,7 @@ plt.savefig('build/Nullmessung1.pdf')
 plt.clf()
 
 #--------- Plot zur Eingangsintensität
-I0 = np.genfromtxt('../rohdaten/W4_I0.txt', unpack=True)
+I0 = np.genfromtxt('rohdaten/W4_I0.txt', unpack=True)
 I0_error = np.sqrt(I0)
 
 hist = np.linspace(0, len(I0), 512)
@@ -65,7 +65,7 @@ plt.savefig('build/Nullmessung2.pdf')
 plt.clf()
 
 #--------- Plot zum ersten Würfel W1_pos1
-W1_pos1 = np.genfromtxt('../rohdaten/W1_pos1.txt', unpack=True)
+W1_pos1 = np.genfromtxt('rohdaten/W1_pos1.txt', unpack=True)
 W1_pos1_error = np.sqrt(W1_pos1)
 
 hist = np.linspace(0, len(W1_pos1), 512)
