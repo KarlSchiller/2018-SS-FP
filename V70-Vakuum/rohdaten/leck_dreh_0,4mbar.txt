@@ -1,0 +1,9 @@
+# Leckratenmessung Drehschieberpumpe
+# Gleichgewichtsdruck 0.4mbar
+# p/mbar delta_t_i/s (i=1,2,3)
+0.4 00.00 00.00 00.00
+0.6 09.79 09.97 09.27
+0.8 09.18 08.84 08.73
+1.0 07.60 07.06 07.77
+2.0 35.90 34.94 34.67
+4.0 62.26 62.07 63.57
