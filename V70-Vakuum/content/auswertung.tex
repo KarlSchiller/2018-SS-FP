@@ -19,14 +19,16 @@ In Tabelle \ref{tab:vol2} sind neben den Volumina auch die gemessenen
 Durchmesser $d$ und die Längen $l$ der Bauteile aufgeführt, aus diesen wurde
 das jeweilige Volumen unter Annahme einer Zylindergeometrie nach
 \begin{equation*}
-  V_\text{Zylinder} = \pi \left(\frac{d}{2}\right) l
+  V = \pi \left(\frac{d}{2}\right) l
 \end{equation*}
 mit dem zugehörigen Fehler
 \begin{equation*}
-  \Delta V_\text{Zylinder} =
+  \Delta V =
+  \sqrt{\left(\frac{\partial V}{\partial d} \;\Delta d\right)^2 +
+  \left(\frac{\partial V}{\partial l} \;\Delta l\right)^2} =
   \pi \left(\frac{d}{2}\right) \sqrt{
   \left(l \Delta d \right)^2 +
-  \left(\left(\frac{d}{2}\right) \Delta l\right)^2}
+  \left( \frac{d}{2} \Delta l\right)^2}
 \end{equation*}
 bestimmt.
 
@@ -49,8 +51,17 @@ Für die beiden Pumpen ergibt sich ein Rezipientenvolumen von
   V_\text{Turbo} &= \SI{10.3(8)}{\liter}.
 \end{align*}
 
+
 \subsection{Evakuierungskurve der Drehschieberpumpe}
 \label{sec:AuswEvaD}
+
+- Zeiten ohne Fehler gemittelt, da nicht sinnvoll angebbar
+- druckfehler 0.2
+- druck umgeformt mit dem ln und Fehlerfortpflanzung
+- linearer Fit mit scipy
+- aus Steigung und Volumen Saugvermögen
+- Alles in einen Plot, 3 Saugvermögen angeben
+
 
 \subsection{Evakuierungskurve der Turbomolekularpumpe}
 \label{sec:AuswEvaT}
