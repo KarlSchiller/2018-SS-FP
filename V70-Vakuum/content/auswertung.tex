@@ -1,9 +1,65 @@
 \newpage
 \section{Auswertung}
-
 \label{sec:Auswertung}
-% \subsection{Unterkapiel}
-% \label{sec:Unterkapitel}
+
+\subsection{Berechnung des Rezipientenvolumens}
+\label{sec:Volumina}
+
+Für die Bestimmung der Pumpensaugfähigkeit ist das Volumens des Rezipienten
+vonnöten. Dazu sind in den Tabellen \ref{tab:vol1} und \ref{tab:vol2} die
+in dem Kapitel zum Versuchsaufbau erläuterten Bauteile samt ihres Volumens aufgeführt.
+Die Abkürzung \enquote{D} steht dabei für die Verwendung
+des jeweiligen Bauteils bei der Vermessung der
+Drehschieberpumpe und die Akürzung \enquote{T} für die Turbomolekularpumpe.
+
+% Aus Anleitung übernommene Volumina
+\input{tab/vol1.tex}
+
+In Tabelle \ref{tab:vol2} sind neben den Volumina auch die gemessenen
+Durchmesser $d$ und die Längen $l$ der Bauteile aufgeführt, aus diesen wurde
+das jeweilige Volumen unter Annahme einer Zylindergeometrie nach
+\begin{equation*}
+  V_\text{Zylinder} = \pi \left(\frac{d}{2}\right) l
+\end{equation*}
+mit dem zugehörigen Fehler
+\begin{equation*}
+  \Delta V_\text{Zylinder} =
+  \pi \left(\frac{d}{2}\right) \sqrt{
+  \left(l \Delta d \right)^2 +
+  \left(\left(\frac{d}{2}\right) \Delta l\right)^2}
+\end{equation*}
+bestimmt.
+
+% Selbst vermessene Volumina
+\input{tab/vol2.tex}
+
+Das Bauteil B6 ist ein T-Stück, hierfür wurde zum angegebenen Volumen des Zylinders
+in Tabelle \ref{tab:vol2}
+das Volumen des T-Teils addiert. Dieses hatte ebenfalls einen Durchmesser
+von \SI{40.5(1)}{\milli\meter} und eine Länge von \SI{4.5(5)}{\centi\meter}.
+Eine weitere Besonderheit ist das Handventil V3, dieses wurde für die Messung
+der Evakuierungskurven geschlossen und für die Messung der Leckratenmessung
+geschlossen. Diese Volumenänderung ist beim Rezipientenvolumen jedoch kleiner
+als dessen Unsicherheit und
+wurde deshalb im Folgenden vernachlässigt.
+
+Für die beiden Pumpen ergibt sich ein Rezipientenvolumen von
+\begin{align*}
+  V_\text{Dreh} &= \SI{10.9(8)}{\liter} \text{ beziehungsweise}\\
+  V_\text{Turbo} &= \SI{10.3(8)}{\liter}.
+\end{align*}
+
+\subsection{Evakuierungskurve der Drehschieberpumpe}
+\label{sec:AuswEvaD}
+
+\subsection{Evakuierungskurve der Turbomolekularpumpe}
+\label{sec:AuswEvaT}
+
+\subsection{Leckratenmessung der Drehschieberpumpe}
+\label{sec:AuswLeckD}
+
+\subsection{Leckratenmessung der Turbomolekularpumpe}
+\label{sec:AuswLeckT}
 
 % \begin{figure}
 %   \centering
