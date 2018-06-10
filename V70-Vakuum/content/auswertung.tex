@@ -55,26 +55,100 @@ Für die beiden Pumpen ergibt sich ein Rezipientenvolumen von
 \subsection{Evakuierungskurve der Drehschieberpumpe}
 \label{sec:AuswEvaD}
 
-- Zeiten ohne Fehler gemittelt, da nicht sinnvoll angebbar
-- druckfehler 0.2
-- druck umgeformt mit dem ln und Fehlerfortpflanzung
-- linearer Fit mit scipy
-- aus Steigung und Volumen Saugvermögen
-- Alles in einen Plot, 3 Saugvermögen angeben
+Die gemessenen Zeiten $t_\text{1..6}$, an denen die Druckwerte $p$ erreicht
+wurden, sind in Tabelle \ref{tab:evak_D} aufgeführt. Dabei wurden die Drücke
+mit einem digitalen Pirani Messgerät mit einer
+Unsicherheit von \SI{20}{\percent} aufgenommen. Für die gemessenen Zeiten lässt
+sich nur sehr schwer eine experimentelle Unsicherheit angeben, zumal diese stark
+zwischen Stützstellen variieren müsste. Für die weitere Auswertung wurden die
+Zeiten gemittelt, dieser Mittelwert $\mean{t_\text{1..6}}$ ist ebenfalls in
+Tabelle \ref{tab:evak_D} aufgeführt.
+
+\input{tab/evak_D.tex}
+
+Des Weiteren lässt sich Gleichung \eqref{eqn:druck} zu
+\begin{equation*}
+  f\left(p\right) = \ln\left(\frac{p(t)-p_\text{e}}{p_0-p_\text{e}}\right) =
+  - \frac{S}{V} \;t
+\end{equation*}
+umformen. Dieser Zusammenhang motiviert die in Abbildung \ref{fig:evak_D}
+dargestellten linearen Regressionen an die Messwerte. Die verwendeten Messwerte
+sind ebenfalls in Tabelle \ref{tab:evak_D} aufgeführt, dabei ergaben sich die
+Unsicherheiten nach Gaußscher Fehlerfortpflanzung zu
+\begin{align*}
+  \Delta f &=
+  \sqrt{\left(\frac{\partial f}{\partial p} \Delta p\right)^2 +
+  \left(\frac{\partial f}{\partial p_\text{e}} \Delta p_\text{e}\right)^2 +
+  \left(\frac{\partial f}{\partial p_\text{0}} \Delta p_\text{0}\right)^2} \\
+  &=
+  \sqrt{\left(\frac{\Delta p}{p - p_\text{e}}\right)^2 +
+  \left(\frac{\Delta p_0}{p_0 - p_\text{e}}\right)^2 +
+  \left(\frac{\Delta p_\text{e}}{p_0 - p_\text{e}} -
+  \frac{\Delta p_\text{e}}{p - p_\text{e}}\right)^2}.
+\end{align*}
+Der Startdruck $p_0$ betrug \SI{1000}{\milli\bar} und der Enddruck $p_\text{e}$
+betrug \SI{0.03}{\milli\bar}.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{build/evak_D.pdf}
+  \caption{Evakuierungskurve der Drehschieberpumpe samt linearer Regression.}
+  \label{fig:evak_D}
+\end{figure}
+
+Die in Abbildung \ref{fig:evak_D} dargestellte linearen Regressionen wurden
+mit der Funktion \texttt{curve\_fit} des Pakets \texttt{scipy.optimze} \cite{scipy}
+erstellt. Aus den erhaltenen Steigungen $m$ lassen sich die Saugvermögen der Pumpe
+nach
+\begin{align*}
+    S &= - m \; V_\text{Dreh} \\
+    \Delta S &=
+    \sqrt{\left(\frac{\partial S}{\partial m} \Delta m\right)^2 +
+    \left(\frac{\partial S}{\partial V_\text{Dreh}} \Delta V_\text{Dreh}\right)^2} \\
+    &=
+    \sqrt{\left(\Delta m \; V_\text{Dreh}\right)^2 +
+    \left(m \Delta \; V_\text{Dreh}\right)^2}
+\end{align*}
+berechnen. Sie sind in Tabelle \ref{tab:saug_evak_D} dargestellt.
+
+\input{tab/saug_evak_D.tex}
+\FloatBarrier
 
 
 \subsection{Evakuierungskurve der Turbomolekularpumpe}
 \label{sec:AuswEvaT}
+
+Analog zur Evakuierungskurve der Drehschieberpumpe wurde die Evakuierungskurve
+der Turbomolekularpumpe ausgewertet. In Tabelle \ref{tab:evak_T} sind die
+Stützstellen des Druckes $p$ samt der gemessenen Zeiten $t_\text{1..6}$
+dargestellt. Der Mittelwert $\mean{t_\text{1..6}}$ und die logarithmierten
+Druckwerte sind nach den selben Formeln wie die Werte der Drehschieberpumpe
+berechnet. Die Ungenauigkeit der Glühkathode beträgt \SI{10}{\percent}, der
+Startdruck beträgt \SI{5e-3}{\milli\bar} und der Enddruck beträgt
+\SI{1.7e-5}{\milli\bar}.
+
+\input{tab/evak_T.tex}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{build/evak_T.pdf}
+  \caption{Evakuierungskurve der Turbomolekularpumpe samt linearer Regression.}
+  \label{fig:evak_T}
+\end{figure}
+
+Wiederum wurden an die logarithmierten Drücke und gemittelten Zeiten
+lineare Regressionen mit der Funktion \texttt{curve\_fit} durchgeführt.
+Diese Regressionen sind in Abbildung \ref{fig:evak_T} dargestellt.
+Die sich ergebenden Steigungen und daraus berechneten Saugvermögen sind in
+Tabelle \ref{tab:saug_evak_T} dargestellt. Dabei wurde an die Steigung das
+Volumen des Rezipienten beim Betreiben der Turbomolekularpumpe $V_\text{Turbo}$
+multipliziert.
+
+\input{tab/saug_evak_T.tex}
+
 
 \subsection{Leckratenmessung der Drehschieberpumpe}
 \label{sec:AuswLeckD}
 
 \subsection{Leckratenmessung der Turbomolekularpumpe}
 \label{sec:AuswLeckT}
-
-% \begin{figure}
-%   \centering
-%   \includegraphics[width=\textwidth]{Plot.pdf}
-%   \caption{Bildunterschrift}
-%   \label{fig:Plot1}
-% \end{figure}

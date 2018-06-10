@@ -3,7 +3,7 @@ all:  build/main.pdf
 build:
 	mkdir -p build
 
-build/main.pdf: build/volumina.txt build/evak_D.pdf | build
+build/main.pdf: build/volumina.txt build/evak_D.pdf build/evak_T.pdf | build
 
 build/volumina.txt: python/volumen.py | build
 	python python/volumen.py
