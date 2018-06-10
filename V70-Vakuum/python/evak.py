@@ -188,5 +188,5 @@ if __name__ == '__main__':
     # Volumina der Rezipienten
     volumes = np.genfromtxt("build/volumina.txt", unpack=True)
 
-    # evak_D()
+    evak_D()
     evak_T()
