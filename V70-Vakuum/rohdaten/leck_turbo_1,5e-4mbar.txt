@@ -1,11 +1,11 @@
 # Leckratenmessung Turbomolekularpumpe
 # Gleichgewichtsdruck 1,5e-4mbar
 # p/mbar delta_t_i/s (i=1,2,3)
-1,5e-4 0.00 0.00 0.00
+1.5e-4 0.00 0.00 0.00
 4e-4 0.71 0.60 0.64
 6e-4 0.89 0.90 0.99
 8e-4 0.73 0.87 0.80
-2e-3 4,70 4.63 4.19
+2e-3 4.70 4.63 4.19
 3e-3 3.25 3.36 3.56
 4e-3 3.10 2.83 3.10
 5e-3 2.70 2.91 3.06
