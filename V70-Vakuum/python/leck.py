@@ -56,7 +56,8 @@ def leckrate(datafile, V=10, p_err=0.1, pg=1, plotfile='plot.pdf', tablefile='ta
     # plt.ylim(6.70, 16.95)
     plt.grid()
     plt.tight_layout()
-    plt.savefig(plotfile)
+    # No whitespace around plots
+    plt.savefig(plotfile, bbox_inches='tight')
     plt.clf()
 
     # Erstelle Tabelle
@@ -130,8 +131,8 @@ def Turbomolekularpumpe():
              V=V_T,
              p_err=druckmessfehler_T,
              pg=1.5e-4,
-             plotfile='build/leck/T_1.5e-4.pdf',
-             tablefile='build/tab/T_1.5e-4.tex')
+             plotfile='build/leck/T_1,5e-4.pdf',
+             tablefile='build/tab/T_1,5e-4.tex')
 
     leckrate(datafile="rohdaten/leck_turbo_2e-4mbar.txt",
              V=V_T,
