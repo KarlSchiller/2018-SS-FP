@@ -63,6 +63,13 @@ sich nur sehr schwer eine experimentelle Unsicherheit angeben, zumal diese stark
 zwischen Stützstellen variieren müsste. Für die weitere Auswertung wurden die
 Zeiten gemittelt, dieser Mittelwert $\mean{t_\text{1..6}}$ ist ebenfalls in
 Tabelle \ref{tab:evak_D} aufgeführt.
+Dabei wurden Mittelwert und empirische Standardabweichung nach
+\begin{align*}
+  \mean{t_\text{1..6}} &= \frac{1}{6} \sum_{i = 1}^6 t_\text{i} \\
+  \Delta t_\text{1..6} &=
+  \sqrt{\frac{1}{5} \sum_{i = 1}^6 \left(t_\text{i} - \mean{t_\text{1..6}}\right)^2}
+\end{align*}
+berechnet.
 
 \input{tab/evak_D.tex}
 
