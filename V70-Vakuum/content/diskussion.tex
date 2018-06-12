@@ -1,2 +1,104 @@
 \section{Diskussion}
 \label{sec:Diskussion}
+
+% Umschalten Druckbereich
+Die Messung des Druckes erfolgte bei der Drehschieberpumpe mit einem
+Pirani-Messgerät und bei der Turbomolekularpumpe mit einer Glühkathode mit der
+linearen Skala. Dabei variierten die Drücke über verschiedene Größenordnungen,
+sodass der Messbereich während der Messungen jeweils umgestellt werden musste.
+
+% Unsicherheit der Zeiten
+Bei der Auswertung wurde keine Unsicherheit der gemessenen Zeiten verwendet.
+Dies liegt daran, dass sie sich nicht eindeutig bestimmen lässt.
+Aufgrund des oben beschriebenen Umschaltens des Messbereiches der Druckmesser konnten
+einige Zeiten genauer als andere aufgenommen werden.
+Da diese Zeiten jedoch per Hand mit einer digitalen Stoppuhr gemessen wurden,
+liegt sehr wahrscheinlich ein unbestimmter systematischer Fehler aufgrund einer
+nicht verschwindenden Reaktionszeit des Menschen vor.
+Deshalb sind die eigentlichen Unsicherheiten der Zeiten und somit auch
+Steigungen der Regressionen und sich ergebende Saugleistungen größer als
+in der Auswertung angegeben.
+
+% Vergleich der Saugleistungen
+In den Abbildungen \ref{fig:vgl_D} und \ref{fig:vgl_T} sind die verschiedenen
+bestimmten Saugleistungen der Drehschieberpumpe beziehungsweise der
+Turbomolekularpumpe eingezeichnet.
+Dabei ist die mit \enquote{Hersteller} gekennzeichnete Linie eine Herstellerangabe
+aus der Versuchsanleitung \cite{anleitung} von \SI{1.1}{\liter\raiseto{-1}\second}
+für die Drehschieberpumpe und \SI{77}{\liter\raiseto{-1}\second} für die
+Turbomolekularpumpe. Hier ist weder ein Druckbereich, noch eine Unsicherheit der
+Saugleistung angegeben.
+Vier mit \enquote{Leck} gekennzeichnete Punkte sind die aus den jeweiligen
+Leckratenmessungen bestimmten Saugleistungen. Dabei ist die Unsicherheit des
+Druckes die Unsicherheit des jeweilig verwendeten Druckmessgerätes.
+Schließlich sind die mit \enquote{Evak} gekennzeichneten Punkte die aus der
+jeweiligen Evakuierungsmessung bestimmten Saugleistungen. Hier beschreibt die
+Unsicherheit auf der Druckachse den Druckbereich, auf welchem die Regression
+durchgeführt wurde.
+Sowohl bei der Evakuierungsmessung, als auch bei der Leckratenmessung wurden die
+Regressionen vom kleineren Druck (Gleichgewichtsdruck beziehungsweise Druckbereich)
+zum größeren Druck durchnummeriert.
+
+\begin{figure}
+  \centering
+  \includegraphics[height=8cm]{build/vergleich_D.pdf}
+  \caption{Saugleistungen der Drehschieberpumpe.}
+  \label{fig:vgl_D}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[height=8cm]{build/vergleich_T.pdf}
+  \caption{Saugleistungen der Turbomolekularpumpe.}
+  \label{fig:vgl_T}
+\end{figure}
+\FloatBarrier
+
+% Erklärung Abweichung der Saugleistungen
+Bei der Drehschieberpumpe (Abbildung \ref{fig:vgl_D}) zeigt sich,
+dass die zwei Leckratenmessungen mit den
+höchsten beiden Gleichgewichtsdrücken sowie die Evakuierungsregression im
+mittleren Druckbereich unter Berücksichtigung ihres Fehlers mit der Herstellerangabe
+überein stimmen. Die restlichen bestimmen Saugleistungen liegen unterhalb der
+Herstellerangabe, was systematische Fehler nahe legt.
+Anders sehen die Ergebnisse bei der Turbomolekularpumpe
+(Abbildung \ref{fig:vgl_T}) aus. Hier ist eine deutliche Abweichung der
+Saugleistung nach unten von mindestens \SI{52}{\liter\raiseto{-1}\second}
+feststellbar, sodass hier signifikante systematische Fehler vorliegen sollten.
+
+% Erklärung der Abweichung zu den Herstellerangaben
+Ein Teil der Abweichungen können mit dem oben genannten Unsicherheiten in
+der Zeitmessung erklärt werden. Des Weiteren sind die Herstellerangaben
+unter idealen Bedingungen und ausschließlich mit Stickstoffgas gemessen
+worden. Weiterhin wurde bei den Messungen des Herstellers der größte
+Wert des Saugvermögens angegeben. Deshalb ist ein zu klein bestimmtes
+Saugvermögen im Vergleich zur Herstellerangabe realistisch. Bei der
+Durchführung wurde Luft abgepumpt, welches jedoch zum größten Teil aus
+Stickstoff besteht, jedoch ein Stoffgemisch ist, sodass hier gerade bei
+den niedrigeren Drücken der Turbomolekularpumpe eine Abweichung nach unten
+zu erwarten ist.
+
+Des Weiteren wurde angenommen, dass alle Messungen bei einer konstanten
+Temperatur durchgeführt wurden. Dies konnte jedoch nicht sicher gestellt werden.
+In der Herleitung des Saugvermögens ist auch angenommen worden, dass das
+Saugvermögen unabhängig vom Druck ist. Dies kann nach den Abbildungen
+\ref{fig:vgl_D} und \ref{fig:vgl_T} ebenfalls nicht bestätigt werden.
+
+Ein weiterer großer systematischer Fehler ist der nicht verschwindende Leitwert
+des Rezipienten, welche zum Beispiel durch Schläuche mit geringem Durchmesser
+in einem niedrigeren Saugvermögen resultiert (verlgeiche Gleichung \eqref{eqn:effSaug}).
+
+Schließlich wurden die Ventile per Hand geschlossen, sodass nicht garantiert
+werden kann, dass diese absolut dicht und insbesondere bei der
+Messung der Evakuierungskurve beim Start der Messung bereits geschlossen waren.
+Sollte das Schließen zu lange gedauert haben, so sinkt der Druck aufgrund der
+einströmenden Luft langsamer und die bestimmte Steigung der Regression an die
+logarithmierten Drücke ist kleiner.
+Daraus resultiert dann ein kleineres Saugvermögen. Dies erklärt, warum die
+aus der Evakuierungsmessung bestimmten Saugvermögen tendenziell kleiner sind
+als die Saugvermögen der Leckratenmessungen.
+
+Als Letztes sei erwähnt, dass trotz eines Ausheizens vor Beginn der Messungen
+Desorption statt gefunden haben kann, was wiederum zu kleineren Saugvermögen
+als die Herstellerangabe führt. Desorption tritt stärker auf, je kleiner der
+Druck ist, weshalb dieser Effekt vor allem bei der Turbomolekularpumpe einen
+systematischen Fehler ausmachen sollte.

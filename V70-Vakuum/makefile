@@ -5,7 +5,8 @@ build:
 	mkdir -p build/leck build/tab
 
 build/main.pdf: build/volumina.txt build/evak_D.pdf build/evak_T.pdf \
-	build/leck/D_0,1.pdf build/leck/T_5e-5.pdf | build
+	build/leck/D_0,1.pdf build/leck/T_5e-5.pdf \
+	build/vergleich_T.pdf build/vergleich_D.pdf | build
 
 build/volumina.txt: python/volumen.py | build
 	python python/volumen.py
@@ -22,6 +23,9 @@ rohdaten/leck_dreh_0,8mbar.txt rohdaten/leck_dreh_1,0mbar.txt \
 rohdaten/leck_turbo_5e-5mbar.txt rohdaten/leck_turbo_1e-4mbar.txt \
 rohdaten/leck_turbo_1,5e-4mbar.txt rohdaten/leck_turbo_2e-4mbar.txt | build
 	python python/leck.py
+
+build/vergleich_T.pdf build/vergleich_D.pdf: python/vergleich.py | build
+	python python/vergleich.py
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS="$(call translate,build:)" \

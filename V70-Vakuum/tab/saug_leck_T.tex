@@ -2,17 +2,24 @@
     \centering
     \caption{Steigungen und Saugvermögen der Regressionen an die Leckratenmessungen der Turbomolekularpumpe.}
     \label{tab:saug_leck_T}
-    \sisetup{table-format=1.2}
-    \begin{tabular}{S[table-format=1.1] @{${}\pm{}$} S
-                    S[table-format=1.4] @{${}\pm{}$} S[table-format=1.4]
-                    S @{${}\pm{}$} S}
+    \sisetup{table-format=2.1}
+    \begin{tabular}{
+                    S[table-format=2.0, fixed-exponent=-5, table-omit-exponent]
+                    @{${}\pm{}$}
+                    S[table-format=1.1, fixed-exponent=-5, table-omit-exponent]
+                    S[table-format=2.2, fixed-exponent=-5, table-omit-exponent]
+                    @{${}\pm{}$}
+                    S[table-format=1.2, fixed-exponent=-5, table-omit-exponent]
+                    S @{${}\pm{}$} S[table-format=1.1]}
     \toprule
         \multicolumn{2}{c}{$p_\text{G}\:/\:10^{-5}\;\si{\milli\bar}$} &
-        \multicolumn{2}{c}{$m\:/\:\si{\milli\bar\raiseto{-1}\second}$} &
+        \multicolumn{2}{c}{$m\:/\:10^{-5}\;\si{\milli\bar\raiseto{-1}\second}$} &
         \multicolumn{2}{c}{$S\:/\:\si{\liter\raiseto{-1}\second}$} \\
     \midrule
-    % TODO
-    % p_G durch 1e-5 dividieren
-    0 & 0 & 0 & 0 & 0 & 0 \\
+    % p_G und m werden durch 1e-5 dividiert
+    5e-05 & 0.5e-05 & 6.70e-05 & 1.5e-06 & 14.6 & 1.8 \\
+    1e-04 & 1e-05 & 21.59e-05 & 4.9e-06 & 23.6 & 3.0 \\
+    15e-05 & 15e-06 & 32.49e-05 & 7.2e-06 & 23.7 & 3.0 \\
+    20e-05 & 2e-05 & 45.81e-05 & 1.10e-05 & 25.0 & 3.2 \\
     \end{tabular}
 \end{table}

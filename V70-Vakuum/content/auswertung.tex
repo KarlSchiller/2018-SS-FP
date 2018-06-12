@@ -2,6 +2,11 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+Im Folgenden werden die Regressionen, Abbildungen und Fehlerrechnungen mit den
+Paketen Numpy \cite{numpy}, Uncertainties \cite{uncertainties}, Matplotlib
+\cite{matplotlib} und Scipy \cite{scipy} in der Programmierumgebung
+Python 3.6.5 erstellt beziehungsweise durchgeführt.
+
 \subsection{Berechnung des Rezipientenvolumens}
 \label{sec:Volumina}
 
@@ -195,7 +200,6 @@ samt der linearen Regression aufgetragen.
     \caption{$p_\text{G} = \SI{0.1}{\milli\bar}$}
   \end{subfigure}
   ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
-    %(or a blank line to force the subfigure onto a new line)
   \begin{subfigure}[b]{0.48\textwidth}
     \includegraphics[width=\textwidth]{build/leck/D_0,4.pdf}
     \caption{$p_\text{G} = \SI{0.4}{\milli\bar}$}
@@ -206,7 +210,6 @@ samt der linearen Regression aufgetragen.
     \caption{$p_\text{G} = \SI{0.8}{\milli\bar}$}
   \end{subfigure}
   ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
-    %(or a blank line to force the subfigure onto a new line)
   \begin{subfigure}[b]{0.48\textwidth}
     \includegraphics[width=\textwidth]{build/leck/D_1,0.pdf}
     \caption{$p_\text{G} = \SI{1}{\milli\bar}$}
@@ -223,12 +226,25 @@ samt der linearen Regression aufgetragen.
 
 Analog zur Auswertung der Leckratenmessung der Drehschieberpumpe wurde die
 Turbomolekularpumpe ausgewertet.
-% TODO
+Die Gleichgewichtsdrücke wurden auf
+\SI{5e-5}{\milli\bar}, \SI{10e-5}{\milli\bar}, \SI{15e-5}{\milli\bar} und \SI{20e-5}{\milli\bar}
+eingestellt. Die gemessenen Zeiten sind mit den Druckstützpunkten und den
+gemittelten Zeiten in Tabelle \ref{tab:leck_T_5e-5} bis \ref{tab:leck_T_2e-4}
+dargestellt. Dabei wurden der im vorherigen Abschnitt \ref{sec:AuswLeckD}
+beschriebene Mittelwert und empirische Standardabweichung verwendet.
 
 \input{tab/leck/T_5e-5.tex}
 \input{tab/leck/T_1,5e-4.tex}
 \input{tab/leck/T_1e-4.tex}
 \input{tab/leck/T_2e-4.tex}
+\FloatBarrier
+
+An die Druckstützpunkte und gemittelten Zeiten wurde wiederum eine lineare
+Regression mit \texttt{curve\_fit} durchgeführt und aus der Steigung das
+Saugvermögen der Pumpe nach Formel \eqref{eqn:Saug} berechnet.
+Die Regression ist zusammen mit den Messwerten in Abbildung
+\ref{fig:leck_T} dargestellt, die sich ergebenden Steigungen und
+Saugvermögen sind in Tabelle \ref{tab:saug_leck_T} aufgeführt.
 
 \begin{figure}
   \centering
@@ -237,7 +253,6 @@ Turbomolekularpumpe ausgewertet.
     \caption{$p_\text{G} = \SI{5e-5}{\milli\bar}$}
   \end{subfigure}
   ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
-    %(or a blank line to force the subfigure onto a new line)
   \begin{subfigure}[b]{0.48\textwidth}
     \includegraphics[width=\textwidth]{build/leck/T_1e-4.pdf}
     \caption{$p_\text{G} = \SI{1e-4}{\milli\bar}$}
@@ -248,7 +263,6 @@ Turbomolekularpumpe ausgewertet.
     \caption{$p_\text{G} = \SI{1,5e-4}{\milli\bar}$}
   \end{subfigure}
   ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
-    %(or a blank line to force the subfigure onto a new line)
   \begin{subfigure}[b]{0.48\textwidth}
     \includegraphics[width=\textwidth]{build/leck/T_2e-4.pdf}
     \caption{$p_\text{G} = \SI{2e-4}{\milli\bar}$}
@@ -257,6 +271,5 @@ Turbomolekularpumpe ausgewertet.
   \label{fig:leck_T}
 \end{figure}
 
-% TODO
 \input{tab/saug_leck_T.tex}
 \FloatBarrier
