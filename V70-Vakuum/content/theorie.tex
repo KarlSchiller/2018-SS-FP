@@ -7,7 +7,7 @@ bei einer Drehschieberpumpe und einer Turbomolekularpumpe (im weiteren als TMP b
 Aus diesen Daten sollen dann das effektive Saugvermögen berechnet und gegen die Druckabhängigkeit dargestellt werden.
 
 
-\section{Theorie:}
+\section{Theorie}
 \label{sec:Theorie}
 \subsection{Grundbegriffe}
 
@@ -20,8 +20,8 @@ Druck des Gases und damit die Teilchenzahldichte niedriger ist als außerhalb od
 des Gases niedriger ist als 300 mbar, d. h. kleiner als der niedrigste auf der Erdoberfläche
 vorkommende Atmosphärendruck."\cite{vakuum}
 
-Das Vakuum kann in einzelne Bereiche unterteilt werden, die abhängig von ihrem Druckbereich und der mittleren
-freien Weglänge der in diesem Bereich befindlichen Teilchen ist.
+Das Vakuum kann in einzelne Druckbereiche unterteilt werden, die abhängig von der mittleren
+freien Weglänge der Teilchen ist.
 Eine solche Unterteilung ist in Tabelle \ref{tab:Vakuum} zu finden.
 
 \begin{table}
@@ -32,7 +32,7 @@ Eine solche Unterteilung ist in Tabelle \ref{tab:Vakuum} zu finden.
     \toprule
     &$p$ in mbar & n in Teilchen/cm$^3$ & $\lambda$ \\
     \midrule
-    Umgebungsdruck & 1013 & 2,7\cdot10$^{19}$ & \SI{68}{\nano\meter} \\
+    Umgebungsdruck & 1013 & $2,7\cdot10^{19}$ & \SI{68}{\nano\meter} \\
     Unterdruck & > 300 & > 10$^{19}$ & < \SI{0.1}{\micro\meter} \\
     Grobvakuum & 300 - 1 & 10$^{19}$ - 10$^{16}$ & 0,1 - 100$\,\mu$m \\
     Feinvakuum & 1 - 10$^{-3}$ & 10$^{16}$ - 10$^{13}$ & 0,1 - 100$\,$mm \\
@@ -46,8 +46,8 @@ Eine solche Unterteilung ist in Tabelle \ref{tab:Vakuum} zu finden.
 \begin{equation}
   p = \frac{F}{A}
 \end{equation}
-Da ein Gas wie z.B. Luft nicht nur aus einer Teilchensorte besteht und jede Sorte seinen eigenen Anteil zum Gesamtdruck darstellt, werden
-die einzelnen entstehenden Drücke als Partialdruck bezeichnet. Eine graphische Darstellung der Druckarten ist in \ref{fig:Druck} zu finden.
+Da ein Gas wie z.B. Luft nicht nur aus einer Teilchensorte besteht und jede Sorte ihren eigenen Anteil zum Gesamtdruck darstellt, werden
+die einzelnen entstehenden Drücke als Partialdrücke bezeichnet. Eine graphische Darstellung der Druckarten ist in \ref{fig:Druck} zu finden.
 
 \begin{figure}
   \centering
@@ -73,18 +73,18 @@ ein Teilchen zurücklegt, bis es zu einem Stoß mit einem anderen Teilchen kommt
 \begin{equation*}
   n:\text{Teilchenzahldichte, } \sigma:\text{Wirkungsquerschnitt}
 \end{equation*}
-Bei Verwendung eines idealen Gases, bei dem sich die Teilchen nach der Maxwellschen Geschwindigkeitsverteilung
+Unter Verwendung eines idealen Gases, bei dem sich die Teilchen nach der Maxwellschen Geschwindigkeitsverteilung
 bewegen, gilt
 \begin{equation}
-  \lambda = \frac{k_\text{B}T}{\sqrt{2}\pi p d^2} \\
+  \lambda = \frac{k_\text{B}T}{\sqrt{2}\pi p d^2}. \\
 \end{equation}
 \begin{equation*}
   k_\text{B}:\text{Boltzmann-Konstante }, T:\text{Temperatur}, d:\text{Durchmesser d. Moleküls }, p:\text{Druck}
 \end{equation*}
 \paragraph{Ideales Gas:}
-Das ideale Gas ist ein Modell aus der Thermodynamik um Gas möglichst einfach beschreiben zu
-können. Dabei wird davon ausgegangen, das die Gasteilchen nur untereinander oder mit den Wänden
-(indem sich das entsprechende Gas befindet) elastisch stoßen. Daraus lässt sich die ideale Gasgleichung
+Das ideale Gas ist ein Modell aus der Thermodynamik, um Gas möglichst einfach beschreiben zu
+können. Dabei wird davon ausgegangen, dass die Gasteilchen nur untereinander oder mit den Wänden
+(innerhalb derer sich das entsprechende Gas befindet) elastisch stoßen. Daraus lässt sich die ideale Gasgleichung
 \begin{equation}
   p \cdot V = N \;k_\text{B}\;T \\
   \label{eqn:ideal}
@@ -113,10 +113,10 @@ Für eine Knudsen-Zahl zwischen 0,01 und 0.5 wird der Begriff Knudsen-Strömung 
 Knudsen-Strömung taucht besonders im Bereich des Feinvakuums auf, welches oft in technischen Anwendungen
 zu sehen ist.
 Bei einer Knudsen-zahl von $K_n < 0,01$ wird von einer Kontinuumsströmung gesprochen, die vorallem im
-Grobvakuum auftritt. Im weiteren beschräftigen wir uns mit der laminaren- und der turbulenten Strömung.
+Grobvakuum auftritt. Im weiteren Verlauf beschäftigen wir uns mit der laminaren- und der turbulenten Strömung.
 Gilt $K_n > 0,5$, so ist die mittlere freie Weglänge wesentlich größer als die Abmessung des Strömungskanals
-und es lassen sich kann noch Wechselwirkungen mit anderen Gasteilchen feststellen. Es kommt zur molekularen
-Strömung, diese ist vorallem im Bereich des Hoch- und Ultrahochvakuums aufzufinden.
+und es lassen sich kaum noch Wechselwirkungen mit anderen Gasteilchen feststellen. Es kommt zur molekularen
+Strömung, diese ist vor allem im Bereich des Hoch- und Ultrahochvakuums aufzufinden.
 
 \subsection{Vakuumtechnik:}
 Bei der Unterscheidung von verschiedenen Typen von Vakuumpumpen kommt es auf die verschiedenen Arten der
@@ -126,8 +126,8 @@ Wechselwirkung zwischen Gasteilchen und Wänden an.
 Als Sorption bezeichnet man die Aufnahme eines Teilchens durch Ab- oder Adsorption.
 
 \paragraph{Absorption:}
-Dies ist die Aufnahme eines Atoms, Moleküls oder Ions, welches von einer anderen Phase vollständig
-aufgenommen wird.
+Ein Atom, Molekül oder Ion wird von einer anderen Phase vollständig
+aufgenommen.
 
 \paragraph{Adsorption:}
 Anders als bei der Absorption, wird das Atom, Molekül oder Ion hier nur auf der Oberfläche der anderen Phase
@@ -137,8 +137,8 @@ festgehalten und nicht komplett aufgenommen.
 Dies ist die Umkehrung der Sorption, also die Abgabe eines Atoms, Moleküls oder Ions.
 
  \paragraph{Diffusion:}
- Dies ist der Ausgleich zwischen zwei verschieden konzentrierter Bereiche
- aufgrund von brownscher Molekularbewegung. In der Vakuumsphysik tritt dies auf, wenn es wärend des Anlegens eines
+ Dies ist der Ausgleich zwischen zwei Bereichen verschiedener Konzentrationen
+ aufgrund von Brownscher Molekularbewegung. In der Vakuumsphysik tritt dies auf, wenn es wärend des Anlegens eines
  Vakuums zu einem Gasdruckabfalls im Rezipienten kommt.
 
  Da es auf der Erde kein natürliches Vakuum gibt, ist es unverzichtbar auf Vakuumpumpen zurückzugreifen. Hier werden
@@ -146,14 +146,14 @@ Dies ist die Umkehrung der Sorption, also die Abgabe eines Atoms, Moleküls oder
 
  \paragraph{Drehschieberpumpe:}
  Die Drehschieberpumpe gehört zur Kategorie der Gastransferpumpen und besteht aus einem Gehäuse (auch Stator genannt), einem
- exzentisch eingebautem Rotor und einem im Rotor eingebautem Schieber, welcher mit seiner Feder an das Gehäuse gedrückt wird.
+ exzentisch eingebautem Rotor und einem im Rotor eingebautem Schieber, welcher durch eine Feder an das Gehäuse gedrückt wird.
  Ein- und Ausgang des Gehäuses sind durch Ventile gesichert. Dieser Aufbau ist in Abbildung \ref{fig:DSP} zu finden.
  Der Schieber teilt den Arbeitsraum in Druck- und Saugbereich ein. Fährt der Schieber an dem Einlassventil vorbei, so strömt
  das Gas in das "neu" enstandene Volumen. Nachdem der Einlass wieder geschlossen ist, wird das Gas zwischen den zwei Scheiben komprimiert.
  Ist der Druck groß genug, so öffnet sich das Auslassventil (Federventil) und das Gas strömt heraus. Während dieses Vorganges
  befindet sich immer etwas Öl im Arbeitsraum um den Schieber zu schmieren und den Raum abzudichten.
 
- Diese Art von Vakuumpumpe wird bis zu einem Feinvakuum als Hauptpumpe verwendet. Bei einem Hochvakuum und weiteren Druckbereichen wird
+ Diese Art von Vakuumpumpen wird bis zu einem Feinvakuum als Hauptpumpe verwendet. Bei einem Hochvakuum und weiteren Druckbereichen wird
  ein solches Gerät als Vorpumpe verwendet, z.B. vor einer TMP.
 
  \begin{figure}
@@ -165,10 +165,11 @@ Dies ist die Umkehrung der Sorption, also die Abgabe eines Atoms, Moleküls oder
 
  \paragraph{Turbomolekularpumpe:}
  Diese von Willi Becker verbesserte Art der Molekularpumpe besteht aus einer mehrstufigen Anordnung von Statoren und Rotoren. Dabei sollen die
- Rotoren den Gasteilchen einen zusätzlichen Impuls geben der sie dazu bringt aus die Statoren zu treffen und abtransportiert zu werden. Dafür
+ Rotoren den Gasteilchen einen zusätzlichen Impuls geben. Der sie dazu bringt, auf die Statoren zu treffen und abtransportiert zu werden. Dafür
  muss im Rezipienten selbst eine molekulare Strömung vorliegen. Die freie mittlere Weglänge muss zudem größer sein als der Abstand der Rotorblätter.
- Daher muss das Vakuum im Rezipienten schon vor dem Einschalten der TMP bei ca. 10$^{-1}\,$mbar liegen. Ansonsten würden die Teilchen zwischen
- den Statoren und Rotoren stoßen und somit wieder auf in den Rezipienten gelangen, somit würde man kein höheres Vakuum erschaffen können.
+ Daher muss das Vakuum im Rezipienten schon vor dem Einschalten der TMP bei ca. 10$^{-3}\,$mbar liegen. Ansonsten würden die Teilchen zwischen
+ den Statoren und Rotoren stoßen und wieder in den Rezipienten gelangen, somit würde kein höheres Vakuum erreicht werden können.
+ Dieser Aufbau ist in Abbildung \ref{fig:TMP} graphisch zu erkennen.
 \begin{figure}
   \centering
   \includegraphics[width=0.5\textwidth]{TMP.JPG}
@@ -180,19 +181,18 @@ Dies ist die Umkehrung der Sorption, also die Abgabe eines Atoms, Moleküls oder
  \paragraph{Saugvermögen:}
  Zur Bestimmung des Saugvermögens $S$ (geförderter Volumenstrom) müssen folgende theoretische Annahmen getroffen werden \cite{anleitung}:
  \begin{enumerate}
-   \item Es gilt während der gesamten Messung: $V = const$
-   \item Das verwendete Gas kann als ideales Gas angenommen werden
-   \item Die Messungen werden bei $T = const$ getätigt
-   \item Das Gas ist zu jedem Zeitpunkt im thermischen Gleichgewicht
-   \item Lecks und Effekte der Desorption sind zu vernachlässigen
-   \item Das Saugvermögen $S$ ist konstant und unabhängig vom Druck
+   \item Es gilt während der gesamten Messung $\dot{V} = const$.
+   \item Das verwendete Gas kann als ideales Gas angenommen werden.
+   \item Die Messungen werden bei $T = const$ getätigt.
+   \item Das Gas ist zu jedem Zeitpunkt im thermischen Gleichgewicht.
+   \item Lecks und Effekte der Desorption sind zu vernachlässigen.
+   \item Das Saugvermögen $S$ ist konstant und unabhängig vom Druck.
  \end{enumerate}
-Wird die ideale Gasgleichung nach der Zeit abgeleitet und eine einfache Pumpe (z.B.Drehschieberpumpe) verwendet, damit $\dot{V} = S$ gilt,
+Wird die ideale Gasgleichung nach der Zeit abgeleitet und die Relation $\dot{V} = S = const$ eingesetzt,
 so folgt die Gleichung
 \begin{equation}
   \dot{p}V = -pS.
 \end{equation}
-Dabei wurde die Zeit als konstant angenommen.
 Die so entstandene Differentialgleichung lässt sich durch den Exponentialansatz
 \begin{equation}
   p(t) = p_0 \text{e}^{-\frac{t}{\tau}}
@@ -206,11 +206,11 @@ Wird nun ein endlicher Enddruck $p_\text{E}$ berücksichtigt, so folgt die Gleic
   p(t) = (p_0 - p_\text{E})\text{e}^{-\frac{tS}{V}}+p_\text{E}
   \label{eqn:druck}
 \end{equation}
-Der Einsatz eines Enddrucks folgt aus Effekten wie der Desorption, sowie reale und virtueller Lecks. Durch diee Funktionsweise einer Pumpe kann nun ein
-endlicher Enddruck erreicht werden, da Effekte wie Rückstrahlung, Totvolumen sowie endliches Kompressionsvermögen vorliegen können.
+Der Einsatz eines Enddrucks folgt aus Effekten wie der Desorption, sowie realer und virtueller Lecks. Durch die Funktionsweise einer Pumpe kann nur ein
+endlicher Enddruck erreicht werden, da Effekte wie Rückstrahlung, Totvolumen sowie ein endliches Kompressionsvermögen vorliegen können.
 
 \paragraph{Leckrate:}
-Um zu ermitteln wieviel Gas pro Zeit aus dem Aufbau geleckt ist, wird die Leckrate $Q$ durch
+Um zu ermitteln, wieviel Gas pro Zeit aus dem Aufbau geleckt ist, wird die Leckrate $Q$ durch
 \begin{equation}
   S  = \frac{Q}{P_\text{G}} \text{ mit } Q = V\,\frac{dp}{dt}
 \end{equation}
@@ -227,27 +227,29 @@ Um zu ermitteln wieviel Gas pro Zeit aus dem Aufbau geleckt ist, wird die Leckra
    \frac{1}{S_\text{eff}} = \frac{1}{S_0} + \frac{1}{L}
    \label{eqn:effSaug}
  \end{equation}
- erwartet. Dabei ist $L$ der Leitwert, welcher den reziproken Strömunswiderstand darstellt.
+ erwartet. Dabei ist $L$ der Leitwert, welcher den reziproken Strömungswiderstand darstellt.
 
  \paragraph{Leck:}
  Als ein Leck wird eine undichte Stelle innerhalb eines Systems bezeichnet, von dem aus Teilchen oder Energie aus dem System
- entweicht odder eindringt.
- In der Vakuummphysik wird zwischen realen und virtuellen Leks unterschieden. Reale Lecks sind physische Löcher bzw. Fehlstellen
+ entweicht oder eindringt.
+ In der Vakuummphysik wird zwischen realen und virtuellen Lecks unterschieden. Reale Lecks sind physische Löcher bzw. Fehlstellen
  im Aufbau, wohingegen virtuelle Lecks durch Desorption oder Diffusion entstehen und damit keine Fehlstellen darstellen.
- Trotzdem verfälschen diese Effekte die Messwerte, daher werden durch Ausheizen (erhitzen des Rezipienten) und Fluten (kurzzeitiges
- befüllen mit Stickstoff) die Desorptionsraten so weit es geht gesenkt.
+ Trotzdem verfälschen diese Effekte die Messwerte, daher werden durch Ausheizen (Erhitzen des Rezipienten) und Fluten (kurzzeitiges
+ Befüllen mit Stickstoff) die Desorptionsraten so weit es geht gesenkt.
 
  Zur Messung des Drucks während der Messreihen werden 2 verschiedene Vakuummeter verwendet, dabei hat jedes seinen eigenen Anwendungsbereich:
 
  \paragraph{Pirani-Messgerät:}
- Für hohe Druckbereiche ($p < \SI{1000}{\milli\bar}$) wird ein Pirani-Messgerät verwendet. Dieses bestimmt den Druck des Gases über die Wärmeleitfähigkeit, welche
- bei kleinem Gasdruck immer kleiner wird und die Temperatur des im Messgerät befestigten Glühdrahts steigt. Dieser Anstieg an Temperatur verursacht einen Widerstand,
- welcher gemessen werden kann. verwendet man dieses Messgerät in einem zu hohen Druckbereich, so wird die Wärmleitung von der Konvektion überdeckt, bei einem zu kleinen
- Bereich von der Wärmestrahlung und der eigentlich zu messende Effekt (Wärmeleitung) tritt in den Hintergrund. Somit sind die Messungen unbrauchbar.
+ Für hohe Druckbereiche ($p > \SI{10e-4}{\milli\bar}$) wird ein Pirani-Messgerät verwendet. Dieses bestimmt den Druck des Gases über dessen Wärmeleitfähigkeit. Diese sinkt
+ bei kleinerem Gasdruck und die Temperatur des im Messgerät befestigten Glühdrahts steigt. Wird der Glühdraht auf einer konstanten Temperatur gehalten,
+ so ändert sich mit der Wärmeleitfähigeit des Gases auch die benötigte messbare Heizleistung.
+ Wird dieses Messgerät in einem zu hohen Druckbereich verwendet, so wird die Wärmleitung von der Konvektion überdeckt. Bei zu niedrigen
+ Drücken dominiert die Wärmestrahlung und der eigentlich zu messende Effekt (Wärmeleitung) tritt in den Hintergrund. Zudem tritt Wärmeleitung
+ über die Aufhängung des Drahtes auf.
 
 \paragraph{Glüh- und Kaltkathoden Vakuummeter:}
 Bei einem Glühkathoden Vakuummeter werden die Elektronen durch thermische Elektronenemission von der Kathode gelöst und die Gasteilchen durch Stöße ionisiert. Die
 Anode ist zylindrisch und gitterförmig angeordnet, in ihrer Mitte befindet sich ein als Auffänger dienender Draht, welcher die Ionen aufsammelt. Dieser resultierende
-Ionisationsstrom ist ein Maß für den Druck.
-Die Funktionsweise des Kaltkathoden Vakuummeters ist nahezu analog zu dem des Glühkathoden Vakuummeters, nur werden die Elektronen dort nicht durch die thermische Elektronenemission,
+Ionisationsstrom zwischen Anode und dem Aufhänger ist ein Maß für den Druck.
+Die Funktionsweise des Kaltkathoden Vakuummeters ist nahezu analog zu der des Glühkathoden Vakuummeters, nur werden die Elektronen nicht durch die thermische Elektronenemission,
 sondern durch ein starkes äußeres elektrisches Feld aus der Kathode herausgelöst.
