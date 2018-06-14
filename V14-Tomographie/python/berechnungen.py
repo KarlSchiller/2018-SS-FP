@@ -43,7 +43,7 @@ I0_error = np.sqrt(I0)
 hist = np.linspace(0, len(I0), 512)
 
 #print(len(I0), len(I0_error), len(hist))
-plt.bar(hist, I0, yerr=I0_error)
+plt.bar(hist, I0)
 plt.xlim(33, 250)
 plt.xlabel('Kanal')
 plt.ylabel('Ereignisse')
@@ -57,7 +57,7 @@ I0_error = np.sqrt(I0)
 hist = np.linspace(0, len(I0), 512)
 
 #print(len(I0), len(I0_error), len(hist))
-plt.bar(hist, I0, yerr=I0_error)
+plt.bar(hist, I0)
 plt.xlim(33, 250)
 plt.xlabel('Kanal')
 plt.ylabel('Ereignisse')
@@ -70,7 +70,7 @@ W1_pos1_error = np.sqrt(W1_pos1)
 
 hist = np.linspace(0, len(W1_pos1), 512)
 
-plt.bar(hist, W1_pos1, yerr=W1_pos1_error)
+plt.bar(hist, W1_pos1)
 plt.xlim(33, 250)
 plt.xlabel('Kanal')
 plt.ylabel('Ereignisse')
@@ -78,33 +78,32 @@ plt.savefig('build/W1_pos1.pdf')
 plt.clf()
 
 ##--------- Plot zum zweiften Würfel W2_pos1
-#W2_pos1 = np.genfromtxt('rohdaten/W2_pos1.txt', unpack=True)
-#W2_pos1_error = np.sqrt(W2_pos1)
-#
-#hist = np.linspace(0, len(W2_pos1), 512)
-#
-#plt.bar(hist, W2_pos1, yerr=W2_pos1_error)
-#plt.xlim(33, 442)
-#plt.title('Messung des zweiten Würfels')
-#plt.xlabel('Kanal')
-#plt.ylabel('Ereignisse')
-#plt.savefig('build/W2_pos1.pdf')
-#plt.clf()
-#
-##--------- Plot zum zweiften Würfel W3_pos1
-#W3_pos1 = np.genfromtxt('rohdaten/W3_pos1.txt', unpack=True)
-#W3_pos1_error = np.sqrt(W3_pos1)
-#
-#hist = np.linspace(0, len(W3_pos1), 512)
-#
-#plt.bar(hist, W3_pos1, yerr=W3_pos1_error)
-#plt.xlim(33, 442)
-#plt.title('Messung des dritten Würfels')
-#plt.xlabel('Kanal')
-#plt.ylabel('Ereignisse')
-#plt.savefig('build/W3_pos1.pdf')
-#plt.clf()
+W2_pos1 = np.genfromtxt('rohdaten/W2_pos1.txt', unpack=True)
+W2_pos1_error = np.sqrt(W2_pos1)
 
+hist = np.linspace(0, len(W2_pos1), 512)
+
+plt.bar(hist, W2_pos1)
+plt.xlim(33, 442)
+plt.title('Messung des zweiten Würfels')
+plt.xlabel('Kanal')
+plt.ylabel('Ereignisse')
+plt.savefig('build/W2_pos1.pdf')
+plt.clf()
+
+##--------- Plot zum zweiften Würfel W3_pos1
+W3_pos1 = np.genfromtxt('rohdaten/W3_pos1.txt', unpack=True)
+W3_pos1_error = np.sqrt(W3_pos1)
+
+hist = np.linspace(0, len(W3_pos1), 512)
+
+plt.bar(hist, W3_pos1)
+plt.xlim(33, 442)
+plt.title('Messung des dritten Würfels')
+plt.xlabel('Kanal')
+plt.ylabel('Ereignisse')
+plt.savefig('build/W3_pos1.pdf')
+plt.clf()
 
 # Initialisiere Würfelmatrix
 i = np.sqrt(2)
