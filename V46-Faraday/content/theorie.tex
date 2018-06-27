@@ -1,20 +1,199 @@
 \section{Zielsetzung}
 \label{sec:Zielsetzung}
 
+In diesem Versuch wird die effektive Masse von Leitungselektronen in
+GaAs ermittelt.
+Dazu wird die Faraday-Rotation an unterschiedlich stark
+dotierte Proben für verschiedene Wellen gemessen.
+
 \section{Theorie}
 \label{sec:Theorie}
 
-% \begin{figure}
-%   \centering
-%   \includegraphics[height=5.5cm]{content/Bild.png}
-%   \caption{Bilduterschrift}
-%   \label{fig:Bild}
-% \end{figure}
+\subsection{Die effektive Masse}
+\label{sec:effMasse}
 
-% \subsection{Unterkapitel}
-% \label{sec:UnterKapitel}
+Halbleiter haben im Allgemeinen eine komplizierte Bandstruktur.
+Zur einfacheren Handhabung kann in der Nähe des Minimums des
+Leitungsbands am Punkt $\vec{k} = \vec{0}$ die $E\left(\vec{k}\right)$-
+Relation in eine Taylorreihe zu
+\begin{equation*}
+  E\left(\vec{k}\right) = E_\text{0} +
+  \frac{1}{2} \sum_{i = 1}^3
+  \left(\frac{\partial^2 E}{\partial k_\text{i}^2}\right)_{\vec{k} = \vec{0}}
+  k_\text{i} + ...
+\end{equation*}
+entwickelt werden.
+Dabei steht $\vec{k}$ für den Wellenvektor des Elektrons und der Index
+$i$ für die Raumdimensionen.
+Diese Reihe lässt sich in die parabolische Relation eines freien Elektrons
+überführen, wobei die Größe
+\begin{equation}
+  m_\text{i}^* := \hbar^2
+  \left(\frac{\partial^2 E}{\partial k_\text{i}^2}\right)_{\vec{k} = \vec{0}}^{-1}
+  \label{eqn:effMasse}
+\end{equation}
+als \emph{effektive Masse} definiert wird,
+da sie die Dimension einer Masse haben muss.
+In der Formel spielt auch das reduzierte Plancksche
+Wirkungsquantum $\hbar$ eine Rolle.
+Bei einer Substitution der Elektronenmasse durch die effektive Masse lässt
+sich somit für Leitungselektronen die Quantenmechanik freier Teilchen
+anwenden, der Einfluss des Kristallpotentials ist durch dieses
+Konzept berücksichtigt.
 
-% \begin{equation}
-% Für Formeln
-%   \label{eqn:Formel}
-% \end{equation}
+\subsection{Rotation linear polarisierten Lichts in doppelbrechenden Kristallen}
+\label{sec:Theo1}
+
+Linear polarisiertes Licht lässt sich als eine lineare Überlagerung von
+links- und rechtszirkular polarisierten Lichts auffassen.
+Durchläuft dieses einen sogenannten doppelbrechenden Kristall der Länge $L$,
+so haben die beiden zirkularen Wellen unterschiedliche Phasengeschwindigkeiten
+und infolge dessen wird die lineare (überlagerte) Polarisationsrichtung
+um einen Winkel von
+\begin{equation}
+  \theta = \frac{L}{2} \left(k_\text{R} - k_\text{L}\right)
+  \label{eqn:Winkel-2}
+\end{equation}
+gedreht.
+Dabei steht $k_\text{R}$ für den Wellenvektor des rechtszirkular und
+$k_\text{L}$ für den Wellenvektor des linkszirkular polarisierten Lichts.
+Dieser Effekt lässt sich mittels elektrischer Dipole erlären,
+welche im Kristall induziert werden:
+In einem externen elektrischen Feld $\vec{E}$ werden zum einen positive Ionen relativ
+zu negativen Ionen verschoben, oder zum anderen der Ladungsschwerpunkt der
+positiven Ladungen und der Elektronenverteilung stimmt nicht überein.
+Die Summe der einzelnen Dipolmomente pro Volumen erzeugt eine Polarisation
+\begin{equation}
+  \vec{P} = \epsilon_0 \; \chi \; \vec{E}
+  \label{eqn:Polarisation}
+\end{equation}
+mit der elektrischen Feldkonstanten $\epsilon_0$ und der
+\emph{dielektrischen Suszeptibilität} $\chi$.
+Dabei ist die Suszeptibilität $\chi$ im Allgemeinen ein Tensor.
+
+Ein Material ist doppelbrechend, wenn im Suszeptibilitätstensor
+nicht-diagonale und komplex konjugierte Koeffizienten auftreten.
+Für in $z$-Richtung durchlaufendes Licht hat ein solcher Tensor
+mit allen für die Drehung relevanten Koeffizienten die Gestalt
+\begin{equation*}
+  \chi =
+  \begin{pmatrix}
+    \chi_\text{xx} & i \chi_\text{xy} & 0 \\
+    -i \chi_\text{xy} & \chi_\text{xx} & 0 \\
+    0 & 0 & \chi_\text{zz} \\
+  \end{pmatrix}
+\end{equation*}
+Ein Ausdruck für den Drehwinkel kann nun durch Einsetzen des Ansatzes
+einer ebenen Welle in die Wellengleichung in Materie gewonnen werden.
+Es ergeben sich nach Zerlegung in die Komponenten drei Gleichungen,
+aus einer folgt $E_\text{z} = 0$.
+% Es liegt also eine transversale Wellenausbreitung vor.
+Für die beiden übrigen Gleichungen muss für eine nicht-trivial Lösung
+\begin{equation*}
+  \left(- k^2 + \frac{\omega^2}{c^2} \left(1 + \chi_\text{xy}\right)\right)^2
+  -\left(i \frac{\omega^2}{c^2} \chi_\text{xy}\right)
+  \left(- i \frac{\omega^2}{c^2} \chi_\text{xy}\right)
+  = 0
+\end{equation*}
+mit der Lichtgeschwindigkeit $c$ und der Kreisfrequenz $\omega$
+der Welle gelten.
+Daraus folgen zwei mögliche Wellenzahlen
+\begin{equation*}
+  k_\pm = \frac{\omega}{c} \sqrt{\left(1 + \chi_\text{xx}\right) \pm \chi_\text{xy}},
+\end{equation*}
+oder mit der Beziehung $v_\text{Ph} = \omega / k$ zwei Phasengeschwindigkeiten
+% \begin{align*}
+%   v_\text{Ph,R} &=
+%   \frac{c}{\sqrt{1 + \chi_\text{xx} + \chi_\text{xy}}}\\
+%   v_\text{Ph,L} &=
+%   \frac{c}{\sqrt{1 + \chi_\text{xx} - \chi_\text{xy}}}\\
+% \end{align*}
+für eine rechts- beziehungsweise linkszirkular polarisierte Welle.
+Werden diese Wellenzahlen in den Ausdruck \eqref{eqn:Winkel-2}
+eingesetzt und dieser linearisiert, ergibt sich der Ausdruck
+\begin{equation}
+  \theta \approx \frac{L \, \omega}{2 \, c \, n} \chi_\text{xy}
+  \label{eqn:Winkel-1}
+\end{equation}
+mit dem Brechungsindex $n = c / v_\text{Ph}$.
+
+
+\subsection{Faraday-Rotation in optisch inaktiven Medien}
+\label{sec:Theo22}
+
+In einem optisch inaktiven Medium dreht sich die Polarisationsrichtung von
+durchgehendem Licht nicht ($\chi_\text{ik} = 0$ für $i \neq k$).
+Dies ändert sich jedoch bei Anwesenheit eines externen magnetischen Feldes $\vec{B}$
+parallel zur Ausbreitungsrichtung des Lichts.
+Ein Elektron wird mit der Gleichung
+\begin{equation*}
+  m_\text{e} \frac{\symup{d}^2 \vec{r}}{\symup{d} t^2} + K \, \vec{r} =
+  - e_0 \vec{E}\left(r\right)
+  - e_0 \frac{\symup{d} \vec{r}}{\symup{d} t} \times \vec{B}
+\end{equation*}
+beschrieben, wobei $m_\text{e}$ die Masse und $e_0$ die Ladung des Elektrons,
+$K$ eine die Bindung beschreibende Konstante und
+$\vec{E}$ die Feldstärke der einfallenden Lichtwelle darstellt.
+Wird des Weiteren angenommen, dass $\vec{E}$ in der Zeit harmonisch
+oszilliert, die Polarisation $\vec{P}$ proportional zu $\vec{r}$ ist
+und das Magnetfeld in z-Richtung zeigt, lässt sich diese Gleichung
+komponentenweise zerlegen.
+Nicht-triviale Lösungen ergeben sich nur für $E_\text{z} = 0$,
+damit reduziert sich die Anzahl an Komponentengleichungen auf zwei.
+Wird die Relation \eqref{eqn:Polarisation} mit dem Ansatz
+\begin{equation*}
+  \chi =
+  \begin{pmatrix}
+    \chi_\text{xx} & i \chi_\text{xy} & 0 \\
+    i \chi_\text{yx} & \chi_\text{xx} & 0 \\
+    0 & 0 & \chi_\text{zz} \\
+  \end{pmatrix}
+\end{equation*}
+in die verbleibenden zwei Komponenten eingesetzt und diese Gleichung
+nach Real- und Imaginärteil getrennt, so ergibt sich
+\begin{equation*}
+  \chi_\text{xy} = - \chi_\text{yx}
+\end{equation*}
+durch Vergleich.
+Somit dreht sich die Polarisationsebene von einfallendem Licht in einem
+optisch inaktiven Medium bei einem externen Magnetfeld parallel zur
+Ausbreitungsrichtung prinzipiell.
+Dieser Effekt wird \emph{Faraday-Effekt} genannt.
+
+Mit Gleichung \eqref{eqn:Winkel-1} und den eben genannten Überlegungen lässt
+sich der Drehwinkel durch
+\begin{equation*}
+  \theta = \frac{e_0^3}{2 \epsilon_0 c}\frac{1}{m_\text{e}^2}
+  \frac{\omega^2}{\left(-\omega^2 + \frac{K}{m_\text{e}}\right)^2 -
+  \left(\frac{e_0}{m_\text{e}} B \omega\right)^2}
+  \frac{N B L}{n}
+\end{equation*}
+mit der Masse des Elektrons $m_\text{e}$ und der Anzahl an Elektronen pro
+Volumen $N$ ausdrücken.
+In diesem Ausdruck steht zum einen die
+Zyklotronfrequenz $\omega_\text{Z} = B e_0 / m_\text{e}$ (Frequenz eines im magnetischen
+Feld rotierenden Elektrons aufgrund der Lorentzkraft) und zum anderen
+der Ausdruck $\omega_0 = \sqrt{K / m_\text{e}}$,
+welcher die Bedeutung einer Resonanzfrequenz hat.
+Für \emph{quasifreie} Ladungsträger gilt der Grenzfall $\omega_0 \rightarrow 0$
+und damit
+\begin{equation}
+  \theta_\text{frei} \approx \frac{e_0^3}{8 \pi^2 \epsilon_0 c^3}
+  \frac{1}{m_\text{e}^2} \lambda^2 \frac{N B L}{n}.
+  \label{eqn:theta-frei}
+\end{equation}
+Ansonsten ist in Halbleitern die Resonanzfrequenz $\omega_0$ in der Regel
+deutlich größer als die Zyklotronfrequenz, sodass die Näherungen
+\begin{equation*}
+  \left(\omega_0^2 - \omega^2\right)^2 >> \omega^2 \omega_\text{Z}^2
+  \text{    und    }
+  \omega << \omega_0
+\end{equation*}
+angewendet werden können.
+Hieraus ergibt sich die Relation
+\begin{equation}
+  \theta\left(\lambda\right) \approx \frac{2 \pi^2 e_0^3 c}{\epsilon_0}
+  \frac{1}{m_\text{e}^2}\frac{1}{\lambda^2 \omega_0^4}
+  \frac{N B L}{n}.
+  \label{eqn:theta-gebunden}
+\end{equation}
