@@ -1,0 +1,27 @@
+# Messung magnetische Flussdichte nach Rotationsmessung
+# I=9.2A und U=20V
+# Räumliche Nullposition bei z=100mm
+# B/mT z/mm
+376 100
+377 099
+376 098
+375 097
+372 096
+368 095
+362 094
+353 093
+340 092
+322 091
+294 090
+375 100
+373 101
+369 102
+363 103
+354 104
+341 105
+325 106
+301 107
+268 108
+225 109
+175 110
+374 100
