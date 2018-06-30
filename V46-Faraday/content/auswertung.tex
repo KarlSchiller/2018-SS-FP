@@ -1,13 +1,132 @@
 \newpage
 \section{Auswertung}
-
 \label{sec:Auswertung}
-% \subsection{Unterkapiel}
-% \label{sec:Unterkapitel}
 
-% \begin{figure}
-%   \centering
-%   \includegraphics[width=\textwidth]{Plot.pdf}
-%   \caption{Bildunterschrift}
-%   \label{fig:Plot1}
-% \end{figure}
+Im Folgenden werden die Regressionen, Abbildungen und Fehlerrechnungen mit den
+Paketen Numpy \cite{numpy}, Uncertainties \cite{uncertainties}, Matplotlib
+\cite{matplotlib} und Scipy \cite{scipy} in der Programmierumgebung
+Python 3.6.5 erstellt beziehungsweise durchgeführt.
+
+\subsection{Messung der magnetischen Flussdichte}
+\label{sec:flussmessung}
+
+Wie in Abschnitt \ref{sec:MessungBFeld} beschrieben wird das Magnetfeld
+vor und nach der Messung der Faraday-Rotationswinkel vermessen.
+Da jedoch vor Messung der Rotationswinkel der Elektromagnet noch nicht
+aufgeheizt war, ist für die weitere Auswertung die Messung des Magnetfeldes
+nach Messung der Rotationswinkel verwendet worden.
+Die aufgenommenen Flussdichten $B$ an der jeweiligen Position $z$
+sind in Tabelle \ref{tab:flussmessung} dargestellt.
+Dabei entspricht die Reihenfolge der Messwerte der Reihenfolge ihrer
+Aufnahme, die per Auge abschätzte Position der Probe $z = 0$ wurde
+mehrmals vermessen.
+
+\input{tab/feldmessung2.tex}
+
+Zur Bestimmung der maximalen Flussdichte wird ein Polynom vierten Grades
+der Form
+\begin{equation}
+  B_\text{reg} = a z^4 + b z^3 + c z^2 + d z + e
+  \label{eqn:feldfit}
+\end{equation}
+mit Hilfe der Funktion \texttt{scipy.curve\_fit} an die Messwerte regressiert.
+Diese Regression ist in blau zusammen mit den Messwerten in Abbildung
+\ref{fig:flussmessung} dargestellt. Für die Parameter ergeben sich die Werte
+\begin{align*}
+  a &= \SI{-0.0081(2)}{\milli\tesla\per\raiseto{4}\milli\meter} \\
+  b &= \SI{-0.045(1)}{\milli\tesla\per\raiseto{3}\milli\meter} \\
+  c &= \SI{-0.59(2)}{\milli\tesla\per\raiseto{2}\milli\meter} \\
+  d &= \SI{-1.58(8)}{\milli\tesla\per\raiseto{1}\milli\meter} \\
+  e &= \SI{375.0(3)}{\milli\tesla}.
+\end{align*}
+Als die an der Probe anliegende Feldstärke wird das Maximum der magnetischen
+Flussdichte angenommen. Dieses ergab sich unter Verwendung des Pakets
+\texttt{scipy.minimize\_scalar} zu
+\SI{376}{\milli\tesla} an der Position $z = \SI{-1.5}{\milli\meter}$.
+
+\begin{figure}
+  \centering
+  \includegraphics[height=8cm]{build/feldmessung2.pdf}
+  \caption{Die gemessene magnetische Flussdichte in Abhängigkeit des Ortes.}
+  \label{fig:flussmessung}
+\end{figure}
+\FloatBarrier
+
+
+\subsection{Bestimmung der effektiven Masse}
+\label{sec:AuswMasse}
+
+Im Folgenden werden die Proben nach der in Abschnitt \ref{sec:MessungFaraday}
+angegebenen Reihenfolge durchnummeriert.
+Für jede Probe wird pro Filterwellenlänge die Differenz der am Goniometer
+abgelesenen Winkel vor und nach Umpolung des Magnetfelds gebildet.
+Diese Differenzwinkel $\theta$ sind zusammen mit der jeweiligen Wellenlänge
+$\lambda$ in den Tabellen \ref{tab:probe1} bis \ref{tab:probe3}
+aufgeführt.
+Um nun die verschiedenen Proben miteinander vergleichen zu können,
+werden die Rotationswinkel anschließend in das Radmaß umgerechnet und
+auf die Dicke der Probe $L$ normiert.
+Die entsprechenden Werte sind ebenfalls in den drei Tabellen
+eingetragen und grafisch in Abbildung \ref{fig:winkel}
+gegen das Quadrat der Wellenlänge dargestellt.
+
+\input{tab/probe1.tex}
+\input{tab/probe2.tex}
+\input{tab/probe3.tex}
+\begin{figure}
+  \centering
+  \includegraphics[height=8cm]{build/winkel.pdf}
+  \caption{Differenz der Rotationswinkel zwischen den Magnetfeldpolungen für
+  alle drei Proben.}
+  \label{fig:winkel}
+\end{figure}
+\FloatBarrier
+
+Um die Faraday-Rotation von freien Ladungsträgern zu untersuchen,
+wurde der Rotationswinkel der hochreinen GaAs-Probe (Probe 3)
+von den ersten beiden Proben abgezogen. Diese Differenzen sind
+in Tabelle \ref{tab:probe1} bis \ref{tab:probe3}
+als $\increment\sfrac{\theta}{L}$ aufgeführt.
+Nach Formel \eqref{eqn:theta-frei} ist der auf die Länge normierte
+Rotationswinkel proportional zum Quadrat der Filterwellenlänge.
+Aufgrund dessen wird eine Funktion der Form
+\begin{equation*}
+  \frac{\theta}{L}\left(\lambda\right) = a \cdot \lambda^2 + b
+\end{equation*}
+an die Messwerte regressiert.
+Unter Verwendung von Formel \eqref{eqn:theta-frei} lässt sich daraus die
+effektive Masse der freien Ladungsträger in GaAs zu
+\begin{equation}
+  m^* = \sqrt{\frac{e^3}{8\:\pi\:\epsilon_0\:c^3}
+  \frac{1}{a}\frac{N\:B}{n}}
+  \label{eqn:mstar}
+\end{equation}
+berechnen.
+Als Brechungsindex wurde \num{3.397} eingesetzt, welcher für eine
+Wellenlänge von \SI{1377.56}{\nano\meter} in Quelle \cite{filmetrics} angegeben ist.
+Für die beiden dotierten Proben 1 und 2 ergaben sich unter Verwendung
+der Funktion \texttt{scipy.curve\_fit} die Regressionsparameter zu
+\begin{align*}
+  a_1 &= \SI{03(13)e12}{\radian\per\raiseto{3}\meter} \\
+  b_1 &= \SI{90(27)e12}{\radian\per\meter} \\
+  a_2 &= \SI{02(12)e12}{\radian\per\raiseto{3}\meter} \\
+  b_2 &= \SI{85(25)e12}{\radian\per\meter}.
+\end{align*}
+Bei der Regression wurden die Messwerte für eine Wellenlänge von
+\SI{1}{\micro\meter} nicht mit einbezogen.
+In Abbildung \ref{fig:differenzen} sind die Differenzwinkel mit den
+Regressionen dargestellt.
+Unter Verwendung von Gleichung \eqref{eqn:mstar} ergeben sich die
+effektiven Massen zu
+\begin{align*}
+  \frac{m^*_1}{m_\text{e}} &= \num{0.011(27)} \text{\quad und} \\
+  \frac{m^*_2}{m_\text{e}} &= \num{0.007(19)}.
+\end{align*}
+
+\begin{figure}
+  \centering
+  \includegraphics[height=8cm]{build/differenzen.pdf}
+  \caption{Rotationswinkel für freie Ladungsträger mit Regression für die beiden
+  dotierte Proben.}
+  \label{fig:differenzen}
+\end{figure}
