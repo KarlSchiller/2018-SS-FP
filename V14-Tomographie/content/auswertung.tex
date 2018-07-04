@@ -39,8 +39,7 @@ Abbildung \ref{fig:alu} zu sehen.
 \begin{figure}[htb]
   \centering
   \includegraphics[width=0.75\textwidth]{build/W1_pos1.pdf}
-  \caption{Messung der Energieverteilung eines Aluminiumgehäuses. Die Fehlerbalken
-  repräsentieren die statistischen Poissonfehler.}
+  \caption{Messung der Energieverteilung eines Aluminiumgehäuses.}
   \label{fig:alu}
 \end{figure}
 \FloatBarrier
@@ -48,6 +47,8 @@ Da ein Würfel durch Drehen und Verschieben einen unterschiedlichen Wegunterschi
 besitzen kann, werden die in Abbildung \ref{fig:wuerfelpos} zu erkennenden Projektionen
 $I_1$, $I_2$, $I_{11}$ und $I_{12}$ betrachtet. Die Intensitätsvektoren $\vec{I}$ des Würfels ergeben sich aus
 den gemessenen Daten nach Formel \eqref{eqn:matrixform}.
+Die zugehörige Projektionsmatrix A sowie ihre Zusammenstellung
+ist in Abschnitt \ref{sec:unbekannt} zu finden.
 Dabei ist zu sehen, das allerdings mehrere Projektionen die selben Weglängen
 besitzen, füllt man die zueinender analogen Projektionen mit den entsprechenden Werten,
 so ergibt sich der Vektor $\vec{\tilde{I}}$:
@@ -102,7 +103,7 @@ Würfel der selbe Vektor, da beide Würfel gleich durchstahlt werden:
 Diese Vektoren beschreiben die Projektionen $I_1$, $I_2$, $I_{11}$ und $I_{12}$.
 Aus der Methode der kleinsten Quadrate (Formeln \eqref{eqn:least-squares} und \eqref{eqn:least-squares-error})
 lassen sich die einzelnen Absorptionskoeffizienten der verschiedenen Materialien berechnen.
-Die daraus bestimmten Werte sind in Tabelle \ref{tab:2,3} nachzulesen.
+Die daraus bestimmten Werte sind Tabelle \ref{tab:2,3} zu entnehmen.
 
 
  \begin{table}[htb]
@@ -114,23 +115,25 @@ Die daraus bestimmten Werte sind in Tabelle \ref{tab:2,3} nachzulesen.
                 c
                 c}
         \toprule
-        {Würfel} & {Absorptionkoeffizient $\mu$, $\si{\per\centi\meter}$} & {Sollmaterial} & $\mu$ Literatur & Abweichung/\%\\
+        {Würfel} & {Absorptionkoeffizient $\mu/\si{\raiseto{-1}\centi\meter}$} & {Sollmaterial} & $\mu/\si{\raiseto{-1}\centi\meter}$ Literatur & Abweichung/\%\\
         \midrule
         2 & 0.18(2) & Aluminium & 0.203 & 11,33\\
         3 & 0.91(6) & Blei & 1.245 & 26,90\\
    \end{tabular}
    \label{tab:2,3}
  \end{table}
- Die Herkunft der Abweichungen wird in Abschnitt \ref{sec:Diskussion} beschrieben.
+ Die Literaturwerte sind in Literatur \cite{koeff} nachzulesen. Auf Herkunft der Abweichungen wird in Abschnitt \ref{sec:Diskussion} eingegangen.
 
  \subsection{Würfel mit unbekanntem Inhalt}
+ \label{sec:unbekannt}
  Vor der Untersuchung des Würfel 4 wird die Intensität ohne Würfel im Strahlengang noch
  einmal gemessen. Dabei wirdn 6916 Ereignisse in 60$\,$s gezählt, also eine Rate von
 
  \begin{equation*}
    I_0 = 115.26 \,\frac{\text{Zählungen}}{\si{s}}.
  \end{equation*}
-Dies ergibt einen deutlich anderen Wert als die erste Nullmessung.
+Dies ergibt einen deutlich anderen Wert als die erste Nullmessung. Diese diskrepanz
+wird in \ref{sec:Diskussion} näher erläutert.s
 
  Der Würfel 4 wird untersucht, um sein Material zu bestimmen. Dafür wird er mit 12
  Projektionen vermessen. Die neun einzelnen
@@ -155,6 +158,7 @@ Dies ergibt einen deutlich anderen Wert als die erste Nullmessung.
               \sqrt{2} & 0 & 0 & 0 & \sqrt{2} & 0 & 0 & 0 & \sqrt{2} \\
               0 & \sqrt{2} & 0 & 0 & 0 & \sqrt{2} & 0 & 0 & 0
       \end{pmatrix}.
+      \label{eqn:matrix}
  \end{equation*}
 
 Der dazugehörige Vektor der Ausgangszählraten $I_4$ und der Vektor der
@@ -203,7 +207,7 @@ folgende Werte für die Absorptionskoeffizienten:
   \begin{tabular}{c
                   S[table-format=1.4(1)]}
                   \toprule
-                  {Teilwürfel} & {Absorptionskoeffizient $\mu$, $\si{\per\centi\meter}$}\\
+                  {Teilwürfel} & {Absorptionskoeffizient $\mu/\si{\raiseto{-1}\centi\meter}$}\\
                   \midrule
                   1 & 1.137(363)\\
                   2 & 0.608(414)\\
