@@ -18,7 +18,6 @@ plt.rcParams['axes.spines.right'] = False
 # make build directory if not existant
 if not os.path.isdir('build'):
     os.mkdir('build')
-
 #---------------------------
 I_0_1 = 9520
 t_I_1 = 60
@@ -41,11 +40,11 @@ I0 = np.genfromtxt('rohdaten/kein_wuerfel.txt', unpack=True)
 I0_error = np.sqrt(I0)
 
 hist = np.linspace(0, len(I0), 512)
-
+hist=hist+448
 #print(len(I0), len(I0_error), len(hist))
 plt.bar(hist, I0)
-plt.xlim(33, 250)
-plt.xlabel('Kanal')
+plt.xlim(33+448, 250+448)
+plt.xlabel('Energie [keV]')
 plt.ylabel('Ereignisse')
 plt.savefig('build/Nullmessung1.pdf')
 plt.clf()
@@ -55,11 +54,11 @@ I0 = np.genfromtxt('rohdaten/W4_I0.txt', unpack=True)
 I0_error = np.sqrt(I0)
 
 hist = np.linspace(0, len(I0), 512)
-
+hist+=448
 #print(len(I0), len(I0_error), len(hist))
 plt.bar(hist, I0)
-plt.xlim(33, 250)
-plt.xlabel('Kanal')
+plt.xlim(33+448, 250+448)
+plt.xlabel('Energie [keV]')
 plt.ylabel('Ereignisse')
 plt.savefig('build/Nullmessung2.pdf')
 plt.clf()
@@ -69,10 +68,10 @@ W1_pos1 = np.genfromtxt('rohdaten/W1_pos1.txt', unpack=True)
 W1_pos1_error = np.sqrt(W1_pos1)
 
 hist = np.linspace(0, len(W1_pos1), 512)
-
+hist += 448
 plt.bar(hist, W1_pos1)
-plt.xlim(33, 250)
-plt.xlabel('Kanal')
+plt.xlim(33+448, 250+448)
+plt.xlabel('Energie [keV]')
 plt.ylabel('Ereignisse')
 plt.savefig('build/W1_pos1.pdf')
 plt.clf()
@@ -94,11 +93,13 @@ plt.clf()
 ##--------- Plot zum zweiften Würfel W3_pos1
 W3_pos1 = np.genfromtxt('rohdaten/W3_pos1.txt', unpack=True)
 W3_pos1_error = np.sqrt(W3_pos1)
-
 hist = np.linspace(0, len(W3_pos1), 512)
 
+for i in range(1,len(hist)):
+    hist[i]=hist[i]/(i*662)
+
 plt.bar(hist, W3_pos1)
-plt.xlim(33, 442)
+plt.xlim(33, 700)
 plt.title('Messung des dritten Würfels')
 plt.xlabel('Kanal')
 plt.ylabel('Ereignisse')
