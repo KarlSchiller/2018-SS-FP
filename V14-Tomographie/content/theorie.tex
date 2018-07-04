@@ -23,7 +23,7 @@ bis zur sogenannten \enquote{Comptonkante} führt.
 Diese Comptonkante befindet sich bei der Wellenlänge,
 bei welcher ein einfallendes Photon einen maximalen
 Energieübertrag an das Elektron leistet.
-Deshalb sinkt die Intensität der die Probe durchlaufende Strahlung
+Deshalb sinkt die Intensität der die Probe durchlaufenden Strahlung
 bei dieser Wellenlänge abrupt.
 Bei etwas höheren Wellenlängen ist ein Peak messbar,
 welche auf dem Photoeffekt beruht, der sogenannte \enquote{Photopeak}.
@@ -45,9 +45,10 @@ Ein Beispiel eines solchen Absorptionsspektrums ist in Abbildung \ref{fig:spektr
 dargestellt. Hier ist die Anzahl an gemessenen Ereignissen für ein
 festes Zeitintervall gegen die Photonenenergie aufgetragen.
 Für kleine Energien ist die kontinuierliche Absorptionslinie des Comptoneffekts
-und die Comptonkante erkennbar und bei grob \SI{680}{\kilo\electronvolt}
+und die Comptonkante bei ungefähr \SI{480}{\kilo\electronvolt} erkennbar
+und bei grob \SI{680}{\kilo\electronvolt}
 befindet sich der Photopeak. Die Paarerzeugung ist nicht abgebildet,
-da sie erst bei höheren Energien auftritt, als hier abgebildet ist.
+da sie erst bei höheren Energien auftritt.
 
 
 \subsection{Tomographie}
@@ -73,12 +74,12 @@ Wird eine Probe bestehend aus
 mehreren Würfeln $i$ der Dicke $d_\text{i}$ bestrahlt, lässt sich
 die Gleichung zu
 \begin{equation*}
-  \sum_\text{i} \mu_\text{i} d_\text{i} = \ln\left(\frac{I_0}{N_\text{j}}\right)
+  \sum_\text{i} \mu_\text{i} d_\text{i} = \ln\left(\frac{N_0}{N_\text{j}}\right)
 \end{equation*}
 umstellen, dabei ist $N_\text{j}$ die Ausgangsintensität der $j$-ten Messung
 beziehungsweise $j$-ten Projektion.
 Der Index $i$ summiert dabei über alle Würfel, durch welche der Strahl
-transmittiert ist.
+transmittiert wird.
 Diese Umstellung lässt sich ebenfalls als Matrixgleichung der
 Form
 \begin{equation}
@@ -92,7 +93,7 @@ Form
 realisieren.
 Der Vektor $\vec{\mu}$ beinhaltet die
 Absorptionskoeffizienten,
-der Vektor $\vec{I}$ stellt die Intensitäten der einzelnen Projektionen
+der Vektor $\vec{I}$ stellt die Intensitäten der einzelnen Projektionen dar
 und die Matrix $\mathbf{A}$ beschreibt die Würfelgeometrie.
 Werden mehr Schichten aufgenommen, als Würfel in der Probe sind, lassen sich
 die Absorptionskoeffizienten mittels
