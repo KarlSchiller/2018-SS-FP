@@ -3,8 +3,10 @@ all:  build/main.pdf
 build:
 	mkdir -p build
 
-build/main.pdf:
+build/main.pdf: build/stabilitaet.pdf | build
 
+build/stabilitaet.pdf: python/stabilitaet.py | build
+	python python/stabilitaet.py
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS="$(call translate,build:)" \
