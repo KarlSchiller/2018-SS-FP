@@ -11,22 +11,22 @@ Aus diesen Daten sollen dann das effektive Saugvermögen berechnet und gegen die
 \label{sec:Theorie}
 \subsection{Grundbegriffe}
 
-Im Folgenden werden zunächst einmal die wichtigsten Begriffe der Vakuumphysik näher erläutert:
+Im Folgenden werden zunächst die wichtigsten Begriffe der Vakuumphysik näher erläutert:
 \paragraph{Vakuum:}
 Die allgemeine Annahme, dass das Vakuum ein vollständig leerer Raum ist, ist nach Definition der
 deutschen Industrienorm nicht korrekt.
 Ein Vakuum ist dort definiert als "der Zustand eines Gases, wenn in einem Behälter der
 Druck des Gases und damit die Teilchenzahldichte niedriger ist als außerhalb oder wenn der Druck
 des Gases niedriger ist als 300 mbar, d. h. kleiner als der niedrigste auf der Erdoberfläche
-vorkommende Atmosphärendruck."\cite{vakuum}
+vorkommende Atmosphärendruck \cite{vakuum}."
 
 Das Vakuum kann in einzelne Druckbereiche unterteilt werden, die abhängig von der mittleren
-freien Weglänge der Teilchen ist.
+freien Weglänge der Teilchen sind.
 Eine solche Unterteilung ist in Tabelle \ref{tab:Vakuum} zu finden.
 
 \begin{table}
   \centering
-  \caption{Druckbereiche mit konventionellem Namen, Teilchendichte und mittlerer freien Weglänge.}
+  \caption{Druckbereiche mit konventionellem Namen, Teilchenzahl n und mittlerer freier Weglänge $\lambda$.}
   \label{tab:Vakuum}
   \begin{tabular}{cccc}
     \toprule
@@ -42,12 +42,12 @@ Eine solche Unterteilung ist in Tabelle \ref{tab:Vakuum} zu finden.
 \end{table}
 
 \paragraph{Druck und Partialdruck:}
-"Der Druck ist definiert als der Betrag einer senkrecht und gleichmäßig auf eine Flächeneinheit wirkenden Kraft."\cite{pfeiffer}
+"Der Druck ist definiert als der Betrag einer senkrecht und gleichmäßig auf eine Flächeneinheit wirkenden Kraft \cite{pfeiffer}."
 \begin{equation}
   p = \frac{F}{A}
 \end{equation}
-Da ein Gas wie z.B. Luft nicht nur aus einer Teilchensorte besteht und jede Sorte ihren eigenen Anteil zum Gesamtdruck darstellt, werden
-die einzelnen entstehenden Drücke als Partialdrücke bezeichnet. Eine graphische Darstellung der Druckarten ist in \ref{fig:Druck} zu finden.
+Da ein Gas wie z.B. Luft nicht nur aus einer Teilchensorte besteht und jede Sorte ihren eigenen Anteil zum Totaldruck darstellt, werden
+die einzelnen entstehenden Teilrücke als Partialdrücke bezeichnet. Eine graphische Darstellung der Druckarten ist in \ref{fig:Druck} zu finden.
 
 \begin{figure}
   \centering
@@ -65,13 +65,13 @@ die einzelnen entstehenden Drücke als Partialdrücke bezeichnet. Eine graphisch
 
 \paragraph{Mittlere freie Weglänge:}
 Die mittlere freie Weglänge $\lambda$ ist definiert als die durchschnittliche Weglänge, die
-ein Teilchen zurücklegt, bis es zu einem Stoß mit einem anderen Teilchen kommt.
+ein Teilchen zurücklegt, bis es zu einem Stoß mit einem anderen Teilchen kommt. Es gilt
 \begin{equation}
   \lambda = \frac{1}{n\cdot\sigma}
   \label{eqn:Weglaenge}
 \end{equation}
 \begin{equation*}
-  n:\text{Teilchenzahldichte, } \sigma:\text{Wirkungsquerschnitt}
+  \text{mit }n:\text{Teilchenzahldichte, } \sigma:\text{Wirkungsquerschnitt}
 \end{equation*}
 Unter Verwendung eines idealen Gases, bei dem sich die Teilchen nach der Maxwellschen Geschwindigkeitsverteilung
 bewegen, gilt
@@ -79,7 +79,7 @@ bewegen, gilt
   \lambda = \frac{k_\text{B}T}{\sqrt{2}\pi p d^2}. \\
 \end{equation}
 \begin{equation*}
-  k_\text{B}:\text{Boltzmann-Konstante }, T:\text{Temperatur}, d:\text{Durchmesser d. Moleküls }, p:\text{Druck}
+  \text{mit }k_\text{B}:\text{Boltzmann-Konstante }, T:\text{Temperatur}, d:\text{Durchmesser d. Moleküls }, p:\text{Druck}
 \end{equation*}
 \paragraph{Ideales Gas:}
 Das ideale Gas ist ein Modell aus der Thermodynamik, um Gas möglichst einfach beschreiben zu
@@ -90,11 +90,11 @@ können. Dabei wird davon ausgegangen, dass die Gasteilchen nur untereinander od
   \label{eqn:ideal}
 \end{equation}
 \begin{equation*}
-  p:\text{Druck }, V:\text{Volumen d. Gefäßes }, N:\text{Teilchenzahl}
+  \text{mit }p:\text{Druck }, V:\text{Volumen d. Gefäßes }, N:\text{Teilchenzahl}
 \end{equation*}
 folgern.
 
-Von besonderer Bedeutung ist im Verlauf dieses Experimentes das Gesetz von Boyle-Mariotte, welches besagt,
+Aus der Idealen Gasgleichung für $T\,$=$\,$const das Gesetz von Boyle-Mariotte, welches besagt,
 dass bei konstanter Temperatur der Zusammenhang
 \begin{equation}
   p \sim V^{-1}
@@ -102,21 +102,22 @@ dass bei konstanter Temperatur der Zusammenhang
 gilt.
 
 \paragraph{Stömungsarten:}
-Bei der Unterscheidung von verschiedenen Strömungsarten ist die Knudson-Zahl $K_n$ von großer
+Bei der Unterscheidung von verschiedenen Strömungsarten ist die Knudson-Zahl $K_N$ von
 Bedeutung. Diese ist definiert als die mittlere freie Weglänge pro charakteristischer Länge des
-durchströmten Mediums.
+durchströmten Mediums $l$, dies ist die Distanz im Mediums, die die Stömung durchquert und mit den
+Seiten wechselwirken kann..
 \begin{equation}
   K_N = \frac{\lambda}{l}
   \label{eqn:Knudsen}
 \end{equation}
-Für eine Knudsen-Zahl zwischen 0,01 und 0.5 wird der Begriff Knudsen-Strömung verwendet. Diese
+Für eine Knudsen-Zahl zwischen 0,01 und 0,5 wird der Begriff Knudsenströmung verwendet. Diese
 Knudsen-Strömung taucht besonders im Bereich des Feinvakuums auf, welches oft in technischen Anwendungen
 zu sehen ist.
-Bei einer Knudsen-zahl von $K_n < 0,01$ wird von einer Kontinuumsströmung gesprochen, die vorallem im
+Bei einer Knudsen-Zahl von $K_n < 0,01$ wird von einer Kontinuumsströmung gesprochen, die vor allem im
 Grobvakuum auftritt. Im weiteren Verlauf beschäftigen wir uns mit der laminaren- und der turbulenten Strömung.
-Gilt $K_n > 0,5$, so ist die mittlere freie Weglänge wesentlich größer als die Abmessung des Strömungskanals
+Gilt $K_n > $0,5, so ist die mittlere freie Weglänge wesentlich größer als die Abmessung des Strömungskanals
 und es lassen sich kaum noch Wechselwirkungen mit anderen Gasteilchen feststellen. Es kommt zur molekularen
-Strömung, diese ist vor allem im Bereich des Hoch- und Ultrahochvakuums aufzufinden.
+Strömung, die vor allem im Bereich des Hoch- und Ultrahochvakuums aufzufinden ist.
 
 \subsection{Vakuumtechnik:}
 Bei der Unterscheidung von verschiedenen Typen von Vakuumpumpen kommt es auf die verschiedenen Arten der
@@ -133,16 +134,16 @@ aufgenommen.
 Anders als bei der Absorption, wird das Atom, Molekül oder Ion hier nur auf der Oberfläche der anderen Phase
 festgehalten und nicht komplett aufgenommen.
 
-\paragraph{Desoption:}
+\paragraph{Desorption:}
 Dies ist die Umkehrung der Sorption, also die Abgabe eines Atoms, Moleküls oder Ions.
 
  \paragraph{Diffusion:}
  Dies ist der Ausgleich zwischen zwei Bereichen verschiedener Konzentrationen
- aufgrund von Brownscher Molekularbewegung. In der Vakuumsphysik tritt dies auf, wenn es wärend des Anlegens eines
+ aufgrund von Brownscher Molekularbewegung. In der Vakuumsphysik tritt dies auf, wenn es während des Anlegens eines
  Vakuums zu einem Gasdruckabfalls im Rezipienten kommt.
 
  Da es auf der Erde kein natürliches Vakuum gibt, ist es unverzichtbar auf Vakuumpumpen zurückzugreifen. Hier werden
- 2 Arten von Vakuumpumpen betrachtet:
+ zwei Arten von Vakuumpumpen betrachtet:
 
  \paragraph{Drehschieberpumpe:}
  Die Drehschieberpumpe gehört zur Kategorie der Gastransferpumpen und besteht aus einem Gehäuse (auch Stator genannt), einem
@@ -153,13 +154,13 @@ Dies ist die Umkehrung der Sorption, also die Abgabe eines Atoms, Moleküls oder
  Ist der Druck groß genug, so öffnet sich das Auslassventil (Federventil) und das Gas strömt heraus. Während dieses Vorganges
  befindet sich immer etwas Öl im Arbeitsraum um den Schieber zu schmieren und den Raum abzudichten.
 
- Diese Art von Vakuumpumpen wird bis zu einem Feinvakuum als Hauptpumpe verwendet. Bei einem Hochvakuum und weiteren Druckbereichen wird
+ Diese Art von Vakuumpumpen wird bis zu einem Feinvakuum als Hauptpumpe verwendet. Bei einem Hochvakuum und geringeren Druckbereichen wird
  ein solches Gerät als Vorpumpe verwendet, z.B. vor einer TMP.
 
  \begin{figure}
    \centering
    \includegraphics[width=0.5\textwidth]{Drehschieberpumpe.png}
-   \caption{Schematische Darstellung einer Drehschieberpumpe \cite{DSP}}
+   \caption{Schematische Darstellung einer Drehschieberpumpe \cite{DSP}.}
    \label{fig:DSP}
  \end{figure}
 
@@ -230,9 +231,9 @@ Um zu ermitteln, wieviel Gas pro Zeit aus dem Aufbau geleckt ist, wird die Leckr
  erwartet. Dabei ist $L$ der Leitwert, welcher den reziproken Strömungswiderstand darstellt.
 
  \paragraph{Leck:}
- Als ein Leck wird eine undichte Stelle innerhalb eines Systems bezeichnet, von dem aus Teilchen oder Energie aus dem System
+ Als ein Leck wird eine undichte Stelle innerhalb eines Rezipienten bezeichnet, von dem aus Teilchen aus dem System
  entweicht oder eindringt.
- In der Vakuummphysik wird zwischen realen und virtuellen Lecks unterschieden. Reale Lecks sind physische Löcher bzw. Fehlstellen
+ In der Vakuummphysik wird zwischen realen und virtuellen Lecks unterschieden. Reale Lecks sind physische Löcher
  im Aufbau, wohingegen virtuelle Lecks durch Desorption oder Diffusion entstehen und damit keine Fehlstellen darstellen.
  Trotzdem verfälschen diese Effekte die Messwerte, daher werden durch Ausheizen (Erhitzen des Rezipienten) und Fluten (kurzzeitiges
  Befüllen mit Stickstoff) die Desorptionsraten so weit es geht gesenkt.
