@@ -10,12 +10,12 @@ Python 3.6.5 erstellt beziehungsweise durchgeführt.
 \subsection{Berechnung des Rezipientenvolumens}
 \label{sec:Volumina}
 
-Für die Bestimmung der Pumpensaugfähigkeit ist das Volumens des Rezipienten
-von Nöten. Dazu sind in den Tabellen \ref{tab:vol1} und \ref{tab:vol2} die
+Für die Bestimmung des Saugvermögens der Pumpe ist das Volumen des Rezipienten
+erforderlich. Dazu sind in den Tabellen \ref{tab:vol1} und \ref{tab:vol2} die
 in dem Kapitel zum Versuchsaufbau erläuterten Bauteile samt ihres Volumens aufgeführt.
 Die Abkürzung \enquote{D} steht dabei für die Verwendung
 des jeweiligen Bauteils bei der Vermessung der
-Drehschieberpumpe und die Akürzung \enquote{T} für die Turbomolekularpumpe.
+Drehschieberpumpe und die Abkürzung \enquote{T} für die Turbomolekularpumpe.
 
 % Aus Anleitung übernommene Volumina
 \input{tab/vol1.tex}
@@ -24,21 +24,22 @@ In Tabelle \ref{tab:vol2} sind neben den Volumina auch die gemessenen
 Durchmesser $d$ und die Längen $l$ der Bauteile aufgeführt, aus diesen wurde
 das jeweilige Volumen unter Annahme einer Zylindergeometrie nach
 \begin{equation*}
-  V = \pi \left(\frac{d}{2}\right) l
+  V = \pi \left(\frac{d}{2}\right)^2 l
 \end{equation*}
 mit dem zugehörigen Fehler
 \begin{equation*}
-  \Delta \; V =
-  \sqrt{\left(\frac{\partial V}{\partial d} \;\Delta \; d\right)^2 +
-  \left(\frac{\partial V}{\partial l} \;\Delta \; l\right)^2} =
+  \Delta V =
+  \sqrt{\left(\frac{\partial V}{\partial d} \;\Delta d\right)^2 +
+  \left(\frac{\partial V}{\partial l} \;\Delta l\right)^2} =
   \pi \left(\frac{d}{2}\right) \sqrt{
-  \left(l \Delta \; d \right)^2 +
-  \left( \frac{d}{2} \Delta \; l\right)^2}
+  \left(l \Delta d \right)^2 +
+  \left( \frac{d}{2} \Delta l\right)^2}
 \end{equation*}
 bestimmt.
 
 % Selbst vermessene Volumina
 \input{tab/vol2.tex}
+% TODO Nochmal nachrechnen
 
 Das Bauteil B6 ist ein T-Stück, hierfür wurde zum angegebenen Volumen des Zylinders
 in Tabelle \ref{tab:vol2}
@@ -50,11 +51,12 @@ geschlossen. Diese Volumenänderung ist beim Rezipientenvolumen jedoch kleiner
 als dessen Unsicherheit und
 wurde deshalb im Folgenden vernachlässigt.
 
-Für die beiden Pumpen ergibt sich ein Rezipientenvolumen von
+Durch Aufsummierung der Teilvolumina ergibt sich für die beiden Pumpen ein Rezipientenvolumen von
 \begin{align*}
   V_\text{Dreh} &= \SI{10.9(8)}{\liter} \text{ beziehungsweise}\\
   V_\text{Turbo} &= \SI{10.3(8)}{\liter}.
 \end{align*}
+% TODO Summenfehler berücksichtigt? Fehler der Summe = wurzel der summierte einzelfehlerquadrate
 
 
 \subsection{Evakuierungskurve der Drehschieberpumpe}
@@ -62,20 +64,23 @@ Für die beiden Pumpen ergibt sich ein Rezipientenvolumen von
 
 Die gemessenen Zeiten $t_\text{1..6}$, an denen die Druckwerte $p$ erreicht
 wurden, sind in Tabelle \ref{tab:evak_D} aufgeführt. Dabei wurden die Drücke
-mit einem digitalen Pirani Messgerät mit einer
+mit einem analogen Pirani Messgerät mit einer
 Unsicherheit von \SI{20}{\percent} aufgenommen. Für die gemessenen Zeiten lässt
 sich nur sehr schwer eine experimentelle Unsicherheit angeben, zumal diese stark
 zwischen Stützstellen variieren müsste. Für die weitere Auswertung wurden die
 Zeiten gemittelt, dieser Mittelwert $\mean{t_\text{1..6}}$ ist ebenfalls in
 Tabelle \ref{tab:evak_D} aufgeführt.
-Dabei wurden Mittelwert und empirische Standardabweichung nach
+Dabei wurden Mittelwert und Fehler des Mittelwerts nach
 \begin{align*}
   \mean{t_\text{1..6}} &= \frac{1}{6} \sum_{i = 1}^6 t_\text{i} \\
-  \Delta \; t_\text{1..6} &=
-  \sqrt{\frac{1}{5} \sum_{i = 1}^6 \left(t_\text{i} - \mean{t_\text{1..6}}\right)^2}
+  \Delta t_\text{1..6} &=
+  % sigma/sqrt(n)
+  \sqrt{\frac{1}{30} \sum_{i = 1}^6 \left(t_\text{i} - \mean{t_\text{1..6}}\right)^2}
 \end{align*}
 berechnet.
 
+% TODO Fehler Mittelwert der Zeiten neu berechnen
+% TODO Anderer Fehler bei Startwert, 1013 +- 5 mbar (Unsicherheit aufgrund Höhe, Wetter)
 \input{tab/evak_D.tex}
 
 Des Weiteren lässt sich Gleichung \eqref{eqn:druck} zu
@@ -88,15 +93,15 @@ dargestellten linearen Regressionen an die Messwerte. Die verwendeten Messwerte
 sind ebenfalls in Tabelle \ref{tab:evak_D} aufgeführt, dabei ergaben sich die
 Unsicherheiten nach Gaußscher Fehlerfortpflanzung zu
 \begin{align*}
-  \Delta \; f &=
-  \sqrt{\left(\frac{\partial f}{\partial p} \Delta \; p\right)^2 +
-  \left(\frac{\partial f}{\partial p_\text{e}} \Delta \; p_\text{e}\right)^2 +
-  \left(\frac{\partial f}{\partial p_\text{0}} \Delta \; p_\text{0}\right)^2} \\
+  \Delta f &=
+  \sqrt{\left(\frac{\partial f}{\partial p} \Delta p\right)^2 +
+  \left(\frac{\partial f}{\partial p_\text{e}} \Delta p_\text{e}\right)^2 +
+  \left(\frac{\partial f}{\partial p_\text{0}} \Delta p_\text{0}\right)^2} \\
   &=
-  \sqrt{\left(\frac{\Delta \; p}{p - p_\text{e}}\right)^2 +
-  \left(\frac{\Delta \; p_0}{p_0 - p_\text{e}}\right)^2 +
-  \left(\frac{\Delta \; p_\text{e}}{p_0 - p_\text{e}} -
-  \frac{\Delta \; p_\text{e}}{p - p_\text{e}}\right)^2}.
+  \sqrt{\left(\frac{\Delta p}{p - p_\text{e}}\right)^2 +
+  \left(\frac{\Delta p_0}{p_0 - p_\text{e}}\right)^2 +
+  \left(\frac{\Delta p_\text{e}}{p_0 - p_\text{e}} -
+  \frac{\Delta p_\text{e}}{p - p_\text{e}}\right)^2}.
 \end{align*}
 Der Startdruck $p_0$ betrug \SI{1000}{\milli\bar} und der Enddruck $p_\text{e}$
 betrug \SI{0.03}{\milli\bar}.
@@ -114,15 +119,16 @@ erstellt. Aus den erhaltenen Steigungen $m$ lassen sich die Saugvermögen der Pu
 nach
 \begin{align*}
     S &= - m \; V_\text{Dreh} \\
-    \Delta \; S &=
-    \sqrt{\left(\frac{\partial S}{\partial m} \Delta \; m\right)^2 +
-    \left(\frac{\partial S}{\partial V_\text{Dreh}} \Delta \; V_\text{Dreh}\right)^2} \\
+    \Delta S &=
+    \sqrt{\left(\frac{\partial S}{\partial m} \Delta m\right)^2 +
+    \left(\frac{\partial S}{\partial V_\text{Dreh}} \Delta V_\text{Dreh}\right)^2} \\
     &=
-    \sqrt{\left(\Delta \; m \; V_\text{Dreh}\right)^2 +
-    \left(m \Delta \; \; V_\text{Dreh}\right)^2}
+    \sqrt{\left(\Delta m \; V_\text{Dreh}\right)^2 +
+    \left(m \; \Delta V_\text{Dreh}\right)^2}
 \end{align*}
 berechnen. Sie sind in Tabelle \ref{tab:saug_evak_D} dargestellt.
 
+% TODO Ersten und letzten Wert mit berücksichtigen
 \input{tab/saug_evak_D.tex}
 \FloatBarrier
 
@@ -132,13 +138,14 @@ berechnen. Sie sind in Tabelle \ref{tab:saug_evak_D} dargestellt.
 
 Analog zur Evakuierungskurve der Drehschieberpumpe wurde die Evakuierungskurve
 der Turbomolekularpumpe ausgewertet. In Tabelle \ref{tab:evak_T} sind die
-Stützstellen des Druckes $p$ samt der gemessenen Zeiten $t_\text{1..6}$
+Drücke $p$ samt der gemessenen Zeiten $t_\text{1..6}$
 dargestellt. Der Mittelwert $\mean{t_\text{1..6}}$ und die logarithmierten
 Druckwerte sind nach den selben Formeln wie die Werte der Drehschieberpumpe
 berechnet. Die Ungenauigkeit der Glühkathode beträgt \SI{10}{\percent}, der
 Startdruck \SI{5e-3}{\milli\bar} und der Enddruck
 \SI{1.7e-5}{\milli\bar}.
 
+% TODO Fehler der Mittelwerte der Zeiten neu berechnen
 \input{tab/evak_T.tex}
 
 \begin{figure}
@@ -156,6 +163,7 @@ Tabelle \ref{tab:saug_evak_T} dargestellt. Dabei wurde an die Steigung das
 Volumen des Rezipienten beim Betreiben der Turbomolekularpumpe $V_\text{Turbo}$
 multipliziert.
 
+% TODO ersten und letzten Wert mit berücksichtigen
 \input{tab/saug_evak_T.tex}
 
 
@@ -165,18 +173,19 @@ multipliziert.
 Aus den vier Leckratenmessungen der Drehschieberpumpe
 bei den Drücken \SI{0.1}{\milli\bar},
 \SI{0.4}{\milli\bar}, \SI{0.8}{\milli\bar} und \SI{1}{\milli\bar}
-kann jeweils das Saugvermögen extrahiert werden.
+kann jeweils das Saugvermögen bestimmt werden.
 Die an den Druckstützpunkten $p$ aufgenommenen
 Zeiten $t_\text{1..3}$ sind zusammen mit deren Mittelwerten $\mean{t_\text{1..3}}$
 in den Tabellen \ref{tab:leck_D_0,1} bis \ref{tab:leck_D_1,0} dargestellt.
 Dabei wurden der Mittelwert und die empirische Standardabweichung nach
 \begin{align*}
   \mean{t_\text{1..3}} &= \frac{1}{3} \sum_{i = 1}^3 t_\text{i} \\
-  \Delta \; t_\text{1..3} &=
-  \sqrt{\frac{1}{2} \sum_{i = 1}^3 \left(t_\text{i} - \mean{t_\text{1..3}}\right)^2}
+  \Delta t_\text{1..3} &=
+  \sqrt{\frac{1}{6} \sum_{i = 1}^3 \left(t_\text{i} - \mean{t_\text{1..3}}\right)^2}
 \end{align*}
 berechnet.
 
+% TODO Fehler der Mittelwerte der Zeiten nachrechnen
 \input{tab/leck/D_0,1.tex}
 \input{tab/leck/D_0,4.tex}
 \input{tab/leck/D_0,8.tex}
@@ -187,9 +196,9 @@ An die Drücke und Mittelwerte der Zeiten wurde eine
 lineare Regression mit der Funktion \texttt{curve\_fit}
 des Moduls \texttt{scipy.optimize} durchgeführt
 und das jeweilige Saugvermögen aus der ermittelten Steigung nach Formel \eqref{eqn:Saug}
-berechnet. Die extrahierten Steigungen und Saugvermögen sind für
+berechnet. Die berechneten Steigungen und Saugvermögen sind für
 die vier verschiedenen Gleichgewichtsdrücke $p_\text{G}$
-in Tabelle \ref{tab:saug_leck_D} dargestellt.
+in Tabelle \ref{tab:saug_leck_D} aufgeführt.
 In Abbildung \ref{fig:leck_D} sind die gemittelten Zeiten gegen den Druck
 samt der linearen Regression aufgetragen.
 
@@ -214,7 +223,7 @@ samt der linearen Regression aufgetragen.
     \includegraphics[width=\textwidth]{build/leck/D_1,0.pdf}
     \caption{$p_\text{G} = \SI{1}{\milli\bar}$}
   \end{subfigure}
-  \caption{Leckratenmessungen der Drehschieberpumpe für verschiedene Grenzdrücke samt linearer Regression.}
+  \caption{Leckratenmessungen der Drehschieberpumpe für verschiedene Gleichgewichtsdrücke samt linearer Regression.}
   \label{fig:leck_D}
 \end{figure}
 
@@ -233,6 +242,7 @@ gemittelten Zeiten in Tabelle \ref{tab:leck_T_5e-5} bis \ref{tab:leck_T_2e-4}
 dargestellt. Dabei wurden der im vorherigen Abschnitt \ref{sec:AuswLeckD}
 beschriebene Mittelwert und empirische Standardabweichung verwendet.
 
+% TODO Fehler der Mittelwerte nachrechnen
 \input{tab/leck/T_5e-5.tex}
 \input{tab/leck/T_1,5e-4.tex}
 \input{tab/leck/T_1e-4.tex}
@@ -267,7 +277,7 @@ Saugvermögen sind in Tabelle \ref{tab:saug_leck_T} aufgeführt.
     \includegraphics[width=\textwidth]{build/leck/T_2e-4.pdf}
     \caption{$p_\text{G} = \SI{2e-4}{\milli\bar}$}
   \end{subfigure}
-  \caption{Leckratenmessungen der Turbomolekularpumpe für verschiedene Grenzdrücke samt linearer Regression.}
+  \caption{Leckratenmessungen der Turbomolekularpumpe für verschiedene Gleichgewichtsdrücke samt linearer Regression.}
   \label{fig:leck_T}
 \end{figure}
 
