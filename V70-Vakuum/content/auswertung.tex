@@ -39,7 +39,7 @@ bestimmt.
 
 % Selbst vermessene Volumina
 \input{tab/vol2.tex}
-% TODO Nochmal nachrechnen
+% TODO Nachgerechnet, alles war richtig... Was ein Trottel
 
 Das Bauteil B6 ist ein T-Stück, hierfür wurde zum angegebenen Volumen des Zylinders
 in Tabelle \ref{tab:vol2}
@@ -56,7 +56,11 @@ Durch Aufsummierung der Teilvolumina ergibt sich für die beiden Pumpen ein Rezi
   V_\text{Dreh} &= \SI{10.9(8)}{\liter} \text{ beziehungsweise}\\
   V_\text{Turbo} &= \SI{10.3(8)}{\liter}.
 \end{align*}
-% TODO Summenfehler berücksichtigt? Fehler der Summe = wurzel der summierte einzelfehlerquadrate
+Dabei berechnet sich die Abweichung der Volumina aus den
+Einzelabweichungen $\Delta V_\text{i}$ nach
+\begin{equation*}
+  \Delta V = \sqrt{\sum_i \left(V_\text{i}\right)}.
+\end{equation*}
 
 
 \subsection{Evakuierungskurve der Drehschieberpumpe}
@@ -80,6 +84,7 @@ Dabei wurden Mittelwert und Fehler des Mittelwerts nach
 berechnet.
 
 % TODO Fehler Mittelwert der Zeiten neu berechnen
+% Diese Mittelwertfehler sind bereits in python-Datei evak.py verarbeitet, aber nirgendwo sonst
 % TODO Anderer Fehler bei Startwert, 1013 +- 5 mbar (Unsicherheit aufgrund Höhe, Wetter)
 \input{tab/evak_D.tex}
 

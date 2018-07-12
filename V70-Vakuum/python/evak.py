@@ -30,7 +30,8 @@ def evak_D():
     lnp_D = unp.log((p_D - pend_D)/(pstart_D - pend_D))
     times_D = np.array([t1_D, t2_D, t3_D, t4_D, t5_D, t6_D])
     times_D = np.cumsum(times_D, axis=1)  # wirkliche Zeiten sind die Kumulante
-    tmean_D = unp.uarray(np.mean(times_D, axis=0), np.std(times_D, axis=0, ddof=1))
+    # Mittelwert und Fehler des Mittelwerts sigma/wurzel(n)
+    tmean_D = unp.uarray(np.mean(times_D, axis=0), np.std(times_D, axis=0, ddof=1)/np.sqrt(len(times_D)))
 
     # Fitten an einzelne Druckbereiche
     # Bereich 1: Messwerte 2-4
@@ -121,7 +122,8 @@ def evak_T():
     lnp_T = unp.log((p_T - pend_T)/(pstart_T - pend_T))
     times_T = np.array([t1_T, t2_T, t3_T, t4_T, t5_T, t6_T])
     times_T = np.cumsum(times_T, axis=1)  # wirkliche Zeiten sind die Kumulante
-    tmean_T = unp.uarray(np.mean(times_T, axis=0), np.std(times_T, axis=0, ddof=1))
+    # Mittelwert und Fehler des Mittelwerts sigma/wurzel(n)
+    tmean_T = unp.uarray(np.mean(times_T, axis=0), np.std(times_T, axis=0, ddof=1)/np.sqrt(len(times_T)))
 
     # Fitten an einzelne Druckbereiche
     # Bereich 1: Messwerte 2-5
