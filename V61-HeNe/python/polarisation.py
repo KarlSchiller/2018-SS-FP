@@ -9,18 +9,27 @@ from uncertainties import ufloat
 from scipy.constants import codata
 
 
-def linear(x, m, b):
-    return m*x + b
+def polar(x, I0, phi0):
+    return I0*np.sin(x+phi0)**2
 
 
 def evak_T():
     phi, I = np.genfromtxt("rohdaten/polarisation.txt", unpack=True)
+    phi = phi/360*2*np.pi
+    x = np.linspace(0, 2*np.pi)
+
+    params, covariance = curve_fit(f=polar, xdata=phi, ydata=I)
+    errors = np.sqrt(np.diag(covariance))
+    print("I0 : ",params[0])
+    print("phi0 : ", params[1])
     # Plot
     plt.plot(phi, I, 'kx', label='Messwerte')
-    # plt.xlabel(r'$\overline{t_\mathrm{1..6}}\;/\;\mathrm{s}$')
-    # plt.ylabel(r'$\ln(\frac{p(t)-p_\mathrm{e}}{p_\mathrm{0}-p_\mathrm{e}})$')
-    # plt.xlim(60, 310)
+    plt.plot(x, polar(x, *params), label='Fit')
+    plt.xlabel(r'$\phi/rad$')
+    plt.ylabel(r'$I/nA$')
+    plt.xlim(0, 2*np.pi)
     # plt.ylim(6.70, 16.95)
+    plt.legend(loc='best')
     plt.grid()
     plt.tight_layout()
     plt.savefig('build/polarisation.pdf')
@@ -28,7 +37,5 @@ def evak_T():
 
 
 
-
 if __name__ == '__main__':
-
     evak_T()

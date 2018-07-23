@@ -3,10 +3,19 @@ all:  build/main.pdf
 build:
 	mkdir -p build
 
-build/main.pdf: build/stabilitaet.pdf | build
+build/main.pdf: build/stabilitaet.pdf build/polarisation.pdf build/T00.pdf build/T01.pdf | build
 
 build/stabilitaet.pdf: python/stabilitaet.py | build
 	python python/stabilitaet.py
+
+build/polarisation.pdf: python/polarisation.py | build
+	python python/polarisation.py
+
+build/T00.pdf: python/tem00.py | build
+	python python/tem00.py
+
+build/T01.pdf: python/tem10.py | build
+	python python/tem10.py
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS="$(call translate,build:)" \

@@ -9,18 +9,28 @@ from uncertainties import ufloat
 from scipy.constants import codata
 
 
-def linear(x, m, b):
-    return m*x + b
+def t00(d, I0, d0, w):
+    return I0*np.exp( -2*( (d-d0)/w )**2 )
 
 
 def evak_T():
-    r, I = np.genfromtxt("rohdaten/T00.txt", unpack=True)
+    d, I = np.genfromtxt("rohdaten/T00.txt", unpack=True)
+
+    x = np.linspace(-30, 30)
+    params, covariance = curve_fit(t00, d, I)
+    errors = np.sqrt(np.diag(covariance))
+    print("d0 : ", params[0])
+    print("I0 : ", params[1])
+    print("w : ", params[2])
+
     # Plot
-    plt.plot(r, I, 'kx', label='Messwerte')
-    # plt.xlabel(r'$\overline{t_\mathrm{1..6}}\;/\;\mathrm{s}$')
-    # plt.ylabel(r'$\ln(\frac{p(t)-p_\mathrm{e}}{p_\mathrm{0}-p_\mathrm{e}})$')
+    plt.plot(d, I, 'kx', label='Messwerte')
+    plt.plot(x, t00(x, *params), label='Fit')
+    plt.xlabel(r'$d/mm$')
+    plt.ylabel(r'$I/nA$')
     # plt.xlim(60, 310)
     # plt.ylim(6.70, 16.95)
+    plt.legend(loc='best')
     plt.grid()
     plt.tight_layout()
     plt.savefig('build/T00.pdf')

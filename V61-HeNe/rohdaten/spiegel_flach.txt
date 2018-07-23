@@ -1,0 +1,7 @@
+#Stabilitätsbedingung
+#flacher Spiegel, r1=inf r2=1.4m
+#Abstand L/cm I/muA
+92.3 0.38
+96.7 0.71
+100.8 0.82
+112.5 1.10
