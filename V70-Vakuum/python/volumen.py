@@ -22,7 +22,7 @@ def liter2qmeter(V_liter):
 # selbst vermessen:
 print('Selbst vermessene Bauteile')
 # Schlauch S2
-d_S2 = ufloat(24.75, 0.1)*1e-3  # m
+d_S2 = ufloat(24.8, 0.1)*1e-3  # m
 l_S2 = ufloat(1210, 20)*1e-3  # m
 V_S2 = VolZyl(d_S2, l_S2)  # m^3
 print('V_S2     {:} m^3'.format(V_S2))
