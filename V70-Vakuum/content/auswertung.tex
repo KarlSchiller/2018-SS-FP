@@ -39,7 +39,6 @@ bestimmt.
 
 % Selbst vermessene Volumina
 \input{tab/vol2.tex}
-% TODO Nachgerechnet, alles war richtig...
 
 Das Bauteil B6 ist ein T-Stück, hierfür wurde zum angegebenen Volumen des Zylinders
 in Tabelle \ref{tab:vol2}
@@ -69,7 +68,11 @@ Einzelabweichungen $\Delta V_\text{i}$ nach
 Die gemessenen Zeiten $t_\text{1..6}$, an denen die Druckwerte $p$ erreicht
 wurden, sind in Tabelle \ref{tab:evak_D} aufgeführt. Dabei wurden die Drücke
 mit einem analogen Pirani Messgerät mit einer
-Unsicherheit von \SI{20}{\percent} aufgenommen. Für die gemessenen Zeiten lässt
+Unsicherheit von \SI{20}{\percent} aufgenommen.
+Ausschließlich für den Umgebungsdruck von \SI{1013}{\milli\bar} wurde eine
+Unsicherheit von \SI{5}{\milli\bar} aufgrund von wetter- und höhenbedingten
+Abweichungen angenommen.
+Für die gemessenen Zeiten lässt
 sich nur sehr schwer eine experimentelle Unsicherheit angeben, zumal diese stark
 zwischen Stützstellen variieren müsste. Für die weitere Auswertung wurden die
 Zeiten gemittelt, dieser Mittelwert $\mean{t_\text{1..6}}$ ist ebenfalls in
@@ -83,9 +86,6 @@ Dabei wurden Mittelwert und Fehler des Mittelwerts nach
 \end{align*}
 berechnet.
 
-% TODO Fehler Mittelwert der Zeiten neu berechnen
-% Diese Mittelwertfehler sind bereits in python-Datei evak.py verarbeitet, aber nirgendwo sonst
-% TODO Anderer Fehler bei Startwert, 1013 +- 5 mbar (Unsicherheit aufgrund Höhe, Wetter)
 \input{tab/evak_D.tex}
 
 Des Weiteren lässt sich Gleichung \eqref{eqn:druck} zu
@@ -133,7 +133,6 @@ nach
 \end{align*}
 berechnen. Sie sind in Tabelle \ref{tab:saug_evak_D} dargestellt.
 
-% TODO Ersten und letzten Wert mit berücksichtigen
 \input{tab/saug_evak_D.tex}
 \FloatBarrier
 
@@ -150,7 +149,6 @@ berechnet. Die Ungenauigkeit der Glühkathode beträgt \SI{10}{\percent}, der
 Startdruck \SI{5e-3}{\milli\bar} und der Enddruck
 \SI{1.7e-5}{\milli\bar}.
 
-% TODO Fehler der Mittelwerte der Zeiten neu berechnen
 \input{tab/evak_T.tex}
 
 \begin{figure}
@@ -168,7 +166,6 @@ Tabelle \ref{tab:saug_evak_T} dargestellt. Dabei wurde an die Steigung das
 Volumen des Rezipienten beim Betreiben der Turbomolekularpumpe $V_\text{Turbo}$
 multipliziert.
 
-% TODO ersten und letzten Wert mit berücksichtigen
 \input{tab/saug_evak_T.tex}
 
 
@@ -182,7 +179,7 @@ kann jeweils das Saugvermögen bestimmt werden.
 Die an den Druckstützpunkten $p$ aufgenommenen
 Zeiten $t_\text{1..3}$ sind zusammen mit deren Mittelwerten $\mean{t_\text{1..3}}$
 in den Tabellen \ref{tab:leck_D_0,1} bis \ref{tab:leck_D_1,0} dargestellt.
-Dabei wurden der Mittelwert und die empirische Standardabweichung nach
+Dabei wurden der Mittelwert und der Fehler des Mittelwerts nach
 \begin{align*}
   \mean{t_\text{1..3}} &= \frac{1}{3} \sum_{i = 1}^3 t_\text{i} \\
   \Delta t_\text{1..3} &=
@@ -190,7 +187,6 @@ Dabei wurden der Mittelwert und die empirische Standardabweichung nach
 \end{align*}
 berechnet.
 
-% TODO Fehler der Mittelwerte der Zeiten nachrechnen
 \input{tab/leck/D_0,1.tex}
 \input{tab/leck/D_0,4.tex}
 \input{tab/leck/D_0,8.tex}
@@ -247,7 +243,6 @@ gemittelten Zeiten in Tabelle \ref{tab:leck_T_5e-5} bis \ref{tab:leck_T_2e-4}
 dargestellt. Dabei wurden der im vorherigen Abschnitt \ref{sec:AuswLeckD}
 beschriebene Mittelwert und empirische Standardabweichung verwendet.
 
-% TODO Fehler der Mittelwerte nachrechnen
 \input{tab/leck/T_5e-5.tex}
 \input{tab/leck/T_1,5e-4.tex}
 \input{tab/leck/T_1e-4.tex}

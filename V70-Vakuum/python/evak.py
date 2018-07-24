@@ -27,6 +27,7 @@ def evak_D():
     print("Startdruck   {:} mbar".format(pstart_D))
     print("Enddruck     {:} mbar\n".format(pend_D))
     p_D = unp.uarray(p_D, druckmessfehler_D * p_D)
+    p_D[0] = ufloat(1013.0, 5.0)  # Kleiner Fehler für Normaldruck, da Wetter
     lnp_D = unp.log((p_D - pend_D)/(pstart_D - pend_D))
     times_D = np.array([t1_D, t2_D, t3_D, t4_D, t5_D, t6_D])
     times_D = np.cumsum(times_D, axis=1)  # wirkliche Zeiten sind die Kumulante
@@ -34,9 +35,9 @@ def evak_D():
     tmean_D = unp.uarray(np.mean(times_D, axis=0), np.std(times_D, axis=0, ddof=1)/np.sqrt(len(times_D)))
 
     # Fitten an einzelne Druckbereiche
-    # Bereich 1: Messwerte 2-4
+    # Bereich 1: Messwerte 1-4
     print('Regression Bereich 1')
-    params1_D, covariance1_D = curve_fit(f=linear, xdata=noms(tmean_D[1:4]), ydata=noms(lnp_D[1:4]))
+    params1_D, covariance1_D = curve_fit(f=linear, xdata=noms(tmean_D[0:4]), ydata=noms(lnp_D[0:4]))
     # covariance is the covaniance matrix
     errors1_D = np.sqrt(np.diag(covariance1_D))
     print('m = ', params1_D[0], ' +/- ', errors1_D[0], ' 1/s')
@@ -56,9 +57,9 @@ def evak_D():
     S2_D = -m2_D * V_D
     print('Saugvermögen 2       {:} m^3/s\n'.format(S2_D))
 
-    # Bereich 3: Messwerte 13-16
+    # Bereich 3: Messwerte 13-17
     print('Regression Bereich 3')
-    params3_D, covariance3_D = curve_fit(f=linear, xdata=noms(tmean_D[12:17]), ydata=noms(lnp_D[12:17]))
+    params3_D, covariance3_D = curve_fit(f=linear, xdata=noms(tmean_D[12:18]), ydata=noms(lnp_D[12:18]))
     # covariance is the covaniance matrix
     errors3_D = np.sqrt(np.diag(covariance3_D))
     print('m = ', params3_D[0], ' +/- ', errors3_D[0], ' 1/s')
@@ -68,11 +69,11 @@ def evak_D():
     print('Saugvermögen 3       {:} m^3/s\n'.format(S3_D))
 
     # Plot
-    tplot1_D = np.linspace(noms(tmean_D[1]), noms(tmean_D[3]), 10)
+    tplot1_D = np.linspace(noms(tmean_D[0]), noms(tmean_D[3]), 10)
     plt.plot(tplot1_D, linear(tplot1_D, *params1_D), 'b-', label='Regression 1')
     tplot2_D = np.linspace(noms(tmean_D[4]), noms(tmean_D[11]), 10)
     plt.plot(tplot2_D, linear(tplot2_D, *params2_D), 'g-', label='Regression 2')
-    tplot3_D = np.linspace(noms(tmean_D[12]), noms(tmean_D[16]), 10)
+    tplot3_D = np.linspace(noms(tmean_D[12]), noms(tmean_D[17]), 10)
     plt.plot(tplot3_D, linear(tplot3_D, *params3_D), 'r-', label='Regression 3')
     plt.errorbar(x=noms(tmean_D), xerr=stds(tmean_D),
                     y=noms(lnp_D), yerr=stds(lnp_D),
@@ -126,9 +127,9 @@ def evak_T():
     tmean_T = unp.uarray(np.mean(times_T, axis=0), np.std(times_T, axis=0, ddof=1)/np.sqrt(len(times_T)))
 
     # Fitten an einzelne Druckbereiche
-    # Bereich 1: Messwerte 2-5
+    # Bereich 1: Messwerte 1-5
     print('Regression Bereich 1')
-    params1_T, covariance1_T = curve_fit(f=linear, xdata=noms(tmean_T[1:5]), ydata=noms(lnp_T[1:5]))
+    params1_T, covariance1_T = curve_fit(f=linear, xdata=noms(tmean_T[0:5]), ydata=noms(lnp_T[0:5]))
     # covariance is the covaniance matrix
     errors1_T = np.sqrt(np.diag(covariance1_T))
     print('m = ', params1_T[0], ' +/- ', errors1_T[0], ' 1/s')
@@ -137,9 +138,9 @@ def evak_T():
     S1_T = -m1_T * V_T
     print('Saugvermögen 1       {:} m^3/s\n'.format(S1_T))
 
-    # Bereich 2: Messwerte 6-8
+    # Bereich 2: Messwerte 6-9
     print('Regression Bereich 2')
-    params2_T, covariance2_T = curve_fit(f=linear, xdata=noms(tmean_T[5:8]), ydata=noms(lnp_T[5:8]))
+    params2_T, covariance2_T = curve_fit(f=linear, xdata=noms(tmean_T[5:9]), ydata=noms(lnp_T[5:9]))
     # covariance is the covaniance matrix
     errors2_T = np.sqrt(np.diag(covariance2_T))
     print('m = ', params2_T[0], ' +/- ', errors2_T[0], ' 1/s')
@@ -149,9 +150,9 @@ def evak_T():
     print('Saugvermögen 2       {:} m^3/s\n'.format(S2_T))
 
     # Plot
-    tplot1_T = np.linspace(noms(tmean_T[1]), noms(tmean_T[4]), 10)
+    tplot1_T = np.linspace(noms(tmean_T[0]), noms(tmean_T[4]), 10)
     plt.plot(tplot1_T, linear(tplot1_T, *params1_T), 'b-', label='Regression 1')
-    tplot2_T = np.linspace(noms(tmean_T[5]), noms(tmean_T[7]), 10)
+    tplot2_T = np.linspace(noms(tmean_T[5]), noms(tmean_T[8]), 10)
     plt.plot(tplot2_T, linear(tplot2_T, *params2_T), 'g-', label='Regression 2')
     plt.errorbar(x=noms(tmean_T), xerr=stds(tmean_T),
                     y=noms(lnp_T), yerr=stds(lnp_T),
@@ -177,8 +178,8 @@ def evak_T():
                 np.round(times_T[3], 2),
                 np.round(times_T[4], 2),
                 np.round(times_T[5], 2),
-                np.round(noms(tmean_T), 1),
-                np.round(stds(tmean_T), 1)],
+                np.round(noms(tmean_T), 2),
+                np.round(stds(tmean_T), 2)],
                 'build/table_evak_T.tex',
                 format='latex',
                 overwrite=True)

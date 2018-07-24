@@ -30,7 +30,8 @@ def leckrate(datafile, V=10, p_err=0.1, pg=1, plotfile='plot.pdf', tablefile='ta
     pg = ufloat(pg, druckmessfehler * pg)
     times = np.array([t1, t2, t3])
     times = np.cumsum(times, axis=1)  # wirkliche Zeiten sind die Kumulante
-    tmean = unp.uarray(np.mean(times, axis=0), np.std(times, axis=0, ddof=1))
+    # Mittelwert und Fehler des Mittelwerts sigma/wurzel(n)
+    tmean = unp.uarray(np.mean(times, axis=0), np.std(times, axis=0, ddof=1)/np.sqrt(len(times)))
 
     print('Regression Gleichgewichtsdruck {:} mbar'.format(pg))
     params, covariance = curve_fit(f=linear, xdata=noms(tmean), ydata=noms(p))

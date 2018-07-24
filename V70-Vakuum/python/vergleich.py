@@ -19,11 +19,11 @@ for i in range(len(noms(p_leck))):
                  yerr=stds(S_leck[i]),
                  label=r'Leck {}'.format(i+1))
 # Aus Evakuierungskurve
-# Bereich 1 zwischen 100 und 40 Milli Bar
-plt.errorbar(x=70,
-             xerr=30,
-             y=0.55,
-             yerr=0.06,
+# Bereich 1 zwischen 1000 und 40 Milli Bar
+plt.errorbar(x=520,
+             xerr=480,
+             y=1.06,
+             yerr=0.23,
              label=r'Evak 1')
 # Bereich 2 zwischen 20 und 0,8 Milli Bar
 plt.errorbar(x=10.4,
@@ -31,11 +31,11 @@ plt.errorbar(x=10.4,
              y=1.08,
              yerr=0.08,
              label=r'Evak 2')
-# Bereich 3 zwischen 0,6 und 0,08 Milli Bar
-plt.errorbar(x=0.34,
-             xerr=0.26,
-             y=0.59,
-             yerr=0.04,
+# Bereich 3 zwischen 0,6 und 0,06 Milli Bar
+plt.errorbar(x=0.33,
+             xerr=0.27,
+             y=0.52,
+             yerr=0.05,
              label=r'Evak 3')
 # Aus Anleitung
 plt.axhline(y=1.1, label='Hersteller')
@@ -67,17 +67,17 @@ for i in range(len(noms(p_leck))):
                  yerr=stds(S_leck[i]),
                  label=r'Leck {}'.format(i+1))
 # Aus Evakuierungskurve
-# Bereich 1 zwischen 2e-3 und 2e-4 Milli Bar
-plt.errorbar(x=11e-4,
-             xerr=9e-4,
-             y=8.5,
-             yerr=0.7,
+# Bereich 1 zwischen 5e-3 und 2e-4 Milli Bar
+plt.errorbar(x=2.6e-3,
+             xerr=2.4e-3,
+             y=9.2,
+             yerr=0.9,
              label=r'Evak 1')
-# Bereich 2 zwischen 4e-5 und 8e-5 Milli Bar
-plt.errorbar(x=6e-5,
-             xerr=2e-5,
-             y=4.7,
-             yerr=0.4,
+# Bereich 2 zwischen 3e-5 und 8e-5 Milli Bar
+plt.errorbar(x=5.5e-5,
+             xerr=2.5e-5,
+             y=3.3,
+             yerr=0.5,
              label=r'Evak 2')
 # Aus Anleitung
 plt.axhline(y=77, label='Hersteller')
