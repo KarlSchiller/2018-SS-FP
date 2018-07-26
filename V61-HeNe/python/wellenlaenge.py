@@ -29,3 +29,12 @@ for i in range(len(lamb)):
 print(lamb)
 print(np.mean(lamb[1:5]))
 print(np.mean(lamb[6:-1]))
+
+ascii.write([o, d, lamb],
+            'table/wellenlaenge.tex',
+            format='latex',
+            overwrite=True)
+
+lambda_theo = 632.8e-9
+delta_lambda = (np.mean(lamb)/lambda-1)*100
+print('Abweichung: ', delta_lambda)

@@ -30,12 +30,20 @@ def evak_T():
     params, covariance = curve_fit(t10, d, I, p0=[Imaxleft, -10, 1, Imaxright, 12, 1])
     errors = np.sqrt(np.diag(covariance))
 
-    print("I1 : ", params[0])
-    print("d1 : ", params[1])
-    print("w1 : ", params[2])
-    print("I2 : ", params[0])
-    print("d2 : ", params[1])
-    print("w2 : ", params[2])
+    I1 = ufloat(params[0], errors[0])
+    d1 = ufloat(params[1], errors[1])
+    w1 = ufloat(params[2], errors[2])
+    I2 = ufloat(params[3], errors[3])
+    d2 = ufloat(params[4], errors[4])
+    w2 = ufloat(params[5], errors[5])
+
+    print("I1 : ", I1)
+    print("d1 : ", d1)
+    print("w1 : ", w1)
+    print("I2 : ", I2)
+    print("d2 : ", d2)
+    print("w2 : ", w2)
+
     # Plot
     plt.plot(d, I, 'kx', label='Messwerte')
     plt.plot(x, t10(x, *params), label='Fit')
@@ -49,8 +57,10 @@ def evak_T():
     plt.savefig('build/T10.pdf')
     plt.clf()
 
-
-
+    ascii.write([d[1:15], I[1:15], d[16:-1], I[16:-1]],
+                'table/T_10.tex',
+                format='latex',
+                overwrite=True)
 
 if __name__ == '__main__':
 

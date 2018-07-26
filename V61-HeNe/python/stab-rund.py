@@ -9,26 +9,79 @@ from uncertainties import ufloat
 from scipy.constants import codata
 
 
-def linear(x, m, b):
+def g(x, m, b):
     return m*x + b
 
+def g_1g_2(L,r_1,r_2):
+    return (1-L/r_1)*(1-L/r_2)
 
-def evak_T():
-    L, I = np.genfromtxt("rohdaten/stab-rund.txt", unpack=True)
+def quadrat(x, a, b, c):
+    return a*x**2+b*x+c
+
+r_e = 1e15
+r_k1 = 100
+r_k2 = 140
+
+#-------------------konkav-konkav
+def evak_Tkk():
+    L, I = np.genfromtxt("rohdaten/spiegel_rund.txt", unpack=True)
+
+    test = (I*g_1g_2(91, r_k2, r_k2))/(I)
+
+    params_kk, covariance_kk = curve_fit(quadrat, L, test)
+    errors_kk = np.sqrt(np.diag(covariance_kk))
+
+    print(': ', g_1g_2(91, r_k2, r_k2))
+    print('Quadrat: ', ufloat(params_kk[0], errors_kk[0]))
+    print('Linear: ', ufloat(params_kk[1], errors_kk[1]))
+    print('Knostante: ', ufloat(params_kk[2], errors_kk[2]))
+
     # Plot
-    plt.plot(L, I, 'kx', label='Messwerte')
-    # plt.xlabel(r'$\overline{t_\mathrm{1..6}}\;/\;\mathrm{s}$')
-    # plt.ylabel(r'$\ln(\frac{p(t)-p_\mathrm{e}}{p_\mathrm{0}-p_\mathrm{e}})$')
+    x = np.linspace(L[0]-1, L[-1]+1)
+    plt.plot(L, test, 'kx', label='Messwerte')
+    plt.plot(x, quadrat(x, *params_kk), label=r'Fit')
+    plt.plot(x, g_1g_2(x, r_k2, r_k2), label=r'$\mathrm{Theorie:} r_{k2}, r_{k2}$')
+    plt.xlabel(r'$d / mm$')
+    plt.ylabel(r'$g_1g_2$')
     # plt.xlim(60, 310)
     # plt.ylim(6.70, 16.95)
     plt.grid()
+    plt.legend(loc='best')
     plt.tight_layout()
     plt.savefig('build/stab-rund.pdf')
     plt.clf()
 
+#-------------------konkav-flach
+def evak_Tkf():
+    L2, I2 = np.genfromtxt("rohdaten/spiegel_flach.txt", unpack=True)
 
+    I2_max = max(I2)
+    c_kf = g_1g_2(min(L2), r_e, r_k2)
+    test = (I2*c_kf)/I2_max
 
+    params_kf, covariance_kf = curve_fit(g, L2, test)
+    errors_kf = np.sqrt(np.diag(covariance_kf))
+
+    print(':', g_1g_2(75, r_e, r_k2))
+    print('linear: ', ufloat(params_kf[0], errors_kf[0]))
+    print('konstante: ', ufloat(params_kf[1], errors_kf[1]))
+
+    # Plot
+    x = np.linspace(L2[0]-1, L2[-1]+1)
+    plt.plot(L2, test, 'kx', label='Messwerte')
+    plt.plot(x, g(x, *params_kf), '.', label=r'Fit')
+    plt.plot(x, g_1g_2(x, r_e, r_k2), label=r'$\mathrm{Theorie:} \, flach, r_{k1}$')
+    plt.xlabel(r'$d / mm$')
+    plt.ylabel(r'$g_1g_2$')
+    # plt.xlim(60, 310)
+    # plt.ylim(6.70, 16.95)
+    plt.grid()
+    plt.legend(loc='best')
+    plt.tight_layout()
+    plt.savefig('build/stab-flach.pdf')
+    plt.clf()
 
 if __name__ == '__main__':
 
-    evak_T()
+    evak_Tkk()
+    evak_Tkf()

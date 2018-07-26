@@ -19,9 +19,13 @@ def evak_T():
     x = np.linspace(-30, 30)
     params, covariance = curve_fit(t00, d, I)
     errors = np.sqrt(np.diag(covariance))
-    print("d0 : ", params[0])
-    print("I0 : ", params[1])
-    print("w : ", params[2])
+
+    versch = ufloat(params[0], errors[0])
+    ampl = ufloat(params[1], errors[1])
+    omega = ufloat(params[2], errors[2])
+    print("d0 : ", versch)
+    print("I0 : ", ampl)
+    print("w : ", omega)
 
     # Plot
     plt.plot(d, I, 'kx', label='Messwerte')
@@ -36,8 +40,10 @@ def evak_T():
     plt.savefig('build/T00.pdf')
     plt.clf()
 
-
-
+    ascii.write([d[1:15], I[1:15], d[16:-1], I[16:-1]],
+            'table/t_00.tex',
+            format='latex',
+            overwrite=True)
 
 if __name__ == '__main__':
 
