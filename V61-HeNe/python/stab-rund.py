@@ -26,12 +26,13 @@ r_k2 = 140
 def evak_Tkk():
     L, I = np.genfromtxt("rohdaten/spiegel_rund.txt", unpack=True)
 
-    test = (I*g_1g_2(91, r_k2, r_k2))/(I)
+    c = g_1g_2(47.3, r_k2, r_k2)
+    test = (I*c/max(I))
 
     params_kk, covariance_kk = curve_fit(quadrat, L, test)
     errors_kk = np.sqrt(np.diag(covariance_kk))
 
-    print(': ', g_1g_2(91, r_k2, r_k2))
+    print('Skalierungsfaktor: ', c)
     print('Quadrat: ', ufloat(params_kk[0], errors_kk[0]))
     print('Linear: ', ufloat(params_kk[1], errors_kk[1]))
     print('Knostante: ', ufloat(params_kk[2], errors_kk[2]))
@@ -55,14 +56,13 @@ def evak_Tkk():
 def evak_Tkf():
     L2, I2 = np.genfromtxt("rohdaten/spiegel_flach.txt", unpack=True)
 
-    I2_max = max(I2)
-    c_kf = g_1g_2(min(L2), r_e, r_k2)
-    test = (I2*c_kf)/I2_max
+    c_kf = g_1g_2(92.3, r_e, r_k2)
+    test = (I2*c_kf)/max(I2)
 
     params_kf, covariance_kf = curve_fit(g, L2, test)
     errors_kf = np.sqrt(np.diag(covariance_kf))
 
-    print(':', g_1g_2(75, r_e, r_k2))
+    print('Skalierungsfaktor:', c_kf)
     print('linear: ', ufloat(params_kf[0], errors_kf[0]))
     print('konstante: ', ufloat(params_kf[1], errors_kf[1]))
 

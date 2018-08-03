@@ -13,10 +13,12 @@ Streben von $a = \SI{0.1}{\milli\meter}$ verwendet.
 
 \input{table/wellenlaenge.tex}
 
-Für die berechnung der Wellenlänge wurde Formel \ref{eqn:welle} verwendet.
+Für die Berechnung der Wellenlänge wurde Formel \ref{eqn:welle} verwendet. Dabei
+beschreibt die Ordnung $n>0$ die auftretenden Maxima nach rechts und $n<0$ die
+Maxima nach links.
 Eine Mittelung über alle berechneten Wellenlängen ergab
 \begin{align*}
-  %\bar{\lambda} = \SI{}{\nano\meter}.
+  \bar{\lambda} = \SI{375.99(10489)}{\nano\meter}.
 \end{align*}
 
 
@@ -114,7 +116,7 @@ berechnet:
 \subsection{Konfokale Konfiguration}
 In Tabelle \ref{tab:kk} sind die zur Untersuchung dieser Konfiguration
 aufgenommenen Messwerte aufgelistet. In Abbildung \ref{plt:kk} sind diese
-graphisch dargestellt. Der Umskalierungsfaktor liegt bei $\si{}$. Die zu
+graphisch dargestellt. Der Umskalierungsfaktor liegt bei $c = \num{0,43}$. Die zu
 sehende Ausgleichskurve wird mit der Formel
 \begin{align*}
   f(d) = a\cdot d^2 + b\cdot d + c
@@ -134,7 +136,7 @@ berechnet. Die dabei errechneten Parameter ergeben
 \end{figure}
 \FloatBarrier
 
-%\include{}
+\include{table/t_00.tex}
 \FloatBarrier
 
 \subsubsection{Konkav-Ebene Konfiguration}
@@ -145,7 +147,7 @@ in Abbildung \ref{plt:ke} zusätzlich mit der durch
   g(d) = m\cdot d + a
 \end{align*}
 berechneten Ausgleichsgeraden abgebildet. Als Skalierungsfaktor ergibt
-sich %$c = \si{}$.
+sich $c = \num{0.34}$.
 
 \begin{figure}[htb]
   \centering
@@ -155,5 +157,5 @@ sich %$c = \si{}$.
 \end{figure}
 \FloatBarrier
 
-%\input{}
+\input{table/T_10.tex}
 \FloatBarrier

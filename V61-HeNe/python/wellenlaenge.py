@@ -35,7 +35,9 @@ print(np.mean(lamb[6:-1]))
 #            format='latex',
 #            overwrite=True)
 
-lambda_theo = 632.8e-9
-delta_lambda = (np.mean(lamb)/lamb-1)*100
+lambda_theo = 632.8
+lamb = np.abs(lamb)
+delta_lambda = ((np.mean(lamb)-lambda_theo)/lambda_theo)*100
 delta_lambda_mean = np.mean(delta_lambda)
+print('Mittelung: ', np.mean(lamb), '+/-', np.std(lamb))
 print('Abweichung: ', delta_lambda_mean)
