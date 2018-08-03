@@ -30,11 +30,12 @@ print(lamb)
 print(np.mean(lamb[1:5]))
 print(np.mean(lamb[6:-1]))
 
-ascii.write([o, d, lamb],
-            'table/wellenlaenge.tex',
-            format='latex',
-            overwrite=True)
+#ascii.write([o, np.round(d, 3), np.round(lamb, 2)],
+#            'table/wellenlaenge.tex',
+#            format='latex',
+#            overwrite=True)
 
 lambda_theo = 632.8e-9
-delta_lambda = (np.mean(lamb)/lambda-1)*100
-print('Abweichung: ', delta_lambda)
+delta_lambda = (np.mean(lamb)/lamb-1)*100
+delta_lambda_mean = np.mean(delta_lambda)
+print('Abweichung: ', delta_lambda_mean)

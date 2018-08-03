@@ -2,8 +2,8 @@
 \section{Auswertung}
 
 \label{sec:Auswertung}
-Im Folgenden wurden alle Ausgleichsrechnungen mit der Funktion $curve_fit$ von dem
-Python Paket $scipy.optimize$ %\cite{} durchgeführt, sowie deren Parameter berechnet.
+Im Folgenden wurden alle Ausgleichsrechnungen mit der Funktion $curve\_fit$ von dem
+Python Paket $scipy.optimize$ \cite{scipy} durchgeführt, sowie deren Parameter berechnet.
 
 \subsection{Bestimmung der Wellenlänge}
 Die zur Betsimmung der Wellenlängedes lasers aufgenommenen Messwerte
@@ -11,7 +11,7 @@ sind in Tabelle \ref{tab:wellenlänge}. Dabei wurde der Laser in einem Abstand
 von $L = \SI{11.3(2)}{\centi\meter}$ positioniert und ein Gitter mit einem Abstand der einzelnen
 Streben von $a = \SI{0.1}{\milli\meter}$ verwendet.
 
-%\input{}
+\input{table/wellenlaenge.tex}
 
 Für die berechnung der Wellenlänge wurde Formel \ref{eqn:welle} verwendet.
 Eine Mittelung über alle berechneten Wellenlängen ergab
@@ -22,25 +22,27 @@ Eine Mittelung über alle berechneten Wellenlängen ergab
 
 \subsection{Untersuchung der TEM-Moden}
 
-\subsubsection{Auswertung der $T_{00} Mode$}
+\subsubsection{Auswertung der $T_{00}$ Mode}
 Die in Abbildung \ref{plt:t00} dargestellten Messwerte für die Intenstät $I$
 und die Entfernung vom Hauptmaxima $r$ sind in Tabelle \ref{tab:t00}
 aufgelistet.
 
 \input{table/t_00.tex}
+\FloatBarrier
 
 \begin{figure}[htb]
   \centering
-  \includegraphics[width=0.8\textwidth]{T00.pdf}
+  \includegraphics[width=0.7\textwidth]{T00.pdf}
   \caption{Grphisch Darstellung der Werte aus Tabelle \ref{tab:t00} mit Ausgleichskurve der Form von Formel \ref{eqn:t00}.}
   \label{plt:t00}
 \end{figure}
+\FloatBarrier
 
 Die durch die Ausgleichsrechung berechneten Parameter ergeben:
 \begin{align*}
-  %I_0 &= \SI{}{\ampere} \\
-  %d_0 &= \SI{}{\milli\meter} \\
-  %\omega &= \SI{}{\raiseto{-1}\milli\meter}
+  I_0 &= \SI{2.09(8)}{\nano\ampere} \\
+  d_0 &= \SI{3212(31)}{\milli\meter} \\
+  \omega &= \SI{13.87(16)}{\raiseto{-1}\milli\meter}
 \end{align*}
 
 \subsubsection{Auswertung der $T_{10}$}
@@ -50,21 +52,23 @@ Abbildung \ref{plt:t10} zusammen mit einer berechneten Ausgleichskurve
 graphisch dargestellt.
 
 \input{table/T_10.tex}
+\FloatBarrier
 
 \begin{figure}[htb]
   \centering
-  \includegraphics[width=0.8\textwidth]{T10.pdf}
+  \includegraphics[width=0.7\textwidth]{T10.pdf}
   \caption{Darstellung der in Tabelle \ref{tab:t10} aufgelisteten Messwerte und einer berechneten Ausgleichskurve.}
   \label{plt:t10}
 \end{figure}
+\FloatBarrier
 
 Die aus der Ausgleichsrechnung nach Formel \ref{eqn:t10} bestimmten
 Parameter sind:
 
 \begin{align*}
-  %I_{0,1} = \SI{}{\ampere} \ \ \ \ \ \ I_{0,2} = \SI{}{\ampere} \\
-  %d_{0,1} = \SI{}{\milli\meter} \ \ \ \ \ d_{0,2} = \SI{}{\milli\meter} \\
-  %\omega_1 = \SI{}{\raiseto{-1}\milli\meter} \ \ \ \ \ \omega_2 = \SI{}{\raiseto{-1}\milli\meter}
+  I_{0,1} &= \SI{227(8)}{\nano\ampere} \ \ \ \ \ \ \ \ \ \ \ \ \ I_{0,2} = \SI{315(8)}{\nano\ampere} \\
+  d_{0,1} &= \SI{-9.66(21)}{\milli\meter} \ \ \ \ d_{0,2} = \SI{13.19(14)}{\milli\meter} \\
+  \omega_1 &= \SI{10.2(4)}{\raiseto{-1}\milli\meter} \ \ \ \ \ \omega_2 = \SI{9.60(29)}{\raiseto{-1}\milli\meter}
 \end{align*}
 
 \subsection{Untersuchung der Polarisation}
@@ -74,18 +78,21 @@ auch in Rad angegeben.
 Die durch die Ausgleichsrechung in Abbildung \ref{plt:pol} bestimmten
 Parameter ergaben sich zu
 \begin{align*}
-  %I_0 = \SI{}{} \\
-  %\phi_0 = \SI{}{}
+  I_0 &= \SI{2.83(6)}{\micro\ampere} \\
+  \phi_0 &= \SI{-87.72(2)}{\radian} \\
+      &= \SI{-13.96(0)}{\degree}
 \end{align*}
 
 \begin{figure}[htb]
   \centering
-  \includegraphics[width=0.8\textwidth]{build/polarisation.pdf}
-  \caption{Graphische Abbildung der Messdaten aus tabelle \ref{tab:pol} mit zugehöriger Ausgleichskurve.}
+  \includegraphics[width=0.7\textwidth]{build/polarisation.pdf}
+  \caption{Graphische Abbildung der Messdaten aus Tabelle \ref{tab:pol} mit zugehöriger Ausgleichskurve.}
   \label{plt:pol}
 \end{figure}
+\FloatBarrier
 
 \input{table/polar.tex}
+\FloatBarrier
 
 \subsection{Überprüfung der Stabilitätsbedingung}
 Bei der Untersuchung der Stabilitätsbedingung werden zwei verschiedene
@@ -116,16 +123,19 @@ berechnet. Die dabei errechneten Parameter ergeben
 \begin{align*}
   %a &= \SI{}{\raiseto{-2}\milli\meter} \\
   %b &= \SI{}{\raiseto{-1}\milli\meter} \\
-  %c &= \si{}
+  %c &= \num{}
 \end{align*}
 
 \begin{figure}[htb]
-  \includegraphics{build/stab-rund.pdf}
+  \centering
+  \includegraphics[width=0.7\textwidth]{build/stab-rund.pdf}
   \caption{Gemessene Werte der Untersuchung der Stabilitätsmessung der konfokalen Konfiguration. }
   \label{plt:kk}
 \end{figure}
+\FloatBarrier
 
 %\include{}
+\FloatBarrier
 
 \subsubsection{Konkav-Ebene Konfiguration}
 Die für die Untersuchung der Stabilitätsbedingung aufgenommenen Werte der
@@ -136,11 +146,14 @@ in Abbildung \ref{plt:ke} zusätzlich mit der durch
 \end{align*}
 berechneten Ausgleichsgeraden abgebildet. Als Skalierungsfaktor ergibt
 sich %$c = \si{}$.
+
 \begin{figure}[htb]
   \centering
-  \includegraphics[width=0.8\textwidth]{build/stab-flach.pdf}
+  \includegraphics[width=0.7\textwidth]{build/stab-flach.pdf}
   \caption{Graphische Darstellung der Messwerte zur Untersuchung der Stabilitätsbedingung bei einer konkav-ebenen Konfiguration.}
   \label{plt:ke}
 \end{figure}
+\FloatBarrier
 
 %\input{}
+\FloatBarrier

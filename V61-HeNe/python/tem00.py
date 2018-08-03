@@ -40,10 +40,10 @@ def evak_T():
     plt.savefig('build/T00.pdf')
     plt.clf()
 
-    ascii.write([d[1:15], I[1:15], d[16:-1], I[16:-1]],
-            'table/t_00.tex',
-            format='latex',
-            overwrite=True)
+    #ascii.write([d[1:15], I[1:15], d[16:-1], I[16:-1]],
+    #        'table/t_00.tex',
+    #        format='latex',
+    #        overwrite=True)
 
 if __name__ == '__main__':
 
