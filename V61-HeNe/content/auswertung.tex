@@ -3,7 +3,9 @@
 
 \label{sec:Auswertung}
 Im Folgenden wurden alle Ausgleichsrechnungen mit der Funktion $curve\_fit$ von dem
-Python Paket $scipy.optimize$ \cite{scipy} durchgeführt, sowie deren Parameter berechnet.
+Python Paket $scipy.optimize$ \cite{scipy} durchgeführt, sowie deren Parameter
+berechnet. Die Fehlerberechnung wird mit dem Paket $uncertainties$ \cite{uncertainties}
+von Python durchgeführt. Die Umrechnung der Winkeleinheiten, sowie 
 
 \subsection{Bestimmung der Wellenlänge}
 Die zur Betsimmung der Wellenlängedes lasers aufgenommenen Messwerte
@@ -111,6 +113,7 @@ Startposition der Spiegel $r_1, r_2$ und der Formel \ref{eqn:c} wir folgt
 berechnet:
 \begin{align*}
   c = g_1g_2(d_0,r_1,r_2)
+  \label{eqn:c}
 \end{align*}
 
 \subsection{Konfokale Konfiguration}
