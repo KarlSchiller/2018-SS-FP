@@ -33,8 +33,8 @@ def evak_T():
     # Plot
     plt.plot(phi_rad, I, 'kx', label='Messwerte')
     plt.plot(x, polar(x, *params), label='Fit')
-    plt.xlabel(r'$\phi/rad$')
-    plt.ylabel(r'$I/nA$')
+    plt.xlabel(r'$\phi/\ rad$')
+    plt.ylabel(r'$I/\ nA$')
     # plt.yscale(0, 2*np.pi)
     # plt.ylim(6.70, 16.95)
     plt.legend(loc='best')

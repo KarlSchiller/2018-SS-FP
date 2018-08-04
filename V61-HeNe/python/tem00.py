@@ -30,8 +30,8 @@ def evak_T():
     # Plot
     plt.plot(d, I, 'kx', label='Messwerte')
     plt.plot(x, t00(x, *params), label='Fit')
-    plt.xlabel(r'$d/mm$')
-    plt.ylabel(r'$I/nA$')
+    plt.xlabel(r'$d/\ mm$')
+    plt.ylabel(r'$I/\ nA$')
     # plt.xlim(60, 310)
     # plt.ylim(6.70, 16.95)
     plt.legend(loc='best')

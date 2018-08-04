@@ -66,8 +66,8 @@ eines Lasers soll dafür gesorgt werden, das eine dauerhafte Verstärkung des
 Strahlungsfeldes entsteht.
 
 \subsection{Aufbau und Funktionsweise eines Lasers}
-Das Wort Laser steht für "Light Amplification by Stimulated Emission of Radiation".
-Ein Laser besteht prinzipiell aus drei Teilen:
+Das Wort Laser steht für \textit{"Light Amplification by Stimulated Emission of
+Radiation"}. Ein Laser besteht prinzipiell aus drei Teilen:
 Dem aktiven Lasermedium, einer Pumpquelle und einem Resonator.
 % Dieser schematische ist in Abbildung \ref{pic:laser} zu sehen.
 Abbildung \ref{pic:laser} zeigt eine schematische Darstellung eines Lasers.
@@ -91,7 +91,7 @@ zwei gegenüber liegenden Spiegeln, welche das Licht reflektieren und somit
 den Laufweg der Photonen im Lasermedium maximieren.
 % Damit der Laufweg der Photonen möglichst groß wird, verlängert
 % der Resonator genau diesen durch zwei gegenüberliegende Spiegel.
-Einer dieser Spiegel ist halbdurchlässig sein,
+Einer dieser Spiegel ist halbdurchlässig,
 um einen erzeugten Strahl auskoppeln zu können. Der andere ist vollständig reflektierend.
 Dabei werden durch eine konfokale Anordnung Verluste minimiert,
 die durch eine Abweichung des Strahlenganges vom optimalen Weg entstehen.
@@ -139,9 +139,9 @@ auftritt. Dabei beschreibt
 \end{equation}
 mit dem Krümmungsradius des $i$-ten Spiegels $r_i$.
 In Abbildung \ref{fig:stabilität} ist das Produkt $g_1g_2$
-als Funktion des Spiegelastandes $L$  für $r_2 = \SI{1400}{\metre}$ dargestellt. Wird ein
-ebener Spiegel ("$r_1 = \infty$") betrachtet, so ergibt sich eine Bedingung für
-$L$ von
+als Funktion des Spiegelastandes $L$  für $r_2 = \SI{1400}{\metre}$ dargestellt.
+Wird ein ebener Spiegel ("$r_1 = \infty$") betrachtet, so ergibt sich eine
+ Bedingung für $L$ von
 \begin{equation}
   \SI{0}{\metre} \leq L \leq \SI{1.4}{\metre}.
 \end{equation}
@@ -174,11 +174,19 @@ Dies ist in Abbildung \ref{fig:HeNe} dargestellt.
   \label{fig:HeNe}
 \end{figure}
 
-Da der $5s$ Zustand des Heliums eine größere mittlere Lebensdauer hat als der $3s$ Zustand,
-ist die Besetzungsinversion erfüllt und wahrscheinlicher als spontane Emissionen.
-Die bei diesem Übergang auftretende Spektrallinie zwischen den beiden Neonatomen liegt bei
-$\lambda = \SI{632.8}{\nano\metre}$ und damit im sichtbaren roten Bereich des elektromagnetischen
-Spektrums.
+Da der $5s$ Zustand des Heliums eine größere mittlere Lebensdauer hat als der
+$3s$ Zustand, ist die Besetzungsinversion erfüllt und wahrscheinlicher als
+spontane Emissionen. Die bei diesem Übergang auftretende Spektrallinie zwischen
+den beiden Neonatomen liegt bei $\lambda = \SI{632.8}{\nano\metre}$ und damit
+im sichtbaren roten Bereich des elektromagnetischen Spektrums.
+
+Wird die Polarisation eines Lasers untersucht, so besagt das Gesetz von Malus,
+welches die Intensität des Strahls hinter dem Polasisationsfilter beschreibt. Mit
+den konstanten Parametern $I_0$ und $\phi_0$ wird in Abhängigkeit des Drehwinkels
+$\phi$ die verbleibende Intensität berechnet durch
+\begin{equation}
+  I(\phi) = I_0\sin^2(\phi+\phi_0).
+\end{equation}
 
 % \begin{equation}
 % Für Formeln
