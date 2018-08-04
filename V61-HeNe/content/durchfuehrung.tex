@@ -7,51 +7,52 @@ Abbildung \ref{fig:Versuchsaufbau1} abgebildet.
 \begin{figure}[htb]
   \centering
   \includegraphics[width=0.8\textwidth]{content/aufbau.png}
-  \caption{Abbildung des Aufbaus eines HeNe-Lasers mit zur Justage verwendetem JUstagelaser.}
+  \caption{Aufbau eines HeNe-Lasers mit Justagelaser \cite{anleitung}.}
   \label{fig:Versuchsaufbau1}
 \end{figure}
 \FloatBarrier
 
 \subsection{Justage}
 
-Damit der Versuch durchgeführt
-werden kann, müssen die einzelnen Bestandteile zuerst justiert werden. Zu diesem
-Zweck wird ein weiterer Laser als Justage-Laser und zwei Lochblenden verwendet.
+Zunächst müssen die einzelnen Bestandteile justiert werden.
+Zu diesem Zweck wird ein weiterer Laser und zwei Lochblenden verwendet.
 Um die notwendige Gasentladung zu erhalten, wird eine Hochspannung an das Laserrohr
-angelegt. Um nun den Laser zum lasern zu bringen werden die konfokalen
-Resonatorspiegel mit Justierschrauben  an Spiegeln und laserrohr so eingestellt,
-sodass alle optischen Achsen aufeinander liegen. Dabei ist eine Photodiode zu
+angelegt. Um nun den Laser zum lasern zu bringen, werden die konfokalen
+Resonatorspiegel mit Justierschrauben an Spiegeln und laserrohr so eingestellt,
+dass alle optischen Achsen aufeinander liegen. Dabei ist eine Photodiode zu
 Intensitätsmessung hinter dem Laser angebracht.
 
 \subsection{Bestimmung der Wellenlänge}
 Um die Wellenlänge
-des erzeugten Lasers zu messen wird ein optisches Gitter verwendet.
-Um das entstehende Interferenzbild zu vermessen wird hinter das Gitter ein Schirm
+des erzeugten Lasers zu messen, wird ein optisches Gitter verwendet.
+Zur Vermessung des entstehenden Interferenzbildes wird hinter das Gitter ein Schirm
 gestellt, an dem die Abstände zwischen den auftretenden Interferrenzmaxima vermessen
-werden können. Daraus, und aus der Messung des Abstandes zwischen Schirm und Gitter
+werden können. Aus diesen Abständen und aus der Messung des Abstandes zwischen Schirm und Gitter
 kann die Wellenlänge durch
 \begin{equation}
-  \lambda = \frac{g\cdot\sin(\phi)}{n},\ \ \phi = \arctan\left(\frac{d_n}{L}\right),\  n\in\mathds{N}
+  \lambda = \frac{g\cdot\sin(\phi)}{n},\ \ \phi = \arctan\left(\frac{d_\text{n}}{L}\right),\  n\in\mathds{N}
   \label{eqn:welle}
 \end{equation}
-berechnet werden. Hierbei ist $g$ die Gitterkonstante, $d_n$ der Abstand zwischen Hauptmaxima
+berechnet werden. Hierbei ist $g$ die Gitterkonstante, $d_\text{n}$ der Abstand zwischen Hauptmaxima
 und $n$-ten Maximum und $L$ der Abstand zwischen Gitter und Schirm.
 
 \subsection{Unteruchung der TEM-Moden}
-Um die TEM-Moden untersuchen zu können wird eine defokussierende Linse hinter den Laser gestellt.
-So wird der Strahl des Lasers verbreitert und die Untersuchung erleichtert werden.
-Um die Photodiode senkrecht zu der Starhlenachse verschieben zu können werden
-Mikrometerschraube verwendet. Durch Verschieben der Photodiode kann die Abhängigkeit
-zwischen Intensität und Achsenabstand bestimmt werden.
+Zur Untersuchung der TEM-Moden wird eine defokussierende Linse hinter den Laser gestellt.
+So wird der Strahl des Lasers verbreitert und die Untersuchung erleichtert.
+Um die Photodiode senkrecht zu der Strahlenachse verschieben zu können, wird eine
+Mikrometerschraube verwendet. Durch Verschieben der Photodiode kann
+die Intensität in Abhängigkeit des Achsenabstands bestimmt werden.
 
-Die Grundmode ist ohne Einsatz von Blenden und Gittern zu untersuchen. Die
-$I_{01}$-Mode wird vermessen, indem ein Wolframdraht so positioniert wird, dass
-die Grundmode unterdrückt wird. Die $I_{01}$-Mode besitzt eine Nullstelle bei $r = 0$
-und wird ebenfalls durch verschieben der Photodiode senkrecht zur Strahlenachse
+Die Grundmode ist ohne Einsatz von Blenden und Gittern zu untersuchen.
+Die $I_{01}$-Mode wird vermessen,
+indem ein Wolframdraht zwischen den Resonatorspiegeln positioniert wird,
+dass die Grundmode unterdrückt wird.
+Die $I_{01}$-Mode besitzt eine Nullstelle bei $r = 0$
+und wird ebenfalls durch Verschieben der Photodiode senkrecht zur Strahlenachse
 untersucht.
 
 \subsection{Untersuchung der Polarisation}
-Um zu untersuchen welche Polarisation der Laser besitzt, sind an den Ausgängen des
+Zur Überprüfung der Polarisation der Lasers sind an den Ausgängen des
 Laserrohrs Brewster-Fenster angebracht. Brewster-Fenster sind gläsernde Platten, die einen
 zur optischen Achse eingestellten Brewsterwinkel besitzen. Als Brewsterwinkel wird
 jener Winkel bezeichnet, bei dem nach den Fresnelschen Formel kein parallel zur
@@ -68,8 +69,8 @@ $\phi$ die verbleibende Intensität berechnet durch
 \end{equation}
 
 \subsection{Überprüfung der Stabilitätsbedingung}
-Damit die Rinchtigkeit der Stabilitätsbedingung überprüft werden kann, wird die
-variierte Resonatorlänge $L$ gegen den Photostrom aufgezeichnet werden. Hier
-wird ein gekrümmter Spiegel $r=\SI{1.4}{\metre}$ und eine ebener Spiegel verwendet.
+Damit die Richtigkeit der Stabilitätsbedingung überprüft werden kann, wird die
+variierte Resonatorlänge $L$ gegen den Photostrom aufgezeichnet. Hierzu
+werden ein gekrümmter Spiegel $r=\SI{1.4}{\metre}$ und ein ebener Spiegel verwendet.
 Bei jeder Variation der Resonatorlänge ist dabei die Justage neu durchzuführen,
 um den Photostrom zu maximieren.
