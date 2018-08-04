@@ -19,16 +19,17 @@ System aus Atomen zu analysieren. Ein theoretisches Modell hierfür bietet ein
 Zweiniveausystem.
 
 \subsection{Zweiniveausystem}
-Ein einfaches Modell zur Beschreibung eines Systems aus Atomen ist das Zweiniveausystem.
-Werden Zustände $\left| 1 \right>$ und $\left| 2 \right>$ mit entsprechenden
-Eigenwerten $E_1$ und $E_2$ ($E_1<E_2$). Durch Absorption und Emission eines Photons mit
-Energie $h\nu=E_2-E_1$ kann das System zwischen den Zuständen springen. Dabei sind
-folgende Prozesse für die Lasertechnik wichtig:
+Ein einfaches Modell zur Beschreibung eines Systems aus Atomen ist das Zweiniveausystem,
+welches aus zwei Zuständen $\left| 1 \right>$ und $\left| 2 \right>$ mit entsprechenden
+Eigenwerten $E_1$ und $E_2$ ($E_1<E_2$) besteht.
+Durch Absorption und Emission eines Photons mit
+Energie $h\nu=E_2-E_1$ kann ein Elektron zwischen den Zuständen wechseln.
+Dabei sind folgende Prozesse für die Lasertechnik wichtig:
 \begin{itemize}
   \item induzierte Absorption:
   Hier wird durch Absorption eines Photons das System in Zustand $\left| 2 \right>$
   gehoben. Die Wahrscheinlichkeit, mit der dieser Prozess stattfindet, wird beschrieben
-  Durch
+  durch
   \begin{equation}
     P_{1\rightarrow 2} = B_{1\rightarrow 2}\cdot \rho(\nu).
   \end{equation}
@@ -37,15 +38,16 @@ folgende Prozesse für die Lasertechnik wichtig:
   eines externen Strahlungsfeldes da.
   \item induzierte Emission:
   Hierbei stimmt das induzierte Photon in Energie, Phase und Ausbreitungsrichtung
-  mit dem anregenden Photon überein. Hier kann eine analoge Beschreibung wie bei der
-  induzierten Emission verwendet werden. Somit wird die Übergangswahrscheinlichkeit durch
+  mit einem anregenden Photon überein. Es kann eine analoge Beschreibung wie bei der
+  induzierten Absorption verwendet werden.
+  Somit wird die Übergangswahrscheinlichkeit durch
   \begin{equation}
     P_{2\rightarrow 1} = B_{2\rightarrow 1}\cdot\rho(\nu)
   \end{equation}
   definiert. $B_{2\rightarrow 1}$ stellt hier den Einsteinkoeffizienten der induzierten
   Emission da.
   \item spontane Emission:
-  Auch unabhängig von einer externen Strahlnfeldes kann ein Photon emittiert werden
+  Auch in Abwesenheit eines externen Strahlenfeldes kann ein Photon emittiert werden.
   Dabei gilt die Beziehung
   \begin{equation}
     P_s = A_{2\rightarrow 1}
@@ -56,44 +58,60 @@ folgende Prozesse für die Lasertechnik wichtig:
 Befindet sich ein System im thermischen Gleichgewicht, so kann es durch die
 Besetzungszahlen $n_i$ der Niveaus beschrieben werden. Diese folgen der Boltzmann-Statistik
 \begin{equation}
-    n_i = \frac{g_in}{Z}\exp{-\frac{E_i}{k_\text{B}T}}
+    n_i = \frac{g_in}{Z}\exp\left(-\frac{E_i}{k_\text{B}T}\right).
 \end{equation}
-Als $n$ wird die gesamtzahl der Systeme, $g_i$ das statistische Gewicht dess Zustandes
+Als $n$ wird die Gesamtzahl der Systeme, $g_i$ das statistische Gewicht dess Zustandes
 $\left| i \right>$ und Zals die Zustandssumme bezeichnet. Durch den Einsatz
 eines Lasers soll dafür gesorgt werden, das eine dauerhafte Verstärkung des
 Strahlungsfeldes entsteht.
 
 \subsection{Aufbau und Funktionsweise eines Lasers}
-Ein Laser kurz für "Light Amplification by Stimulated Emission of Radiation" besteht prinzipiell aus
-drei Teilen. Dem aktiven Lasermedium, einer Pumpquelle und einem Resonator. Dieser
-schematische ist in Abbildung \ref{pic:laser} zu sehen.
+Das Wort Laser steht für "Light Amplification by Stimulated Emission of Radiation".
+Ein Laser besteht prinzipiell aus drei Teilen:
+Dem aktiven Lasermedium, einer Pumpquelle und einem Resonator.
+% Dieser schematische ist in Abbildung \ref{pic:laser} zu sehen.
+Abbildung \ref{pic:laser} zeigt eine schematische Darstellung eines Lasers.
 \begin{figure}[htb]
   \centering
   \includegraphics[width=0.8\textwidth]{content/prinzip_laser.png}
   \caption{Schematischer Aufbau eines Lasers mit Pumpquelle, aktivem Medium und Resonator.}
   \label{pic:laser}
 \end{figure}
-Um mindestens einen angereten Zustand mehr im aktiven zu haben wie Grundzustände,
-wird eine Pumpquelle verwendet um diese Besetzungsinverssion herzustellen.
-Daraufhin tritt in dem aktiven Medium mehr induzierte Emission als spontane auf und das
-Strahlungsfeld wird verstärkt. Damit der Laufweg der Photonen möglichst groß wird, verlängert
-der Resonator genau diesen durch zwei gegenüberliegende Spiegel. Einer dieser Spiegel
-muss halbdurchlässig sein, um einen erzeugten Strahl auskoppeln zu können. Durch eine
-konfokale Anordnung werden Verluste minimiert.
-Ein langer Laufweg ist wichtig, da so ein Photon öfters durch das Lasermedium gelangen kann
-und dadurch weitere Emissionen bewirkt.
-Im Resonator können nur Wellenlängen verstärkt werden,welche die Bedingung
+Eine Pumpquelle stellt eine sogenannte Besetzungsinversion her.
+Diese bedeutet, dass mehr Elektronen in einem angeregten Zustand sind, als
+im Grundzustand. Ohne Pumpquelle wäre dies nicht möglich, da wie oben
+dargestellt das statistische Gewicht des Grundzustands größer ist.
+% Um mindestens einen angeregten Zustand mehr im aktiven zu haben wie Grundzustände,
+% wird eine Pumpquelle verwendet um diese Besetzungsinverssion herzustellen.
+Daraufhin tritt in dem Lasermedium oder auch aktiven Medium häufiger
+induzierte als spontane Emission auf und das
+Strahlungsfeld wird verstärkt.
+Um diese Verstärkung zu maximieren, befindet sich das Lasermedium zwischen
+zwei gegenüber liegenden Spiegeln, welche das Licht reflektieren und somit
+den Laufweg der Photonen im Lasermedium maximieren.
+% Damit der Laufweg der Photonen möglichst groß wird, verlängert
+% der Resonator genau diesen durch zwei gegenüberliegende Spiegel.
+Einer dieser Spiegel ist halbdurchlässig sein,
+um einen erzeugten Strahl auskoppeln zu können. Der andere ist vollständig reflektierend.
+Dabei werden durch eine konfokale Anordnung Verluste minimiert,
+die durch eine Abweichung des Strahlenganges vom optimalen Weg entstehen.
+% Ein langer Laufweg ist wichtig, da so ein Photon öfters durch das Lasermedium gelangen kann
+% und dadurch weitere Emissionen bewirkt.
+Im Resonator können nur Wellenlängen verstärkt werden, welche die Bedingung
 \begin{equation}
-  \lambda = \frac{2L}{n}\ \ n\in\mathds{N}
+  \lambda = \frac{2L}{n} \text{mit} n\in\mathds{N}
 \end{equation}
-erfüllen. Hierbei ist $L$ der Abstand zwischen den Spiegeln und n der Index der Moden.
-Durch diese Bedingung tritt eine Selektion der Wellelängen auf, die bedtrachtet werden können.
+erfüllen.
+Hierbei ist $L$ der Abstand zwischen den Spiegeln und n der Index der Moden.
+Diese Bedingung begründet sich aus der Bedingung an stehende Wellen,
+welche die Elektronenfunktionen zwischen den Resonatorspiegeln ausbilden.
+Durch diese Bedingung tritt eine Selektion der Wellelängen auf, die betrachtet werden können.
 Innerhalb eines durch den optischen Dopplereffekt auftretenden natürlichen Spektrums
-sind diese longitudinale Moden.
+sind dies die longitudinale Moden.
 
 Treten stationäre Intenstiätsverteilungen durch Beugungseffekte an Unebenheiten
 der Spiegel senkrecht zur Rotationachse auf, so werden diese als transversale oder
-TEM-Moden ($transversal electromagnetic$) bezeichnet.
+TEM-Moden (\textit{transversal electromagnetic}) bezeichnet.
 
 Wird die Intensität $I_{00}$ der Grund- oder Fundamentalmode $T_{00}$ betrachtet, so
 folgt sie einer Gaußverteilung der Form
