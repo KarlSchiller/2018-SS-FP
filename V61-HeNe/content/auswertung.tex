@@ -2,23 +2,26 @@
 \section{Auswertung}
 
 \label{sec:Auswertung}
-Im Folgenden wurden alle Ausgleichsrechnungen mit der Funktion $curve\_fit$ von dem
-Python Paket $scipy.optimize$ \cite{scipy} durchgeführt, sowie deren Parameter
-berechnet. Die Fehlerberechnung wird mit dem Paket $uncertainties$ \cite{uncertainties}
-von Python durchgeführt. Die Umrechnung von Einheiten, sowie weitere Berechnungen
-wurden mit dem $numpy$ Paket \cite{numpy} durchgeführt.
+Im Folgenden wurden alle Ausgleichsrechnungen mit der Funktion \textit{curve_fit} von dem
+Python Paket \textit{scipy.optimize} \cite{scipy} durchgeführt, ebenso werden deren
+Parameter mit diesem Paket. Die Fehlerberechnung wird mit dem Paket \textit{uncertainties}
+\cite{uncertainties} von Python durchgeführt berechnet. Die Umrechnung von
+Einheiten, sowie weitere Berechnungen wurden mit dem \textit{numpy} Paket \cite{numpy}
+durchgeführt.
 
 \subsection{Bestimmung der Wellenlänge}
-Die zur Betsimmung der Wellenlängedes lasers aufgenommenen Messwerte
+Die zur Betsimmung der Wellenlängedes Lasers aufgenommenen Messwerte
 sind in Tabelle \ref{tab:welle}. Dabei wurde der Laser in einem Abstand
-von $L = \SI{11.3(2)}{\centi\meter}$ positioniert und ein Gitter mit einem Abstand der einzelnen
-Streben von $a = \SI{0.1}{\milli\meter}$ verwendet.
+von $L = \SI{11.3(2)}{\centi\meter}$ positioniert und ein Gitter mit einem
+Abstand der einzelnen Streben von $a = \SI{0.1}{\milli\meter}$ verwendet.
+Mithilfe der Formel \ref{eqn:welle} wurden die Wellenlängenberechnungen an den
+einzelnen Intensitätsmaxima durchgeführt. Die daraus resultierenden Werte für
+$\lambda$ sind in Tabelle \ref{tab:welle} nachzulesen.
 
 \input{table/wellenlaenge.tex}
 
-Für die Berechnung der Wellenlänge wurde Formel \ref{eqn:welle} verwendet. Dabei
-beschreibt die Ordnung $n>0$ die auftretenden Maxima nach rechts und $n<0$ die
-Maxima nach links.
+Dabei beschreibt die Ordnung $n>0$ die auftretenden Maxima zur rechten Seite
+gegenüber dem Laserstrahl und $n<0$ die Maxima zur linken Seite.
 Eine Mittelung über alle berechneten Wellenlängen ergab
 \begin{align*}
   \bar{\lambda} = \SI{375.99(10489)}{\nano\meter}.
@@ -29,8 +32,9 @@ Eine Mittelung über alle berechneten Wellenlängen ergab
 
 \subsubsection{Auswertung der $T_{00}$ Mode}
 Die in Abbildung \ref{plt:t00} dargestellten Messwerte für die Intenstät $I$
-und die Entfernung vom Hauptmaxima $r$ sind in Tabelle \ref{tab:t00}
-aufgelistet.
+und die Entfernung vom Hauptmaxima $d$ sind in Tabelle \ref{tab:t00}
+aufgelistet. Aus der Messung des Abstandes mit einem Maßband resultiert eine
+Unsicherheit von \SI{1}{\centi\meter}.
 
 \input{table/t_00.tex}
 \FloatBarrier
@@ -38,24 +42,24 @@ aufgelistet.
 \begin{figure}[htb]
   \centering
   \includegraphics[width=0.7\textwidth]{T00.pdf}
-  \caption{Grphisch Darstellung der Werte aus Tabelle \ref{tab:t00} mit Ausgleichskurve der Form von Formel \ref{eqn:t00}.}
+  \caption{Graphisch Darstellung der Werte aus Tabelle \ref{tab:t00} mit Ausgleichskurve der Form von Formel \ref{eqn:t00}.}
   \label{plt:t00}
 \end{figure}
 \FloatBarrier
 
-Die durch die Ausgleichsrechung berechneten Parameter ergeben:
+Die durch Formel \ref{eqn:t00} erzeugte Ausgleichsrechung berechneten Parameter
+ergeben
 \begin{align*}
   I_0 &= \SI{2.09(8)}{\nano\ampere} \\
   d_0 &= \SI{3212(31)}{\milli\meter} \\
-  \omega &= \SI{13.87(16)}{\raiseto{-1}\milli\meter}
+  \omega &= \SI{13.87(16)}{\raiseto{-1}\milli\meter}.
 \end{align*}
 
 \subsubsection{Auswertung der $T_{10}$}
 Die für die Untersuchung der $T_{10}$ Mode aufgenommen Intensitäten $I$,
-sowie Abstände $r$ sind in Tabelle \ref{tab:t10} aufgelistet und in
-Abbildung \ref{plt:t10} zusammen mit einer berechneten Ausgleichskurve mit Hilfe
-von Formel \ref{eqn:t00}
-graphisch dargestellt.
+sowie Abstände $d$ sind in Tabelle \ref{tab:t10} aufgelistet und in
+Abbildung \ref{plt:t10} zusammen mit einer berechneten Ausgleichskurve durch
+Formel \ref{eqn:t00} graphisch dargestellt.
 
 \input{table/T_10.tex}
 \FloatBarrier
@@ -70,7 +74,6 @@ graphisch dargestellt.
 
 Die aus der Ausgleichsrechnung nach Formel \ref{eqn:t10} bestimmten
 Parameter sind:
-
 \begin{align*}
   I_{0,1} &= \SI{227(8)}{\nano\ampere} \ \ \ \ \ \ \ \ \ \ \ \ \ I_{0,2} = \SI{315(8)}{\nano\ampere} \\
   d_{0,1} &= \SI{-9.66(21)}{\milli\meter} \ \ \ \ d_{0,2} = \SI{13.19(14)}{\milli\meter} \\
@@ -81,12 +84,12 @@ Parameter sind:
 Die Tabelle \ref{tab:pol} enthält alle zur Untersuchung der Polarisation
 des Lasers verwendeten Messdaten. Dabei ist der Winkel sowohl in Grad als
 auch in Rad angegeben.
-Die durch die Ausgleichsrechung durch Formel \ref{eqn:pol} in Abbildung \ref{plt:pol} bestimmten
-Parameter ergaben sich zu
+Die durch die Ausgleichsrechung durch Formel \ref{eqn:pol} in Abbildung
+\ref{plt:pol} bestimmten Parameter ergaben sich zu
 \begin{align*}
   I_0 &= \SI{2.83(6)}{\micro\ampere} \\
   \phi_0 &= \SI{-87.72(2)}{\radian} \\
-      &= \SI{-13.96(0)}{\degree}
+      &= \SI{-13.96(0)}{\degree}.
 \end{align*}
 
 \begin{figure}[htb]
@@ -121,8 +124,8 @@ berechnet:
 \subsection{Konfokale Konfiguration}
 In Tabelle \ref{tab:kk} sind die zur Untersuchung dieser Konfiguration
 aufgenommenen Messwerte aufgelistet. In Abbildung \ref{plt:kk} sind diese
-graphisch dargestellt. Der Umskalierungsfaktor liegt bei $c = \num{0,43}$. Die zu
-sehende Ausgleichskurve wird mit der Formel
+graphisch dargestellt. Der Umskalierungsfaktor liegt nach \eqref{eqn:c} bei
+$c = \num{0,43}$. Die zu sehende Ausgleichskurve wird mit
 \begin{align*}
   f(d) = a\cdot d^2 + b\cdot d + c
 \end{align*}
