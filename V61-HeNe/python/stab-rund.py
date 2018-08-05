@@ -52,14 +52,20 @@ def evak_Tkk():
     plt.savefig('build/stab-rund.pdf')
     plt.clf()
 
+
+    #ascii.write([L, I, test],
+    #    'table/kk.tex',
+    #    format='latex',
+    #    overwrite=True)
+
 #-------------------konkav-flach
 def evak_Tkf():
     L2, I2 = np.genfromtxt("rohdaten/spiegel_flach.txt", unpack=True)
 
     c_kf = g_1g_2(92.3, r_e, r_k2)
-    test = (I2*c_kf)/max(I2)
+    test2 = (I2*c_kf)/max(I2)
 
-    params_kf, covariance_kf = curve_fit(g, L2, test)
+    params_kf, covariance_kf = curve_fit(g, L2, test2)
     errors_kf = np.sqrt(np.diag(covariance_kf))
 
     print('Skalierungsfaktor:', c_kf)
@@ -68,7 +74,7 @@ def evak_Tkf():
 
     # Plot
     x = np.linspace(L2[0]-1, L2[-1]+1)
-    plt.plot(L2, test, 'kx', label='Messwerte')
+    plt.plot(L2, test2, 'kx', label='Messwerte')
     plt.plot(x, g(x, *params_kf), '.', label=r'Fit')
     plt.plot(x, g_1g_2(x, r_e, r_k2), label=r'$\mathrm{Theorie:} \, flach, r_{k1}$')
     plt.xlabel(r'$d /\ mm$')
@@ -80,6 +86,12 @@ def evak_Tkf():
     plt.tight_layout()
     plt.savefig('build/stab-flach.pdf')
     plt.clf()
+
+    #ascii.write([L2, I2, test2],
+    #        'table/kf.tex',
+    #        format='latex',
+    #        overwrite=True)
+
 
 if __name__ == '__main__':
 

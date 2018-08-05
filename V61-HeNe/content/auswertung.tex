@@ -2,7 +2,7 @@
 \section{Auswertung}
 
 \label{sec:Auswertung}
-Im Folgenden wurden alle Ausgleichsrechnungen mit der Funktion \textit{curve_fit} von dem
+Im Folgenden wurden alle Ausgleichsrechnungen mit der Funktion \textit{curve\_fit} von dem
 Python Paket \textit{scipy.optimize} \cite{scipy} durchgeführt, ebenso werden deren
 Parameter mit diesem Paket. Die Fehlerberechnung wird mit dem Paket \textit{uncertainties}
 \cite{uncertainties} von Python durchgeführt berechnet. Die Umrechnung von
@@ -13,8 +13,8 @@ durchgeführt.
 Die zur Bestimmung der Wellenlänge des Lasers aufgenommenen Messwerte
 sind in Tabelle \ref{tab:welle} dargestellt.
 Dabei wurde der Laser in einem Abstand
-von $L = \SI{11.3(2)}{\centi\meter}$ positioniert und ein Gitter mit einem Abstand der einzelnen
-Streben von $a = \SI{0.1}{\milli\meter}$ verwendet.
+von $L = \SI{11.3(2)}{\centi\meter}$ positioniert und ein Gitter mit einem
+Abstand der einzelnen Streben von $a = \SI{0.1}{\milli\meter}$ verwendet.
 Mithilfe der Formel \ref{eqn:welle} wurden die Wellenlängenberechnungen an den
 einzelnen Intensitätsmaxima durchgeführt. Die daraus resultierenden Werte für
 $\lambda$ sind in Tabelle \ref{tab:welle} nachzulesen.
@@ -37,7 +37,7 @@ und die Entfernung vom Hauptmaxima $d$ sind in Tabelle \ref{tab:t00}
 aufgelistet. Aus der Messung des Abstandes mit einem Maßband resultiert eine
 Unsicherheit von \SI{1}{\centi\meter}.
 
-\input{table/t_00.tex}
+\input{table/t_00}
 \FloatBarrier
 
 \begin{figure}[htb]
@@ -109,23 +109,23 @@ Bei der Untersuchung der Stabilitätsbedingung werden zwei verschiedene
 Konfigurationen Untersucht. Dabei wird bei der ersten Untersuchung zwei
 konfokale Spiegel verwendet, bei der zweiten hingegen ein konfokaler und
 ein ebener Spiegel. Dabei wird eine Umskalierung der Messwerte der Art
-\begin{align*}
+\begin{equation*}
   I \rightarrow \frac{I \cdot c}{I_\text{max}}
-\end{align*}
+\end{equation*}
 vorgenommen, um einen Vergleich zwischen Messwerten und theoretischen
 Berechungnen zu ermöglichen.
 Der Skalierungsfaktor wird dabei aus der Startlänge $d_0$ der jeweiligen
 Startposition der Spiegel $r_1, r_2$ und der Formel \ref{eqn:c} wir folgt
 berechnet:
-\begin{align*}
+\begin{equation}
   c = g_1g_2(d_0,r_1,r_2)
   \label{eqn:c}
-\end{align*}
+\end{equation}
 
-\subsection{Konfokale Konfiguration}
+\subsubsection{Konfokale Konfiguration}
 In Tabelle \ref{tab:kk} sind die zur Untersuchung dieser Konfiguration
 aufgenommenen Messwerte aufgelistet. In Abbildung \ref{plt:kk} sind diese
-graphisch dargestellt. Der Umskalierungsfaktor liegt nach \eqref{eqn:c} bei
+graphisch dargestellt. Der Umskalierungsfaktor liegt nach \ref{eqn:c} bei
 $c = \num{0,43}$. Die zu sehende Ausgleichskurve wird mit
 \begin{align*}
   f(d) = a\cdot d^2 + b\cdot d + c
@@ -145,7 +145,7 @@ berechnet. Die dabei errechneten Parameter ergeben
 \end{figure}
 \FloatBarrier
 
-\include{table/t_00.tex}
+\include{table/kk.tex}
 \FloatBarrier
 
 \subsubsection{Konkav-Ebene Konfiguration}
@@ -166,5 +166,5 @@ sich $c = \num{0.34}$.
 \end{figure}
 \FloatBarrier
 
-\input{table/T_10.tex}
+\input{table/ke.tex}
 \FloatBarrier
