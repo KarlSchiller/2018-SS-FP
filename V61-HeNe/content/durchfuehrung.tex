@@ -52,17 +52,30 @@ und wird ebenfalls durch Verschieben der Photodiode senkrecht zur Strahlenachse
 untersucht.
 
 \subsection{Untersuchung der Polarisation}
-Zur Überprüfung der Polarisation der Lasers sind an den Ausgängen des
-Laserrohrs Brewster-Fenster angebracht. Brewster-Fenster sind gläsernde Platten, die einen
-zur optischen Achse eingestellten Brewsterwinkel besitzen. Als Brewsterwinkel wird
-jener Winkel bezeichnet, bei dem nach den Fresnelschen Formel kein parallel zur
-Einfallsebene polarisertes Licht reflektiert wird. Zudem wird das senkrecht zur
-Einfallsebene polarisierte Licht durch Reflexion stark unterdrückt. Somit ist der
-verbleibende Lichtstrahl linear polarisiert. Um sicher zu gehen, dass nur linear
-polarisiertes Licht betrachtet wird, wird ein Polarisationsfilter verwendet.
-Dieser wurde während der Messung gedreht, um somit die Polarisation des Lasers 
-untersuchen zu können.
+Zur Polarisation des emittierten Laserstrahls sind an den Ausgängen des
+Laserrohres Brewster-Fenster angebracht.
+Diese Fenster sind gläsernde Platten, die im Brewsterwinkel bezüglich der
+optischen Achse angebracht sind.
+Als Brewsterwinkel wird jener Winkel bezeichnet,
+bei dem (nach den Fresnelschen Formel) zur
+Einfallsebene kein parallel polarisertes Licht reflektiert wird.
+Zudem wird das senkrecht zur Einfallsebene polarisierte Licht
+durch Reflexion stark unterdrückt.
+Somit ist der verbleibende Lichtstrahl linear polarisiert.
+Um diese lineare Polarisation zu überprüfen, wird zwischen die Photodiode
+und den Laser ein Polarisationsfilter eingefügt.
+Dieser ist drehbar gelagert, sodass die Intensität des Laserlichtes in
+Abhängigkeit des Drehwinkels des Filter aufgenommen werden kann.
 
+Das Gesetz von Malus beschreibt die Intensität des Strahls für verschiedene
+Drehwinkel des Polarisationsfilters $\phi$ bezüglich der Polarisationsrichtung
+des Lasers.
+Es gilt der Zusammenhang
+\begin{equation}
+  I\left(\phi\right) = I_0 \sin^2 \left(\phi + \phi_0\right)
+  \label{eqn:pol}
+\end{equation}
+mit der Amplitude $I_0$ und einer Phasenverschiebung $\phi_0$.
 
 \subsection{Überprüfung der Stabilitätsbedingung}
 Damit die Richtigkeit der Stabilitätsbedingung überprüft werden kann, wird die
