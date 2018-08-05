@@ -5,12 +5,13 @@
 Im Folgenden wurden alle Ausgleichsrechnungen mit der Funktion \textit{curve\_fit} von dem
 Python Paket \textit{scipy.optimize} \cite{scipy} durchgeführt, ebenso werden deren
 Parameter mit diesem Paket. Die Fehlerberechnung wird mit dem Paket \textit{uncertainties}
-\cite{uncertainties} von Python durchgeführt berechnet. Die Umrechnung von
+\cite{uncertainties} von Python durchgeführt. Die Umrechnung von
 Einheiten, sowie weitere Berechnungen wurden mit dem \textit{numpy} Paket \cite{numpy}
 durchgeführt.
 
 \subsection{Bestimmung der Wellenlänge}
-Die zur Bestimmung der Wellenlänge des Lasers aufgenommenen Messwerte
+Die zur Bestimmung der Wellenlänge des Lasers aufgenommenen Abstände der Maxima
+zum Hauptmaximum
 sind in Tabelle \ref{tab:welle} dargestellt.
 Dabei wurde der Laser in einem Abstand
 von $L = \SI{11.3(2)}{\centi\meter}$ positioniert und ein Gitter mit einem
@@ -38,15 +39,13 @@ aufgelistet. Aus der Messung des Abstandes mit einem Maßband resultiert eine
 Unsicherheit von \SI{1}{\centi\meter}.
 
 \input{table/t_00}
-\FloatBarrier
 
 \begin{figure}[htb]
   \centering
   \includegraphics[width=0.7\textwidth]{T00.pdf}
-  \caption{Graphisch Darstellung der Werte aus Tabelle \ref{tab:t00} mit Ausgleichskurve der Form von Formel \ref{eqn:t00}.}
+  \caption{Graphische Darstellung der Werte aus Tabelle \ref{tab:t00} mit Ausgleichskurve der Form von Formel \ref{eqn:t00}.}
   \label{plt:t00}
 \end{figure}
-\FloatBarrier
 
 Die durch Formel \ref{eqn:t00} erzeugte Ausgleichsrechung berechneten Parameter
 ergeben
@@ -55,15 +54,16 @@ ergeben
   d_0 &= \SI{3212(31)}{\milli\meter} \\
   \omega &= \SI{13.87(16)}{\raiseto{-1}\milli\meter}.
 \end{align*}
+\FloatBarrier
 
-\subsubsection{Auswertung der $T_{10}$}
+\subsubsection{Auswertung der $T_{10}$ Mode}
+
 Die für die Untersuchung der $T_{10}$ Mode aufgenommen Intensitäten $I$,
 sowie Abstände $d$ sind in Tabelle \ref{tab:t10} aufgelistet und in
 Abbildung \ref{plt:t10} zusammen mit einer berechneten Ausgleichskurve durch
 Formel \ref{eqn:t00} graphisch dargestellt.
 
 \input{table/T_10.tex}
-\FloatBarrier
 
 \begin{figure}[htb]
   \centering
@@ -71,27 +71,28 @@ Formel \ref{eqn:t00} graphisch dargestellt.
   \caption{Darstellung der in Tabelle \ref{tab:t10} aufgelisteten Messwerte und einer berechneten Ausgleichskurve.}
   \label{plt:t10}
 \end{figure}
-\FloatBarrier
 
-Die aus der Ausgleichsrechnung nach Formel \ref{eqn:t10} bestimmten
-Parameter sind:
+Eine Regression mit der Funktion \ref{eqn:t10} ergab die Parameter
 \begin{align*}
   I_{0,1} &= \SI{227(8)}{\nano\ampere} \ \ \ \ \ \ \ \ \ \ \ \ \ I_{0,2} = \SI{315(8)}{\nano\ampere} \\
   d_{0,1} &= \SI{-9.66(21)}{\milli\meter} \ \ \ \ d_{0,2} = \SI{13.19(14)}{\milli\meter} \\
   \omega_1 &= \SI{10.2(4)}{\raiseto{-1}\milli\meter} \ \ \ \ \ \omega_2 = \SI{9.60(29)}{\raiseto{-1}\milli\meter}
 \end{align*}
+\FloatBarrier
 
 \subsection{Untersuchung der Polarisation}
 Die Tabelle \ref{tab:pol} enthält alle zur Untersuchung der Polarisation
 des Lasers verwendeten Messdaten. Dabei ist der Winkel sowohl in Grad als
 auch in Rad angegeben.
-Die durch die Ausgleichsrechung durch Formel \ref{eqn:pol} in Abbildung
-\ref{plt:pol} bestimmten Parameter ergaben sich zu
+Die durch die Ausgleichsrechung durch Formel \ref{eqn:pol}
+bestimmten Parameter ergaben sich zu
 \begin{align*}
   I_0 &= \SI{2.83(6)}{\micro\ampere} \\
   \phi_0 &= \SI{-87.72(2)}{\radian} \\
       &= \SI{-13.96(0)}{\degree}.
 \end{align*}
+In Abbildung \ref{plt:pol} sind die aufgenommenen Messwerte samt Regression
+dargestellt.
 
 \begin{figure}[htb]
   \centering
@@ -99,7 +100,6 @@ Die durch die Ausgleichsrechung durch Formel \ref{eqn:pol} in Abbildung
   \caption{Graphische Abbildung der Messdaten aus Tabelle \ref{tab:pol} mit zugehöriger Ausgleichskurve.}
   \label{plt:pol}
 \end{figure}
-\FloatBarrier
 
 \input{table/polar.tex}
 \FloatBarrier
@@ -143,7 +143,6 @@ berechnet. Die dabei errechneten Parameter ergeben
   \caption{Gemessene Werte der Untersuchung der Stabilitätsmessung der konfokalen Konfiguration. }
   \label{plt:kk}
 \end{figure}
-\FloatBarrier
 
 \include{table/kk.tex}
 \FloatBarrier
@@ -164,7 +163,6 @@ sich $c = \num{0.34}$.
   \caption{Graphische Darstellung der Messwerte zur Untersuchung der Stabilitätsbedingung bei einer konkav-ebenen Konfiguration.}
   \label{plt:ke}
 \end{figure}
-\FloatBarrier
 
 \input{table/ke.tex}
 \FloatBarrier
