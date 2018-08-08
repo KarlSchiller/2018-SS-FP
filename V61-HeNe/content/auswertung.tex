@@ -23,12 +23,13 @@ $\lambda$ sind in Tabelle \ref{tab:welle} nachzulesen.
 \input{table/wellenlaenge.tex}
 
 Dabei beschreibt die Ordnung $n>0$ die auftretenden Maxima zur rechten Seite
-gegenüber dem Laserstrahl und $n<0$ die Maxima zur linken Seite.
+senkrecht zur optischen Achse und $n<0$ die Maxima zur linken Seite.
 Eine Mittelung über alle berechneten Wellenlängen ergab
 \begin{align*}
   \bar{\lambda} = \SI{375.99(10489)}{\nano\meter}.
 \end{align*}
 
+\newpage
 
 \subsection{Untersuchung der TEM-Moden}
 
@@ -36,7 +37,7 @@ Eine Mittelung über alle berechneten Wellenlängen ergab
 Die in Abbildung \ref{plt:t00} dargestellten Messwerte für die Intenstät $I$
 und die Entfernung vom Hauptmaxima $d$ sind in Tabelle \ref{tab:t00}
 aufgelistet. Aus der Messung des Abstandes mit einem Maßband resultiert eine
-Unsicherheit von \SI{1}{\centi\meter}.
+Unsicherheit von $\pm\SI{0.5}{\centi\meter}$.
 
 \input{table/t_00}
 
@@ -47,7 +48,7 @@ Unsicherheit von \SI{1}{\centi\meter}.
   \label{plt:t00}
 \end{figure}
 
-Die durch Formel \ref{eqn:t00} erzeugte Ausgleichsrechung berechneten Parameter
+Die durch eine Funktion der Form von Formel \ref{eqn:t00} erzeugte Ausgleichsrechung berechneten Parameter
 ergeben
 \begin{align*}
   I_0 &= \SI{2.09(8)}{\nano\ampere} \\
@@ -61,22 +62,22 @@ ergeben
 Die für die Untersuchung der $T_{10}$ Mode aufgenommen Intensitäten $I$,
 sowie Abstände $d$ sind in Tabelle \ref{tab:t10} aufgelistet und in
 Abbildung \ref{plt:t10} zusammen mit einer berechneten Ausgleichskurve durch
-Formel \ref{eqn:t00} graphisch dargestellt.
+Formel \ref{eqn:t10} graphisch dargestellt.
 
 \input{table/T_10.tex}
 
 \begin{figure}[htb]
   \centering
   \includegraphics[width=0.7\textwidth]{T10.pdf}
-  \caption{Darstellung der in Tabelle \ref{tab:t10} aufgelisteten Messwerte und einer berechneten Ausgleichskurve.}
+  \caption{Darstellung der in Tabelle \ref{tab:t10} aufgelisteten Messwerte und einer berechneten Ausgleichskurve der Form von Formel \ref{eqn:t10}.}
   \label{plt:t10}
 \end{figure}
 
-Eine Regression mit der Funktion \ref{eqn:t10} ergab die Parameter
+Eine Regression mit einer Funktion der Form von Formel \ref{eqn:t10} ergab die Parameter
 \begin{align*}
   I_{0,1} &= \SI{227(8)}{\nano\ampere} \ \ \ \ \ \ \ \ \ \ \ \ \ I_{0,2} = \SI{315(8)}{\nano\ampere} \\
-  d_{0,1} &= \SI{-9.66(21)}{\milli\meter} \ \ \ \ d_{0,2} = \SI{13.19(14)}{\milli\meter} \\
-  \omega_1 &= \SI{10.2(4)}{\raiseto{-1}\milli\meter} \ \ \ \ \ \omega_2 = \SI{9.60(29)}{\raiseto{-1}\milli\meter}
+  d_{0,1} &= \SI{-9.66(21)}{\milli\meter} \, \ \ \ \ d_{0,2} = \SI{13.19(14)}{\milli\meter} \\
+  \omega_1 &= \SI{10.2(4)}{\raiseto{-1}\milli\meter} \ \ \ \ \ \ \ \omega_2 = \SI{9.60(29)}{\raiseto{-1}\milli\meter}
 \end{align*}
 \FloatBarrier
 
@@ -84,20 +85,20 @@ Eine Regression mit der Funktion \ref{eqn:t10} ergab die Parameter
 Die Tabelle \ref{tab:pol} enthält alle zur Untersuchung der Polarisation
 des Lasers verwendeten Messdaten. Dabei ist der Winkel sowohl in Grad als
 auch in Rad angegeben.
-Die durch die Ausgleichsrechung durch Formel \ref{eqn:pol}
+Die durch die Ausgleichsrechnung durch eine Funktion der Formel \ref{eqn:pol}
 bestimmten Parameter ergaben sich zu
 \begin{align*}
   I_0 &= \SI{2.83(6)}{\micro\ampere} \\
   \phi_0 &= \SI{-87.72(2)}{\radian} \\
       &= \SI{-13.96(0)}{\degree}.
 \end{align*}
-In Abbildung \ref{plt:pol} sind die aufgenommenen Messwerte samt Regression
-dargestellt.
+In Abbildung \ref{plt:pol} sind die aufgenommenen Messwerte der Intensität $I$ samt
+Regression gegen den Drehwinkel $\phi$ des Polarisationsfilters dargestellt.
 
 \begin{figure}[htb]
   \centering
   \includegraphics[width=0.7\textwidth]{build/polarisation.pdf}
-  \caption{Graphische Abbildung der Messdaten aus Tabelle \ref{tab:pol} mit zugehöriger Ausgleichskurve.}
+  \caption{Graphische Abbildung der Messdaten aus Tabelle \ref{tab:pol} mit zugehöriger Ausgleichskurve durch eine Funktion der Formel \ref{eqn:pol}.}
   \label{plt:pol}
 \end{figure}
 
@@ -106,15 +107,16 @@ dargestellt.
 
 \subsection{Überprüfung der Stabilitätsbedingung}
 Bei der Untersuchung der Stabilitätsbedingung werden zwei verschiedene
-Konfigurationen Untersucht. Dabei wird bei der ersten Untersuchung zwei
+Konfigurationen untersucht. Dabei werden bei der ersten Untersuchung zwei
 konfokale Spiegel verwendet, bei der zweiten hingegen ein konfokaler und
 ein ebener Spiegel. Dabei wird eine Umskalierung der Messwerte der Art
 \begin{equation*}
   I \rightarrow \frac{I \cdot c}{I_\text{max}}
 \end{equation*}
-vorgenommen, um einen Vergleich zwischen Messwerten und theoretischen
+mit der maximal gemessenen Intensität $I_\text{max}$ vorgenommen, um einen
+Vergleich zwischen Messwerten und theoretischen
 Berechungnen zu ermöglichen.
-Der Skalierungsfaktor wird dabei aus der Startlänge $d_0$ der jeweiligen
+Der Skalierungsfaktor $c$ wird dabei aus der Startlänge $d_0$ der jeweiligen
 Startposition der Spiegel $r_1, r_2$ und der Formel \ref{eqn:c} wir folgt
 berechnet:
 \begin{equation}
@@ -122,40 +124,47 @@ berechnet:
   \label{eqn:c}
 \end{equation}
 
+\newpage
 \subsubsection{Konfokale Konfiguration}
-In Tabelle \ref{tab:kk} sind die zur Untersuchung dieser Konfiguration
-aufgenommenen Messwerte aufgelistet. In Abbildung \ref{plt:kk} sind diese
-graphisch dargestellt. Der Umskalierungsfaktor liegt nach \ref{eqn:c} bei
-$c = \num{0,43}$. Die zu sehende Ausgleichskurve wird mit
+In Tabelle  sind die zur Untersuchung dieser Konfiguration
+aufgenommenen Messwerte des Abstandes zur Strahlenachse $d$, die Intensität $I$
+und die Umskalierte Intensität $\frac{I \cdot c}{I_\text{max}}$ aufgelistet. In
+Abbildung \ref{plt:kk} sind diese
+graphisch dargestellt. Der Umskalierungsfaktor liegt nach Formel \ref{eqn:c} bei
+$c = \num{0,43}$. Die zu sehende Ausgleichskurve wird mit einer Funktion der Form
 \begin{align*}
   f(d) = a\cdot d^2 + b\cdot d + c
 \end{align*}
 berechnet. Die dabei errechneten Parameter ergeben
 \begin{align*}
-  %a &= \SI{}{\raiseto{-2}\milli\meter} \\
-  %b &= \SI{}{\raiseto{-1}\milli\meter} \\
-  %c &= \num{}
+  a &= \SI{2.5(21)e-5}{\raiseto{-2}\milli\meter} \\
+  b &= \SI{-2(4)e-2}{\raiseto{-1}\milli\meter} \\
+  c &= \num{2(20)e-2}
 \end{align*}
 
 \begin{figure}[htb]
   \centering
-  \includegraphics[width=0.7\textwidth]{build/stab-rund.pdf}
+  \includegraphics[width=0.6\textwidth]{build/stab-rund.pdf}
   \caption{Gemessene Werte der Untersuchung der Stabilitätsmessung der konfokalen Konfiguration. }
   \label{plt:kk}
 \end{figure}
 
-\include{table/kk.tex}
+\include{table/kk}
 \FloatBarrier
 
 \subsubsection{Konkav-Ebene Konfiguration}
 Die für die Untersuchung der Stabilitätsbedingung aufgenommenen Werte der
-Konkav-Ebenen Konfiguration sind in Tabelle \ref{tab:ke} aufgelistet und
-in Abbildung \ref{plt:ke} zusätzlich mit der durch
+Konkav-Ebenen Konfiguration sind in Tabelle \ref{tab:ke} aufgelistet.
+In Abbildung \ref{plt:ke} sind zusätzlich mit einer Formel der Form
 \begin{align*}
   g(d) = m\cdot d + a
 \end{align*}
 berechneten Ausgleichsgeraden abgebildet. Als Skalierungsfaktor ergibt
-sich $c = \num{0.34}$.
+sich $c = \num{0.34}$. Aus dieser Ausgleichsrechung ergeben sich die Parameter
+\begin{align*}
+   m &= \SI{1.02(22)}{\raiseto{-1}\milli\meter} \\
+   a &= \num{-0.79(22)}
+\end{align*}
 
 \begin{figure}[htb]
   \centering
